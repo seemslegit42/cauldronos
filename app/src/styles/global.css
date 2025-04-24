@@ -1,0 +1,620 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for theme based on brand guidelines */
+:root {
+  /* Primary colors */
+  --color-void-purple: #4A0D67; /* Deep Purple - primary background color, brand identifier */
+  --color-void-purple-light: #6A2D87; /* Lighter variant - hover states, secondary elements */
+  --color-void-purple-dark: #2A0047; /* Darker variant - active states, pressed buttons */
+
+  --color-flux-aqua: #3DAA9D; /* Electric Aqua - primary accent color, call-to-actions, links */
+  --color-flux-aqua-light: #5DCABD; /* Lighter variant - hover states, highlights */
+  --color-flux-aqua-dark: #1D8A7D; /* Darker variant - active states, pressed buttons */
+
+  /* Accent colors */
+  --color-alchemy-gold: #B8860B; /* Muted Gold - success states, profit indicators */
+  --color-alchemy-gold-light: #D8A62B; /* Lighter variant - hover states for success elements */
+  --color-warning-amber: #FFD166; /* Bright amber for warnings - warning messages, caution indicators */
+  --color-error-red: #EF476F; /* Vibrant red for errors - error messages, critical alerts */
+
+  /* Neutral colors - Light theme defaults */
+  --color-bg: #F5F5F5;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-container: #FAFAFA;
+  --color-border: #E0E0E0;
+  --color-text: #212121;
+  --color-text-secondary: #757575;
+  
+  /* Neutral colors - Dark mode */
+  --color-obsidian-black: #0D1117; /* Deep blue-black for backgrounds - main background color for dark mode */
+  --color-dark-gray-1: #121212; /* Darkest gray for backgrounds - main background in dark mode */
+  --color-dark-gray-2: #1E1E1E; /* Slightly lighter gray - card backgrounds, elevated surfaces */
+  --color-dark-gray-3: #2D2D2D; /* Medium dark gray - borders, dividers */
+  --color-light-gray-1: #E0E0E0; /* Light gray for text - primary text on dark backgrounds */
+  --color-light-gray-2: #9E9E9E; /* Medium light gray - secondary text, disabled elements */
+  --color-silver: #C0C0C0; /* Metallic silver - subtle highlights, industrial accents */
+
+  /* Typography */
+  --font-family-heading: 'Manrope', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
+
+  /* Font sizes - compatible with Ant Design */
+  --font-size-base: 14px;
+  --font-size-small: 12px;
+  --font-size-large: 16px;
+
+  /* Heading sizes - strategic use of larger sizes */
+  --font-size-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-h3: 20px;
+  --font-size-h4: 16px;
+  --font-size-h5: 14px;
+
+  /* Line heights */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.5;
+  --line-height-code: 1.4;
+
+  /* Letter spacing */
+  --letter-spacing-heading: -0.02em;
+  --letter-spacing-body: 0;
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-base: all 0.2s ease;
+  --transition-slow: all 0.3s ease;
+}
+
+/* Dark theme variables based on brand guidelines */
+[data-theme="dark"] {
+  --color-bg: var(--color-obsidian-black);
+  --color-bg-elevated: var(--color-dark-gray-2);
+  --color-bg-container: var(--color-dark-gray-3);
+  --color-border: var(--color-dark-gray-3);
+  --color-text: var(--color-light-gray-1);
+  --color-text-secondary: var(--color-light-gray-2);
+
+  /* Primary colors in dark mode */
+  --color-primary: var(--color-flux-aqua);
+  --color-primary-hover: var(--color-flux-aqua-light);
+  --color-primary-active: var(--color-flux-aqua-dark);
+  --color-success: var(--color-alchemy-gold);
+  --color-success-hover: var(--color-alchemy-gold-light);
+  --color-warning: var(--color-warning-amber);
+  --color-error: var(--color-error-red);
+  --color-purple: var(--color-void-purple);
+  --color-purple-hover: var(--color-void-purple-light);
+  --color-purple-active: var(--color-void-purple-dark);
+  --color-accent: var(--color-silver);
+
+  /* Shadows for dark mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+  
+  /* Glow effects */
+  --glow-primary: 0 0 10px rgba(61, 170, 157, 0.5);
+  --glow-success: 0 0 10px rgba(184, 134, 11, 0.5);
+  --glow-warning: 0 0 10px rgba(255, 209, 102, 0.5);
+  --glow-error: 0 0 10px rgba(239, 71, 111, 0.5);
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography - Balanced approach with Ant Design */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: var(--line-height-heading);
+}
+
+/* Strategic use of Manrope for key headings */
+.brand-heading h1,
+.brand-heading h2,
+.page-title,
+.section-title,
+.dashboard-title {
+  font-family: var(--font-family-heading);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+/* Primary Heading */
+h1 {
+  font-weight: var(--font-weight-bold); /* Bold for main headings */
+  font-size: var(--font-size-h1);
+}
+
+/* Secondary Heading */
+h2 {
+  font-weight: var(--font-weight-semibold); /* Semibold for secondary headings */
+  font-size: var(--font-size-h2);
+}
+
+/* Tertiary Heading */
+h3 {
+  font-weight: var(--font-weight-semibold); /* Semibold for tertiary headings */
+  font-size: var(--font-size-h3);
+}
+
+/* Subheadings */
+h4 {
+  font-weight: var(--font-weight-medium); /* Medium for quaternary headings */
+  font-size: var(--font-size-h4);
+}
+
+h5, h6 {
+  font-weight: var(--font-weight-medium); /* Medium for quinary headings */
+  font-size: var(--font-size-h5);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Code blocks */
+code, pre {
+  font-family: var(--font-family-code);
+  background-color: var(--color-bg-container);
+  border-radius: 4px;
+  line-height: var(--line-height-code);
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid var(--color-border);
+}
+
+code {
+  padding: 2px 4px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Focus outline */
+:focus {
+  outline-color: var(--color-primary);
+}
+
+/* CauldronOS-specific styles based on brand guidelines */
+
+/* Glowing text effect for headings */
+.glow-text {
+  text-shadow: 0 0 5px var(--color-flux-aqua), 0 0 10px var(--color-flux-aqua-light);
+}
+
+/* Neon border effect */
+.neon-border {
+  border: 1px solid var(--color-flux-aqua);
+  box-shadow: var(--glow-primary);
+}
+
+/* Terminal-like container */
+.terminal {
+  background-color: var(--color-dark-gray-1);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 16px;
+  font-family: var(--font-family-code);
+  color: var(--color-light-gray-1);
+  box-shadow: var(--glow-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-flux-aqua), transparent);
+  opacity: 0.7;
+}
+
+/* CauldronOS card */
+.cauldron-card {
+  background-color: var(--color-bg-elevated);
+  border-left: 3px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.cauldron-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(61, 170, 157, 0.2);
+}
+
+/* Grid lines background - can be applied to containers */
+.grid-bg {
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(61, 170, 157, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 170, 157, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Circuit-like background pattern */
+.circuit-bg {
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 25px 25px, var(--color-flux-aqua) 2px, transparent 0),
+    linear-gradient(to right, rgba(61, 170, 157, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(61, 170, 157, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 25px 25px, 25px 25px;
+  background-position: 0 0;
+}
+
+/* Hexagonal pattern background */
+.hex-bg {
+  background-color: var(--color-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill='%233DAA9D' fill-opacity='0.05'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Scanline effect - add to containers for retro-tech feel */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Glitch effect for text - use sparingly */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both;
+}
+
+/* Cyberpunk button */
+.cyber-button {
+  background: var(--color-dark-gray-2);
+  color: var(--color-flux-aqua);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: var(--font-family-code);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(61, 170, 157, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.cyber-button:hover {
+  background: var(--color-dark-gray-3);
+  color: var(--color-flux-aqua-light);
+  box-shadow: var(--glow-primary);
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+/* Industrial divider */
+.industrial-divider {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-flux-aqua), transparent);
+  margin: 24px 0;
+  position: relative;
+}
+
+.industrial-divider::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 9px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 2px;
+}
+
+/* Typography utility classes */
+.font-heading {
+  font-family: var(--font-family-heading);
+}
+
+.font-body {
+  font-family: var(--font-family-body);
+}
+
+.font-code {
+  font-family: var(--font-family-code);
+}
+
+/* Brand typography classes */
+.page-title {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-flux-aqua);
+}
+
+.section-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-flux-aqua);
+}
+
+.dashboard-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-flux-aqua);
+}
+
+/* Witty message styles */
+.witty-message {
+  font-style: italic;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+}
+
+/* Code display with brand personality */
+.brand-code {
+  font-family: var(--font-family-code);
+  background-color: var(--color-bg-container);
+  border-left: 3px solid var(--color-flux-aqua);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* Brand color utility classes based on brand guidelines */
+/* Text colors */
+.text-void-purple {
+  color: var(--color-void-purple);
+}
+
+.text-void-purple-light {
+  color: var(--color-void-purple-light);
+}
+
+.text-void-purple-dark {
+  color: var(--color-void-purple-dark);
+}
+
+.text-flux-aqua {
+  color: var(--color-flux-aqua);
+}
+
+.text-flux-aqua-light {
+  color: var(--color-flux-aqua-light);
+}
+
+.text-flux-aqua-dark {
+  color: var(--color-flux-aqua-dark);
+}
+
+.text-alchemy-gold {
+  color: var(--color-alchemy-gold);
+}
+
+.text-alchemy-gold-light {
+  color: var(--color-alchemy-gold-light);
+}
+
+.text-warning {
+  color: var(--color-warning-amber);
+}
+
+.text-error {
+  color: var(--color-error-red);
+}
+
+.text-silver {
+  color: var(--color-silver);
+}
+
+/* Background colors */
+.bg-void-purple {
+  background-color: var(--color-void-purple);
+}
+
+.bg-void-purple-light {
+  background-color: var(--color-void-purple-light);
+}
+
+.bg-void-purple-dark {
+  background-color: var(--color-void-purple-dark);
+}
+
+.bg-flux-aqua {
+  background-color: var(--color-flux-aqua);
+}
+
+.bg-flux-aqua-light {
+  background-color: var(--color-flux-aqua-light);
+}
+
+.bg-flux-aqua-dark {
+  background-color: var(--color-flux-aqua-dark);
+}
+
+.bg-alchemy-gold {
+  background-color: var(--color-alchemy-gold);
+}
+
+.bg-warning {
+  background-color: var(--color-warning-amber);
+}
+
+.bg-error {
+  background-color: var(--color-error-red);
+}
+
+.bg-obsidian {
+  background-color: var(--color-obsidian-black);
+}
+
+.bg-dark-gray-1 {
+  background-color: var(--color-dark-gray-1);
+}
+
+.bg-dark-gray-2 {
+  background-color: var(--color-dark-gray-2);
+}
+
+.bg-dark-gray-3 {
+  background-color: var(--color-dark-gray-3);
+}
+
+/* Border colors */
+.border-flux-aqua {
+  border-color: var(--color-flux-aqua);
+}
+
+.border-void-purple {
+  border-color: var(--color-void-purple);
+}
+
+.border-alchemy-gold {
+  border-color: var(--color-alchemy-gold);
+}
+
+.border-warning {
+  border-color: var(--color-warning-amber);
+}
+
+.border-error {
+  border-color: var(--color-error-red);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--color-void-purple) 0%, var(--color-flux-aqua) 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, var(--color-obsidian-black) 0%, var(--color-dark-gray-2) 100%);
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+.glow-success {
+  box-shadow: var(--glow-success);
+}
+
+.glow-warning {
+  box-shadow: var(--glow-warning);
+}
+
+.glow-error {
+  box-shadow: var(--glow-error);
+}

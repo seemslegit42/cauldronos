@@ -1,0 +1,153 @@
+/* Resizable Panel Styles */
+.resizable-panel-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.resizable-panel-card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.resizable-panel-card:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.custom-resize-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resize-indicator {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .resize-indicator {
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Draggable Card Styles */
+.draggable-card-wrapper {
+  position: absolute;
+  z-index: 100;
+}
+
+.draggable-card {
+  cursor: default;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.draggable-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.drag-handle {
+  cursor: move;
+}
+
+.drag-handle:hover {
+  background-color: #f0f0f0;
+}
+
+.dark-mode .drag-handle:hover {
+  background-color: #303030;
+}
+
+/* Code Highlighter Styles */
+.code-highlighter-container {
+  margin: 1rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .code-highlighter-container {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.code-highlighter-header {
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.code-highlighter-container pre {
+  margin: 0 !important;
+  padding: 1rem !important;
+  overflow: auto;
+  max-height: 500px;
+}
+
+.code-highlighter-container code {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Improve scrollbar for code blocks */
+.code-highlighter-container pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-highlighter-container pre::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.dark-mode .code-highlighter-container pre::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.code-highlighter-container pre::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Code Example Styles */
+.code-example {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .code-example {
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: #1f2937;
+}
+
+.code-example:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .code-example:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.code-example .description {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.dark-mode .code-example .description {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.code-example .ant-card-head {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-mode .code-example .ant-card-head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+}

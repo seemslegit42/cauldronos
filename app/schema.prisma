@@ -1,0 +1,359 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  email                     String?         @unique
+  username                  String?         @unique
+  firstName                 String?
+  lastName                  String?
+  avatarUrl                 String?
+
+  // Role-based access control
+  role                      UserRole        @default(USER)
+  isAdmin                   Boolean         @default(false)
+
+  // Payment info
+  paymentProcessorUserId    String?         @unique
+  lemonSqueezyCustomerPortalUrl String?     // You can delete this if you're not using Lemon Squeezy as your payments processor.
+  subscriptionStatus        String?         // 'active', 'cancel_at_period_end', 'past_due', 'deleted'
+  subscriptionPlan          String?         // 'hobby', 'pro'
+  datePaid                  DateTime?
+  credits                   Int             @default(3)
+
+  // Workspace membership
+  workspaces                WorkspaceMember[]
+  ownedWorkspaces           Workspace[]
+  currentWorkspaceId        String?
+
+  // User preferences
+  theme                     String?         // 'light', 'dark', 'system'
+
+  // Relations
+  gptResponses              GptResponse[]
+  contactFormMessages       ContactFormMessage[]
+  tasks                     Task[]
+  files                     File[]
+  notifications             Notification[]
+  auth                      Auth?
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  USER
+  GUEST
+}
+
+model Workspace {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  name                      String
+  slug                      String          @unique
+  description               String?
+  logoUrl                   String?
+
+  // Workspace owner
+  owner                     User            @relation(fields: [ownerId], references: [id])
+  ownerId                   String
+
+  // Members
+  members                   WorkspaceMember[]
+
+  // Modules
+  modules                   WorkspaceModule[]
+
+  // Billing
+  plan                      String?         // 'free', 'starter', 'pro', 'enterprise'
+  billingEmail              String?
+  billingAddress            String?
+  billingName               String?
+  billingPhone              String?
+  subscriptionId            String?
+  subscriptionStatus        String?         // 'active', 'trialing', 'past_due', 'canceled', 'unpaid'
+  trialEndsAt               DateTime?
+
+  // Workspace settings
+  settings                  Json?           // General workspace settings
+  theme                     String?         // 'light', 'dark', 'system'
+  locale                    String?         // 'en-US', 'fr-FR', etc.
+  timezone                  String?         // 'America/New_York', 'Europe/Paris', etc.
+
+  // Activity
+  lastActive                DateTime        @default(now())
+  memberCount               Int             @default(0)    // Cache of member count
+  moduleCount               Int             @default(0)    // Cache of module count
+
+  // Permissions
+  permissions               WorkspacePermission[]
+}
+
+model WorkspaceMember {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  workspace                 Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId               String
+
+  user                      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId                    String
+
+  role                      UserRole        @default(USER)
+
+  @@unique([workspaceId, userId])
+}
+
+model Module {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  name                      String
+  slug                      String          @unique
+  description               String?
+  iconUrl                   String?
+  version                   String          @default("1.0.0")
+
+  // Module type
+  isCore                    Boolean         @default(false)
+  isPublic                  Boolean         @default(true)
+  category                  String          @default("other") // 'productivity', 'communication', 'analytics', 'other'
+
+  // Module configuration
+  config                    Json?
+  defaultConfig             Json?
+
+  // Module path
+  path                      String          @unique
+
+  // Module permissions
+  requiredRoles             String[]        @default(["USER"]) // Minimum role required to access this module
+  permissions               String[]        @default([]) // List of permission slugs required for this module
+
+  // Module UI
+  menuIcon                  String?         // Icon to display in the sidebar menu
+  menuLabel                 String?         // Label to display in the sidebar menu
+  menuOrder                 Int             @default(100) // Order in the sidebar menu
+
+  // Workspaces using this module
+  workspaces                WorkspaceModule[]
+}
+
+model WorkspaceModule {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  workspace                 Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId               String
+
+  module                    Module          @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  moduleId                  String
+
+  isEnabled                 Boolean         @default(true)
+  config                    Json?
+
+  // Module usage statistics
+  lastAccessed              DateTime?       // When the module was last accessed in this workspace
+  accessCount               Int             @default(0) // How many times the module was accessed
+
+  // Module permissions in this workspace
+  allowedRoles              String[]        @default(["USER", "MANAGER", "ADMIN"]) // Roles that can access this module in this workspace
+  customPermissions         Json?           // Custom permissions configuration for this module in this workspace
+
+  @@unique([workspaceId, moduleId])
+}
+
+model Notification {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+
+  user                      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId                    String
+
+  title                     String
+  message                   String
+  type                      String          // 'info', 'success', 'warning', 'error'
+  isRead                    Boolean         @default(false)
+  link                      String?
+}
+
+model GptResponse {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  user                      User            @relation(fields: [userId], references: [id])
+  userId                    String
+
+  content                   String
+}
+
+model Task {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+
+  user                      User            @relation(fields: [userId], references: [id])
+  userId                    String
+
+  description               String
+  time                      String          @default("1")
+  isDone                    Boolean         @default(false)
+}
+
+model File {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+
+  user                      User            @relation(fields: [userId], references: [id])
+  userId                    String
+
+  name                      String
+  type                      String
+  key                       String
+  uploadUrl                 String
+}
+
+model DailyStats {
+  id                               Int             @id @default(autoincrement())
+  date                             DateTime        @default(now()) @unique
+
+  totalViews                       Int             @default(0)
+  prevDayViewsChangePercent        String          @default("0")
+  userCount                        Int             @default(0)
+  paidUserCount                    Int             @default(0)
+  userDelta                        Int             @default(0)
+  paidUserDelta                    Int             @default(0)
+  totalRevenue                     Float           @default(0)
+  totalProfit                      Float           @default(0)
+
+  sources                          PageViewSource[]
+}
+
+model PageViewSource {
+  @@id([date, name])
+  name                     String
+  date                     DateTime        @default(now())
+
+  dailyStats               DailyStats?     @relation(fields: [dailyStatsId], references: [id])
+  dailyStatsId             Int?
+
+  visitors                 Int
+}
+
+model Logs {
+  id                       Int             @id @default(autoincrement())
+  createdAt                DateTime        @default(now())
+
+  message                  String
+  level                    String
+}
+
+model ContactFormMessage {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+
+  user                      User            @relation(fields: [userId], references: [id])
+  userId                    String
+
+  content                   String
+  isRead                    Boolean         @default(false)
+  repliedAt                 DateTime?
+}
+
+model Auth {
+  id         String         @id @default(uuid())
+  userId     String?        @unique
+  user       User?          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  identities AuthIdentity[]
+  sessions   Session[]
+}
+
+model AuthIdentity {
+  providerName   String
+  providerUserId String
+  providerData   String @default("{}")
+  authId         String
+  auth           Auth   @relation(fields: [authId], references: [id], onDelete: Cascade)
+
+  @@id([providerName, providerUserId])
+}
+
+model Session {
+  id        String   @id @unique
+  expiresAt DateTime
+  userId    String
+  auth      Auth     @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Permission {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  name                      String          @unique
+  description               String?
+  slug                      String          @unique
+  category                  String          // 'system', 'workspace', 'module'
+
+  // Relations
+  rolePermissions           RolePermission[]
+  workspacePermissions      WorkspacePermission[]
+}
+
+model RolePermission {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  role                      UserRole
+  permission                Permission      @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  permissionId              String
+
+  @@unique([role, permissionId])
+}
+
+model WorkspacePermission {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+  updatedAt                 DateTime        @updatedAt
+
+  workspace                 Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId               String
+
+  permission                Permission      @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  permissionId              String
+
+  // Custom roles for this permission in this workspace
+  allowedRoles              UserRole[]
+
+  @@unique([workspaceId, permissionId])
+}
+
+model AuditLog {
+  id                        String          @id @default(uuid())
+  createdAt                 DateTime        @default(now())
+
+  userId                    String?
+  workspaceId               String?
+  action                    String          // 'create', 'update', 'delete', 'login', etc.
+  entityType                String          // 'user', 'workspace', 'module', etc.
+  entityId                  String?
+  details                   Json?
+  ipAddress                 String?
+  userAgent                 String?
+}

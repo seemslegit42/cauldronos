@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500" height="150" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A1A2F" /> <!-- Deep Blue-Black -->
+      <stop offset="100%" stop-color="#0D1117" /> <!-- Dark Obsidian -->
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" /> <!-- Electric Teal -->
+      <stop offset="100%" stop-color="#00B2C9" /> <!-- Darker Teal -->
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" /> <!-- Electric Teal -->
+      <stop offset="100%" stop-color="#00B2C9" /> <!-- Darker Teal -->
+    </linearGradient>
+    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8" /> <!-- Cyber-Yellow -->
+      <stop offset="100%" stop-color="#FFA500" stop-opacity="0.8" /> <!-- Amber -->
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background shape - hexagon with rounded corners (smaller for combined logo) -->
+  <path d="M75 30C77.6522 30 80.1957 31.0536 82.0711 32.9289L117.071 67.9289C118.946 69.8043 120 72.3478 120 75V75C120 77.6522 118.946 80.1957 117.071 82.0711L82.0711 117.071C80.1957 118.946 77.6522 120 75 120H75C72.3478 120 69.8043 118.946 67.9289 117.071L32.9289 82.0711C31.0536 80.1957 30 77.6522 30 75V75C30 72.3478 31.0536 69.8043 32.9289 67.9289L67.9289 32.9289C69.8043 31.0536 72.3478 30 75 30H75Z" fill="url(#bgGradient)" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- Circuit board pattern -->
+  <g stroke="#00E5FF" stroke-width="0.5" opacity="0.2">
+    <!-- Horizontal lines -->
+    <line x1="40" y1="50" x2="110" y2="50" />
+    <line x1="40" y1="75" x2="110" y2="75" />
+    <line x1="40" y1="100" x2="110" y2="100" />
+    
+    <!-- Vertical lines -->
+    <line x1="50" y1="40" x2="50" y2="110" />
+    <line x1="75" y1="40" x2="75" y2="110" />
+    <line x1="100" y1="40" x2="100" y2="110" />
+  </g>
+  
+  <!-- Central energy flow/brew element -->
+  <g>
+    <!-- Central energy core -->
+    <circle cx="75" cy="75" r="15" fill="url(#accentGradient)" opacity="0.8" filter="url(#glow)" />
+    
+    <!-- Energy pathways -->
+    <path d="M75 60C80 60 85 62.5 87.5 67.5C90 72.5 90 77.5 87.5 82.5C85 87.5 80 90 75 90C70 90 65 87.5 62.5 82.5C60 77.5 60 72.5 62.5 67.5C65 62.5 70 60 75 60Z" stroke="url(#accentGradient)" stroke-width="1.5" fill="none" />
+    
+    <!-- Binary/data flow -->
+    <g fill="#FFFFFF" opacity="0.9">
+      <text x="70" y="72" font-family="JetBrains Mono, monospace" font-size="5" fill="#FFFFFF">10</text>
+      <text x="70" y="78" font-family="JetBrains Mono, monospace" font-size="5" fill="#FFFFFF">01</text>
+    </g>
+    
+    <!-- Circuit connections to center -->
+    <path d="M75 60L75 40" stroke="url(#accentGradient)" stroke-width="1" />
+    <path d="M87.5 75L110 75" stroke="url(#accentGradient)" stroke-width="1" />
+    <path d="M75 90L75 110" stroke="url(#accentGradient)" stroke-width="1" />
+    <path d="M62.5 75L40 75" stroke="url(#accentGradient)" stroke-width="1" />
+  </g>
+  
+  <!-- Stylized "B" circuit element -->
+  <path d="M65 55C65 52.5 67.5 50 70 50H75C77.5 50 80 52.5 80 55C80 57.5 77.5 60 75 60H70M65 55V65C65 67.5 67.5 70 70 70H75C77.5 70 80 67.5 80 65C80 62.5 77.5 60 75 60H70" stroke="url(#circuitGradient)" stroke-width="1.5" fill="none" />
+  
+  <!-- Connecting line to wordmark -->
+  <path d="M120 75H150" stroke="url(#accentGradient)" stroke-width="1" stroke-dasharray="2 2" />
+  
+  <!-- Bitbrew Wordmark -->
+  <text x="160" y="80" font-family="'Arial Narrow', 'Roboto Condensed', sans-serif" font-weight="800" font-size="40" letter-spacing="0" fill="#FFFFFF">
+    BIT<tspan fill="url(#textGradient)">BREW</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="160" y="105" font-family="'Arial', sans-serif" font-weight="400" font-size="14" letter-spacing="1" fill="#AAAAAA">
+    ENGINEERING THE FUTURE OF AI
+  </text>
+  
+  <!-- Circuit/tech elements -->
+  <g>
+    <!-- Circuit line -->
+    <path d="M160 90H450" stroke="#00E5FF" stroke-width="0.5" stroke-opacity="0.3" />
+    
+    <!-- Circuit nodes -->
+    <circle cx="160" cy="90" r="1.5" fill="#00E5FF" opacity="0.5" />
+    <circle cx="450" cy="90" r="1.5" fill="#00E5FF" opacity="0.5" />
+  </g>
+</svg>

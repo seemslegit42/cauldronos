@@ -1,0 +1,135 @@
+/* BrandVoiceShowcase Component Styles */
+
+.brand-voice-showcase {
+  margin-bottom: 3rem;
+}
+
+.brand-voice-showcase .ant-card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.brand-voice-showcase .ant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 178, 201, 0.1);
+}
+
+/* Value Cards */
+.value-card {
+  text-align: center;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.value-card .ant-typography {
+  margin-bottom: 0;
+}
+
+/* Voice Example Cards */
+.voice-example-card {
+  margin-bottom: 2rem;
+}
+
+.example-headline {
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-flux-aqua);
+  margin-bottom: 1.5rem;
+}
+
+.example-subhead {
+  font-size: 18px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+/* Pricing Levels */
+.pricing-level {
+  padding: 1rem;
+  border-left: 3px solid var(--color-flux-aqua);
+  background-color: var(--color-bg-elevated);
+  border-radius: 4px;
+}
+
+.pricing-level h4 {
+  margin-bottom: 0.5rem;
+  color: var(--color-flux-aqua);
+}
+
+/* Loading Examples */
+.loading-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  min-height: 180px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 178, 201, 0.2);
+  border-top-color: var(--color-flux-aqua);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-text {
+  font-family: var(--font-family-code);
+  font-size: 16px;
+}
+
+/* Documentation Examples */
+.example-doc {
+  font-family: var(--font-family-code);
+  font-size: 16px;
+  padding: 1rem;
+  background-color: var(--color-bg-container);
+  border-radius: 4px;
+  border-left: 3px solid var(--color-flux-aqua);
+}
+
+/* Tagline & Mission */
+.tagline-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.tagline {
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-flux-aqua);
+  margin-bottom: 1rem;
+}
+
+.mission {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Utility Classes */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

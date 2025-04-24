@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500" height="120" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A0D67" />
+      <stop offset="100%" stop-color="#2E1A47" />
+    </linearGradient>
+    <linearGradient id="potionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3DAA9D" />
+      <stop offset="100%" stop-color="#25D5EC" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3DAA9D" />
+      <stop offset="100%" stop-color="#25D5EC" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Hexagon background -->
+  <path d="M60 20L100 40V80L60 100L20 80V40L60 20Z" fill="url(#hexGradient)" stroke="#3DAA9D" stroke-width="2"/>
+  
+  <!-- Pixel grid pattern -->
+  <g opacity="0.15" stroke="#3DAA9D" stroke-width="0.5">
+    <line x1="30" y1="40" x2="90" y2="40" />
+    <line x1="30" y1="50" x2="90" y2="50" />
+    <line x1="30" y1="60" x2="90" y2="60" />
+    <line x1="30" y1="70" x2="90" y2="70" />
+    <line x1="30" y1="80" x2="90" y2="80" />
+    
+    <line x1="40" y1="30" x2="40" y2="90" />
+    <line x1="50" y1="30" x2="50" y2="90" />
+    <line x1="60" y1="30" x2="60" y2="90" />
+    <line x1="70" y1="30" x2="70" y2="90" />
+    <line x1="80" y1="30" x2="80" y2="90" />
+  </g>
+  
+  <!-- Potion flask -->
+  <path d="M50 40V55C50 65 42 70 42 80C42 88 50 95 60 95C70 95 78 88 78 80C78 70 70 65 70 55V40H50Z" fill="url(#potionGradient)" stroke="#FFFFFF" stroke-width="1.5" />
+  
+  <!-- Flask neck -->
+  <rect x="50" y="35" width="20" height="8" fill="url(#potionGradient)" stroke="#FFFFFF" stroke-width="1.5" />
+  
+  <!-- Flask cap -->
+  <rect x="48" y="30" width="24" height="6" rx="3" fill="#B8860B" stroke="#FFFFFF" stroke-width="1.5" />
+  
+  <!-- Bubbles in the potion -->
+  <circle cx="55" cy="70" r="3" fill="#FFFFFF" opacity="0.7" filter="url(#glow)" />
+  <circle cx="62" cy="75" r="4" fill="#FFFFFF" opacity="0.7" filter="url(#glow)" />
+  <circle cx="57" cy="85" r="2.5" fill="#FFFFFF" opacity="0.7" filter="url(#glow)" />
+  <circle cx="67" cy="65" r="2" fill="#FFFFFF" opacity="0.7" filter="url(#glow)" />
+  
+  <!-- Pixel "P" in the potion -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <rect x="54" y="60" width="3" height="3" />
+    <rect x="57" y="60" width="3" height="3" />
+    <rect x="60" y="60" width="3" height="3" />
+    <rect x="54" y="63" width="3" height="3" />
+    <rect x="60" y="63" width="3" height="3" />
+    <rect x="54" y="66" width="3" height="3" />
+    <rect x="57" y="66" width="3" height="3" />
+    <rect x="60" y="66" width="3" height="3" />
+    <rect x="54" y="69" width="3" height="3" />
+    <rect x="54" y="72" width="3" height="3" />
+  </g>
+  
+  <!-- Pixel Potion Wordmark -->
+  <text x="130" y="60" font-family="Manrope, sans-serif" font-weight="800" font-size="40" letter-spacing="1" fill="#E0E0E0">
+    PIXEL <tspan fill="url(#textGradient)">POTION</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="130" y="85" font-family="Inter, sans-serif" font-weight="400" font-size="14" letter-spacing="0.5" fill="#9E9E9E">
+    FORGING THE FUTURE OF AI, ONE DAMN COOL TOOL AT A TIME
+  </text>
+</svg>

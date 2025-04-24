@@ -1,0 +1,81 @@
+/* IconShowcase Component Styles */
+
+.icon-showcase {
+  margin-bottom: 3rem;
+}
+
+.icon-showcase .ant-card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.icon-showcase .ant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 178, 201, 0.1);
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.icon-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.size-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 16px;
+}
+
+/* Animation for icon hover */
+.icon-display svg {
+  transition: all 0.3s ease;
+}
+
+.icon-display svg:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(0, 178, 201, 0.4));
+}
+
+/* Utility classes */
+.font-heading {
+  font-family: var(--font-family-heading);
+}
+
+.font-body {
+  font-family: var(--font-family-body);
+}
+
+.font-code {
+  font-family: var(--font-family-code);
+}
+
+/* Animate the loading icon */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

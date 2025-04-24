@@ -1,0 +1,42 @@
+# Code Style & Structure
+- Adhere to ESLint and Prettier configurations for consistent formatting.
+- Use camelCase for variables/functions, PascalCase for components/classes, and kebab-case for filenames.
+- Maintain the existing directory structure; place new files logically.
+
+# State & Data Management
+- Utilize Zustand for state management.
+- Implement API interactions using TanStack React Query.
+- Validate forms and data structures with Zod schemas.
+
+# UI/UX Consistency
+- Employ Ant Design Pro Components for UI elements.
+- Integrate Framer Motion for animations.
+- Ensure consistent use of colors, typography, and spacing as per the design system.
+- Provide clear user feedback for actions (e.g., loading states, success/error messages).
+
+# AI Integration
+- Incorporate Groq Swarm for orchestrating multi-step AI tasks.
+- Implement a live AI assistant (Copilot) capable of UI manipulation and end-user assistance.
+
+# Architecture & Extensibility
+- Design components to be modular and reusable.
+- Ensure tenant isolation for multi-tenancy support.
+- Implement feature flags for controlled rollouts.
+- Support both self-hosting and cloud deployment options.
+
+# Error Handling & Logging
+- Anticipate potential errors and handle them gracefully.
+- Display user-friendly error messages.
+- Log errors appropriately without exposing sensitive information.
+
+# Testing & Performance
+- Write unit tests for core functionalities.
+- Optimize assets and implement lazy loading where appropriate.
+- Utilize code splitting to reduce initial load times.
+
+# Security & Compliance
+- Sanitize user inputs to prevent vulnerabilities.
+- Encrypt sensitive data and adhere to data privacy regulations.
+
+# Communication
+- Write clear and concise code with meaningful comments explaining complex logic.
