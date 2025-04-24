@@ -1,0 +1,117 @@
+/* Enhanced Menu Styles */
+
+.cauldron-menu {
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Cyberpunk variant */
+.cauldron-menu-cyber {
+  background-color: rgba(18, 18, 30, 0.9);
+  border: 1px solid rgba(102, 16, 242, 0.5);
+  box-shadow: 0 0 10px rgba(102, 16, 242, 0.2);
+}
+
+.cauldron-menu-cyber .ant-menu-item:hover {
+  background-color: rgba(102, 16, 242, 0.1);
+}
+
+.cauldron-menu-cyber .ant-menu-item-selected {
+  background-color: rgba(102, 16, 242, 0.2) !important;
+}
+
+/* Terminal variant */
+.cauldron-menu-terminal {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.cauldron-menu-terminal .ant-menu-item {
+  color: #00ff00;
+}
+
+.cauldron-menu-terminal .ant-menu-item:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.cauldron-menu-terminal .ant-menu-item-selected {
+  background-color: rgba(0, 255, 0, 0.2) !important;
+  color: #00ff00 !important;
+}
+
+/* Glass variant */
+.cauldron-menu-glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cauldron-menu-glass.cauldron-menu-dark {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cauldron-menu-glass .ant-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cauldron-menu-glass .ant-menu-item-selected {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Glow effect */
+.cauldron-menu-glow .ant-menu-item:hover {
+  box-shadow: 0 0 10px rgba(102, 16, 242, 0.5);
+}
+
+.cauldron-menu-glow.cauldron-menu-terminal .ant-menu-item:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Dark mode specific styles */
+.cauldron-menu-dark {
+  background-color: #141414;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Light mode specific styles */
+.cauldron-menu-light {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Animation enhancements */
+.cauldron-menu .ant-menu-item,
+.cauldron-menu .ant-menu-submenu {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.cauldron-menu-cyber .ant-menu-item-selected,
+.cauldron-menu-terminal .ant-menu-item-selected,
+.cauldron-menu-glass .ant-menu-item-selected {
+  position: relative;
+  overflow: hidden;
+}
+
+.cauldron-menu-cyber .ant-menu-item-selected::after,
+.cauldron-menu-terminal .ant-menu-item-selected::after,
+.cauldron-menu-glass .ant-menu-item-selected::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

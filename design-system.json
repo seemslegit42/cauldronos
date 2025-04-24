@@ -1,0 +1,237 @@
+{
+  "name": "CauldronOS Design System",
+  "version": "1.0.0",
+  "description": "A unified, intelligent, animated enterprise UI/UX system for CauldronOS",
+  "colors": {
+    "primary": {
+      "base": "#00F0FF",
+      "hover": "#33F4FF",
+      "active": "#00D6E6",
+      "disabled": "rgba(0, 240, 255, 0.5)"
+    },
+    "secondary": {
+      "base": "#0088FF",
+      "hover": "#339DFF",
+      "active": "#0077E6",
+      "disabled": "rgba(0, 136, 255, 0.5)"
+    },
+    "accent": {
+      "base": "#BD00FF",
+      "hover": "#CA33FF",
+      "active": "#A800E6",
+      "disabled": "rgba(189, 0, 255, 0.5)"
+    },
+    "success": {
+      "base": "#00FF66",
+      "hover": "#33FF85",
+      "active": "#00E65C",
+      "disabled": "rgba(0, 255, 102, 0.5)"
+    },
+    "warning": {
+      "base": "#FFBB00",
+      "hover": "#FFC933",
+      "active": "#E6A800",
+      "disabled": "rgba(255, 187, 0, 0.5)"
+    },
+    "error": {
+      "base": "#FF0033",
+      "hover": "#FF3359",
+      "active": "#E6002E",
+      "disabled": "rgba(255, 0, 51, 0.5)"
+    },
+    "info": {
+      "base": "#00F0FF",
+      "hover": "#33F4FF",
+      "active": "#00D6E6",
+      "disabled": "rgba(0, 240, 255, 0.5)"
+    },
+    "neutral": {
+      "black": "#0D0D0F",
+      "darkGray": "#121318",
+      "mediumGray": "#1A1B23",
+      "lightGray": "#24262F",
+      "white": "#E6E6E8"
+    },
+    "gradients": {
+      "primary": "linear-gradient(90deg, #00F0FF 0%, #0088FF 100%)",
+      "secondary": "linear-gradient(90deg, #BD00FF 0%, #FF0099 100%)",
+      "accent": "linear-gradient(90deg, #FF0099 0%, #FFD700 100%)"
+    }
+  },
+  "typography": {
+    "fontFamily": "'JetBrains Mono', 'Roboto Mono', monospace",
+    "fontSize": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem"
+    },
+    "fontWeight": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "none": 1,
+      "tight": 1.25,
+      "snug": 1.375,
+      "normal": 1.5,
+      "relaxed": 1.625,
+      "loose": 2
+    },
+    "letterSpacing": {
+      "tighter": "-0.05em",
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem",
+    "24": "6rem",
+    "32": "8rem",
+    "40": "10rem",
+    "48": "12rem",
+    "56": "14rem",
+    "64": "16rem"
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "0.125rem",
+    "default": "0.25rem",
+    "md": "0.375rem",
+    "lg": "0.5rem",
+    "xl": "0.75rem",
+    "2xl": "1rem",
+    "3xl": "1.5rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "default": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+    "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+    "outline": "0 0 0 3px rgba(0, 240, 255, 0.5)",
+    "none": "none",
+    "glow": {
+      "cyan": "0 0 10px rgba(0, 240, 255, 0.5)",
+      "blue": "0 0 10px rgba(0, 136, 255, 0.5)",
+      "purple": "0 0 10px rgba(189, 0, 255, 0.5)"
+    }
+  },
+  "animations": {
+    "duration": {
+      "fastest": "0.1s",
+      "fast": "0.2s",
+      "normal": "0.3s",
+      "slow": "0.5s",
+      "slowest": "0.8s"
+    },
+    "easing": {
+      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+      "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "spring": "cubic-bezier(0.22, 1, 0.36, 1)"
+    },
+    "transitions": {
+      "fade": {
+        "in": {
+          "opacity": [0, 1],
+          "duration": "0.3s",
+          "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "out": {
+          "opacity": [1, 0],
+          "duration": "0.2s",
+          "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+        }
+      },
+      "slide": {
+        "up": {
+          "y": [20, 0],
+          "opacity": [0, 1],
+          "duration": "0.3s",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+        },
+        "down": {
+          "y": [-20, 0],
+          "opacity": [0, 1],
+          "duration": "0.3s",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+        },
+        "left": {
+          "x": [20, 0],
+          "opacity": [0, 1],
+          "duration": "0.3s",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+        },
+        "right": {
+          "x": [-20, 0],
+          "opacity": [0, 1],
+          "duration": "0.3s",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+        }
+      },
+      "scale": {
+        "in": {
+          "scale": [0.9, 1],
+          "opacity": [0, 1],
+          "duration": "0.3s",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+        },
+        "out": {
+          "scale": [1, 0.9],
+          "opacity": [1, 0],
+          "duration": "0.2s",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+        }
+      }
+    }
+  },
+  "breakpoints": {
+    "xs": "480px",
+    "sm": "576px",
+    "md": "768px",
+    "lg": "992px",
+    "xl": "1200px",
+    "2xl": "1600px"
+  },
+  "zIndex": {
+    "hide": -1,
+    "auto": "auto",
+    "base": 0,
+    "docked": 10,
+    "dropdown": 1000,
+    "sticky": 1100,
+    "banner": 1200,
+    "overlay": 1300,
+    "modal": 1400,
+    "popover": 1500,
+    "toast": 1600,
+    "tooltip": 1700
+  }
+}

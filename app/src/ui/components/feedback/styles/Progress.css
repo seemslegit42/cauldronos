@@ -1,0 +1,142 @@
+/* Enhanced Progress Styles */
+
+.cauldron-progress {
+  transition: all 0.3s ease;
+}
+
+/* Cyberpunk variant */
+.cauldron-progress-cyber .ant-progress-bg {
+  background: linear-gradient(90deg, #6610f2, #6f42c1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cauldron-progress-cyber .ant-progress-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: cyber-progress-shine 2s infinite;
+}
+
+.cauldron-progress-cyber .ant-progress-text {
+  color: #6610f2;
+}
+
+/* Terminal variant */
+.cauldron-progress-terminal .ant-progress-bg {
+  background-color: #00ff00;
+}
+
+.cauldron-progress-terminal .ant-progress-text {
+  font-family: 'JetBrains Mono', monospace;
+  color: #00ff00;
+}
+
+.cauldron-progress-terminal .ant-progress-inner {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Glass variant */
+.cauldron-progress-glass .ant-progress-inner {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cauldron-progress-glass.cauldron-progress-dark .ant-progress-inner {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cauldron-progress-glass .ant-progress-bg {
+  background: linear-gradient(90deg, rgba(24, 144, 255, 0.7), rgba(24, 144, 255, 0.9));
+}
+
+/* Glow effect */
+.cauldron-progress-glow .ant-progress-bg {
+  box-shadow: 0 0 10px currentColor;
+}
+
+.cauldron-progress-glow.cauldron-progress-cyber .ant-progress-bg {
+  box-shadow: 0 0 10px rgba(102, 16, 242, 0.7);
+}
+
+.cauldron-progress-glow.cauldron-progress-terminal .ant-progress-bg {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* Pulse effect */
+.cauldron-progress-pulse .ant-progress-bg {
+  animation: pulse-animation 2s infinite;
+}
+
+/* Dark mode specific styles */
+.cauldron-progress-dark .ant-progress-inner {
+  background-color: #303030;
+}
+
+/* Light mode specific styles */
+.cauldron-progress-light .ant-progress-inner {
+  background-color: #f0f0f0;
+}
+
+/* Animation keyframes */
+@keyframes cyber-progress-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Circle progress specific styles */
+.cauldron-progress.ant-progress-circle .ant-progress-text {
+  font-weight: bold;
+}
+
+.cauldron-progress-cyber.ant-progress-circle .ant-progress-circle-path {
+  stroke: url(#cyber-gradient) !important;
+}
+
+.cauldron-progress-terminal.ant-progress-circle .ant-progress-circle-path {
+  stroke: #00ff00 !important;
+}
+
+/* Add SVG gradient definition for cyberpunk circle progress */
+.cauldron-progress-cyber.ant-progress-circle::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.cauldron-progress-cyber.ant-progress-circle svg {
+  position: relative;
+}
+
+.cauldron-progress-cyber.ant-progress-circle svg:first-child {
+  position: static;
+}
+
+.cauldron-progress-cyber.ant-progress-circle svg:first-child::before {
+  content: '<defs><linearGradient id="cyber-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6610f2"/><stop offset="100%" stop-color="#6f42c1"/></linearGradient></defs>';
+  position: absolute;
+  width: 0;
+  height: 0;
+}

@@ -1,10 +1,11 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { getTheme, getCssVariables } from './theme';
+import { getTheme, getCssVariables } from '@/ui/design-system/theme';
 import { ThemeConfig } from 'antd';
 
 export type ThemeMode = 'light' | 'dark' | 'system';
 export type ThemeStyle = 'cyberpunk';
+export type ThemeSize = 'compact' | 'default' | 'large';
 
 interface ThemeState {
   // Theme state
@@ -12,11 +13,13 @@ interface ThemeState {
   systemPreference: 'light' | 'dark';
   themeConfig: ThemeConfig;
   style: ThemeStyle;
+  size: ThemeSize;
   
   // Theme actions
   setMode: (mode: ThemeMode) => void;
   setSystemPreference: (preference: 'light' | 'dark') => void;
   setStyle: (style: ThemeStyle) => void;
+  setSize: (size: ThemeSize) => void;
   
   // Helpers
   getEffectiveMode: () => 'light' | 'dark';
@@ -31,6 +34,7 @@ export const useThemeStore = create<ThemeState>()(
       systemPreference: 'dark', // Default to dark for corporate cyberpunk feel
       themeConfig: getTheme('dark'), // Default theme config
       style: 'cyberpunk', // Currently only supporting cyberpunk style
+      size: 'default', // Default component size
       
       // Set theme mode (light, dark, or system)
       setMode: (mode: ThemeMode) => {
@@ -50,13 +54,11 @@ export const useThemeStore = create<ThemeState>()(
         set((state) => {
           const newState = {
             systemPreference: preference,
-          };
+          } as Partial<ThemeState>;
           
           // If current mode is 'system', also update the theme config
           if (state.mode === 'system') {
-            Object.assign(newState, {
-              themeConfig: getTheme(preference),
-            });
+            newState.themeConfig = getTheme(preference);
             
             // Apply theme to document
             document.documentElement.setAttribute('data-theme', preference);
@@ -71,6 +73,20 @@ export const useThemeStore = create<ThemeState>()(
       setStyle: (style: ThemeStyle) => {
         set({ style });
         setTimeout(() => get().applyTheme(), 0);
+      },
+      
+      // Set component size
+      setSize: (size: ThemeSize) => {
+        set({ size });
+        
+        // Update component size in theme config
+        const effectiveMode = get().getEffectiveMode();
+        const updatedThemeConfig = {
+          ...getTheme(effectiveMode),
+          componentSize: size === 'compact' ? 'small' : size === 'large' ? 'large' : 'middle',
+        };
+        
+        set({ themeConfig: updatedThemeConfig });
       },
       
       // Get the effective theme mode (resolves 'system' to actual preference)
@@ -97,12 +113,16 @@ export const useThemeStore = create<ThemeState>()(
         // Apply cyberpunk style class
         root.classList.add('theme-cyberpunk');
         
+        // Apply size class
+        root.classList.remove('size-compact', 'size-default', 'size-large');
+        root.classList.add(`size-${get().size}`);
+        
         // Update meta theme-color for mobile browsers
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         if (metaThemeColor) {
           metaThemeColor.setAttribute(
             'content',
-            effectiveMode === 'dark' ? '#0D0D0F' : '#FFFFFF'
+            effectiveMode === 'dark' ? '#0D1117' : '#FFFFFF'
           );
         }
       },
@@ -112,6 +132,7 @@ export const useThemeStore = create<ThemeState>()(
       partialize: (state) => ({
         mode: state.mode,
         style: state.style,
+        size: state.size,
       }),
     }
   )

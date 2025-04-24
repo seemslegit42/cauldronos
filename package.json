@@ -1,0 +1,41 @@
+{
+  "name": "cauldronos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CauldronOS monorepo",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "blog:dev": "pnpm --filter blog dev",
+    "blog:build": "pnpm --filter blog build",
+    "e2e:test": "pnpm --filter e2e-tests e2e:playwright",
+    "install:all": "pnpm install -r",
+    "admin:dev": "pnpm --filter admin-dashboard dev",
+    "client:dev": "pnpm --filter client-portal dev",
+    "core:dev": "pnpm --filter cauldron-core dev",
+    "create:package": "node scripts/create-package.js",
+    "create:component": "node scripts/create-component.js",
+    "migrate:files": "node scripts/migrate-files.js",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "turbo": "^2.5.1"
+  }
+}

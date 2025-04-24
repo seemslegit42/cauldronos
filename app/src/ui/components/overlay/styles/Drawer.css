@@ -1,0 +1,190 @@
+/* Enhanced Drawer Styles */
+
+.cauldron-drawer .ant-drawer-content {
+  transition: all 0.3s ease;
+}
+
+/* Cyberpunk variant */
+.cauldron-drawer-cyber .ant-drawer-content {
+  background-color: rgba(18, 18, 30, 0.95);
+  border: 1px solid rgba(102, 16, 242, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.cauldron-drawer-cyber .ant-drawer-header {
+  background-color: rgba(18, 18, 30, 0.98);
+  border-bottom: 1px solid rgba(102, 16, 242, 0.5);
+}
+
+.cauldron-drawer-cyber .ant-drawer-title {
+  color: rgba(102, 16, 242, 0.9);
+}
+
+.cauldron-drawer-cyber .ant-drawer-close {
+  color: rgba(102, 16, 242, 0.7);
+}
+
+.cauldron-drawer-cyber .ant-drawer-close:hover {
+  color: rgba(102, 16, 242, 1);
+}
+
+.cauldron-drawer-cyber .ant-drawer-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.05) 25%, 
+                                     rgba(255, 255, 255, 0.05) 50%, transparent 50%, 
+                                     transparent 75%, rgba(255, 255, 255, 0.05) 75%);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+/* Terminal variant */
+.cauldron-drawer-terminal .ant-drawer-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.cauldron-drawer-terminal .ant-drawer-header {
+  background-color: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid rgba(0, 255, 0, 0.5);
+}
+
+.cauldron-drawer-terminal .ant-drawer-title {
+  color: #00ff00;
+}
+
+.cauldron-drawer-terminal .ant-drawer-close {
+  color: rgba(0, 255, 0, 0.7);
+}
+
+.cauldron-drawer-terminal .ant-drawer-close:hover {
+  color: #00ff00;
+}
+
+.cauldron-drawer-terminal .ant-drawer-body {
+  color: rgba(0, 255, 0, 0.9);
+}
+
+/* Glass variant */
+.cauldron-drawer-glass .ant-drawer-content {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cauldron-drawer-glass.cauldron-drawer-dark .ant-drawer-content {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cauldron-drawer-glass .ant-drawer-header {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cauldron-drawer-glass.cauldron-drawer-dark .ant-drawer-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glow effect */
+.cauldron-drawer-glow .ant-drawer-content {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.cauldron-drawer-glow.cauldron-drawer-cyber .ant-drawer-content {
+  box-shadow: 0 0 20px rgba(102, 16, 242, 0.3);
+}
+
+.cauldron-drawer-glow.cauldron-drawer-terminal .ant-drawer-content {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+/* Dark mode specific styles */
+.cauldron-drawer-dark .ant-drawer-content {
+  background-color: #1f1f1f;
+}
+
+.cauldron-drawer-dark .ant-drawer-header {
+  background-color: #141414;
+  border-bottom: 1px solid #303030;
+}
+
+.cauldron-drawer-dark .ant-drawer-title {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cauldron-drawer-dark .ant-drawer-close {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.cauldron-drawer-dark .ant-drawer-close:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cauldron-drawer-dark .ant-drawer-body {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Light mode specific styles */
+.cauldron-drawer-light .ant-drawer-content {
+  background-color: #ffffff;
+}
+
+.cauldron-drawer-light .ant-drawer-header {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.cauldron-drawer-light .ant-drawer-title {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.cauldron-drawer-light .ant-drawer-close {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.cauldron-drawer-light .ant-drawer-close:hover {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.cauldron-drawer-light .ant-drawer-body {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Animation enhancements */
+.cauldron-drawer-cyber .ant-drawer-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(102, 16, 242, 0.7), transparent);
+  animation: drawer-scanline 3s linear infinite;
+}
+
+.cauldron-drawer-terminal .ant-drawer-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.7), transparent);
+  animation: drawer-scanline 3s linear infinite;
+}
+
+@keyframes drawer-scanline {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

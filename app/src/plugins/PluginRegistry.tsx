@@ -214,6 +214,18 @@ interface PluginRegistryContextType {
   enablePlugin: (pluginId: string) => Promise<void>;
   disablePlugin: (pluginId: string) => Promise<void>;
   updatePluginConfig: (pluginId: string, config: Record<string, any>) => Promise<void>;
+  enableFeatureBlock: (pluginId: string, blockId: string) => Promise<void>;
+  disableFeatureBlock: (pluginId: string, blockId: string) => Promise<void>;
+  updateFeatureBlockConfig: (pluginId: string, blockId: string, config: Record<string, any>) => Promise<void>;
+  enableFeatureBlock: (pluginId: string, blockId: string) => Promise<void>;
+  disableFeatureBlock: (pluginId: string, blockId: string) => Promise<void>;
+  updateFeatureBlockConfig: (pluginId: string, blockId: string, config: Record<string, any>) => Promise<void>;
+  enableFeatureBlock: (pluginId: string, blockId: string) => Promise<void>;
+  disableFeatureBlock: (pluginId: string, blockId: string) => Promise<void>;
+  updateFeatureBlockConfig: (pluginId: string, blockId: string, config: Record<string, any>) => Promise<void>;
+  enableFeatureBlock: async () => {},
+  disableFeatureBlock: async () => {},
+  updateFeatureBlockConfig: async () => {},
   isLoading: boolean;
 }
 
@@ -228,6 +240,12 @@ const PluginRegistryContext = createContext<PluginRegistryContextType>({
   enablePlugin: async () => {},
   disablePlugin: async () => {},
   updatePluginConfig: async () => {},
+  enableFeatureBlock: async () => {},
+  disableFeatureBlock: async () => {},
+  updateFeatureBlockConfig: async () => {},
+  enableFeatureBlock: async () => {},
+  disableFeatureBlock: async () => {},
+  updateFeatureBlockConfig: async () => {},
   isLoading: true,
 });
 
@@ -238,6 +256,20 @@ export const usePlugins = () => useContext(PluginRegistryContext);
 interface PluginRegistryProviderProps {
   children: ReactNode;
 }
+
+// Import feature block service
+import { 
+  enableFeatureBlock as enableFeatureBlockService,
+  disableFeatureBlock as disableFeatureBlockService,
+  updateFeatureBlockConfig as updateFeatureBlockConfigService
+} from './featureBlockService';
+
+// Import feature block service
+import { 
+  enableFeatureBlock as enableFeatureBlockService,
+  disableFeatureBlock as disableFeatureBlockService,
+  updateFeatureBlockConfig as updateFeatureBlockConfigService
+} from './featureBlockService';
 
 // Plugin Registry Provider component
 export const PluginRegistryProvider: React.FC<PluginRegistryProviderProps> = ({ children }) => {
@@ -409,6 +441,103 @@ export const PluginRegistryProvider: React.FC<PluginRegistryProviderProps> = ({ 
       message.error('Failed to enable plugin');
     }
   };
+  
+  // Enable a feature block
+  const enableFeatureBlock = async (pluginId: string, blockId: string) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await enableFeatureBlockService(currentWorkspace?.id || 'default', pluginId, blockId);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, isEnabled: true } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block enabled successfully');
+    } catch (error) {
+      console.error('Error enabling feature block:', error);
+      message.error('Failed to enable feature block');
+    }
+  };
+  
+  // Disable a feature block
+  const disableFeatureBlock = async (pluginId: string, blockId: string) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await disableFeatureBlockService(currentWorkspace?.id || 'default', pluginId, blockId);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, isEnabled: false } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block disabled successfully');
+    } catch (error) {
+      console.error('Error disabling feature block:', error);
+      message.error('Failed to disable feature block');
+    }
+  };
+  
+  // Update feature block configuration
+  const updateFeatureBlockConfig = async (
+    pluginId: string, 
+    blockId: string, 
+    config: Record<string, any>
+  ) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await updateFeatureBlockConfigService(currentWorkspace?.id || 'default', pluginId, blockId, config);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, config } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block configuration updated successfully');
+    } catch (error) {
+      console.error('Error updating feature block configuration:', error);
+      message.error('Failed to update feature block configuration');
+    }
+  };
 
   // Disable a plugin
   const disablePlugin = async (pluginId: string) => {
@@ -427,6 +556,103 @@ export const PluginRegistryProvider: React.FC<PluginRegistryProviderProps> = ({ 
     } catch (error) {
       console.error('Error disabling plugin:', error);
       message.error('Failed to disable plugin');
+    }
+  };
+  
+  // Enable a feature block
+  const enableFeatureBlock = async (pluginId: string, blockId: string) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await enableFeatureBlockService(currentWorkspace?.id || 'default', pluginId, blockId);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, isEnabled: true } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block enabled successfully');
+    } catch (error) {
+      console.error('Error enabling feature block:', error);
+      message.error('Failed to enable feature block');
+    }
+  };
+  
+  // Disable a feature block
+  const disableFeatureBlock = async (pluginId: string, blockId: string) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await disableFeatureBlockService(currentWorkspace?.id || 'default', pluginId, blockId);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, isEnabled: false } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block disabled successfully');
+    } catch (error) {
+      console.error('Error disabling feature block:', error);
+      message.error('Failed to disable feature block');
+    }
+  };
+  
+  // Update feature block configuration
+  const updateFeatureBlockConfig = async (
+    pluginId: string, 
+    blockId: string, 
+    config: Record<string, any>
+  ) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await updateFeatureBlockConfigService(currentWorkspace?.id || 'default', pluginId, blockId, config);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, config } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block configuration updated successfully');
+    } catch (error) {
+      console.error('Error updating feature block configuration:', error);
+      message.error('Failed to update feature block configuration');
     }
   };
 
@@ -451,6 +677,103 @@ export const PluginRegistryProvider: React.FC<PluginRegistryProviderProps> = ({ 
     } catch (error) {
       console.error('Error updating plugin configuration:', error);
       message.error('Failed to update plugin configuration');
+    }
+  };
+  
+  // Enable a feature block
+  const enableFeatureBlock = async (pluginId: string, blockId: string) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await enableFeatureBlockService(currentWorkspace?.id || 'default', pluginId, blockId);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, isEnabled: true } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block enabled successfully');
+    } catch (error) {
+      console.error('Error enabling feature block:', error);
+      message.error('Failed to enable feature block');
+    }
+  };
+  
+  // Disable a feature block
+  const disableFeatureBlock = async (pluginId: string, blockId: string) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await disableFeatureBlockService(currentWorkspace?.id || 'default', pluginId, blockId);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, isEnabled: false } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block disabled successfully');
+    } catch (error) {
+      console.error('Error disabling feature block:', error);
+      message.error('Failed to disable feature block');
+    }
+  };
+  
+  // Update feature block configuration
+  const updateFeatureBlockConfig = async (
+    pluginId: string, 
+    blockId: string, 
+    config: Record<string, any>
+  ) => {
+    try {
+      const plugin = getPluginById(pluginId);
+      if (!plugin) {
+        throw new Error('Plugin not found');
+      }
+      
+      // Call the service
+      await updateFeatureBlockConfigService(currentWorkspace?.id || 'default', pluginId, blockId, config);
+      
+      // Update the plugin's feature blocks
+      setPlugins((prev) =>
+        prev.map((p) => {
+          if (p.id === pluginId && p.featureBlocks) {
+            const updatedBlocks = p.featureBlocks.map(block => 
+              block.id === blockId ? { ...block, config } : block
+            );
+            return { ...p, featureBlocks: updatedBlocks };
+          }
+          return p;
+        })
+      );
+      
+      message.success('Feature block configuration updated successfully');
+    } catch (error) {
+      console.error('Error updating feature block configuration:', error);
+      message.error('Failed to update feature block configuration');
     }
   };
 
@@ -483,6 +806,9 @@ export const PluginRegistryProvider: React.FC<PluginRegistryProviderProps> = ({ 
       enablePlugin,
       disablePlugin,
       updatePluginConfig,
+      enableFeatureBlock,
+      disableFeatureBlock,
+      updateFeatureBlockConfig,
       isLoading,
     }),
     [plugins, availablePlugins, isLoading]

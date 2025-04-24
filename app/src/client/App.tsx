@@ -1,5 +1,6 @@
 import './Main.css';
 import '../components/components.css';
+import '../ui/styles/index.less';
 import CookieConsentBanner from './components/cookie-consent/Banner';
 import { useMemo, useEffect } from 'react';
 import { routes } from 'wasp/client/router';

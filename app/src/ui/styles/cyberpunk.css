@@ -1,0 +1,354 @@
+/* Cyberpunk Theme Styles */
+
+/* Cyber Button */
+.cyber-button {
+  background: var(--color-dark-gray-2);
+  color: var(--color-flux-aqua);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: var(--font-family-code);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(61, 170, 157, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.cyber-button:hover {
+  background: var(--color-dark-gray-3);
+  color: var(--color-flux-aqua-light);
+  box-shadow: var(--glow-primary);
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+/* Ghost Button */
+.ghost-button {
+  background: transparent;
+  color: var(--color-flux-aqua);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.ghost-button:hover {
+  background: rgba(61, 170, 157, 0.1);
+  box-shadow: var(--glow-primary);
+}
+
+/* Text Button */
+.text-button {
+  background: transparent;
+  color: var(--color-flux-aqua);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.text-button:hover {
+  color: var(--color-flux-aqua-light);
+  text-shadow: 0 0 5px rgba(61, 170, 157, 0.5);
+}
+
+/* Glow Hover Effect */
+.glow-hover:hover {
+  box-shadow: var(--glow-primary);
+}
+
+/* Cauldron Card */
+.cauldron-card {
+  background-color: var(--color-bg-elevated);
+  border-left: 3px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.cauldron-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(61, 170, 157, 0.2);
+}
+
+/* Terminal Card */
+.terminal {
+  background-color: var(--color-dark-gray-1);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 16px;
+  font-family: var(--font-family-code);
+  color: var(--color-light-gray-1);
+  box-shadow: var(--glow-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-flux-aqua), transparent);
+  opacity: 0.7;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(61, 170, 157, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effects */
+.hover-glow:hover {
+  box-shadow: var(--glow-primary);
+}
+
+.hover-border:hover {
+  border-color: var(--color-flux-aqua);
+}
+
+/* Cyber Modal */
+.cyber-modal .ant-modal-content {
+  background-color: var(--color-dark-gray-2);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  box-shadow: var(--glow-primary);
+}
+
+.cyber-modal .ant-modal-header {
+  background-color: var(--color-dark-gray-2);
+  border-bottom: 1px solid var(--color-flux-aqua);
+}
+
+.cyber-modal .ant-modal-title {
+  color: var(--color-flux-aqua);
+  font-family: var(--font-family-heading);
+}
+
+.cyber-modal .ant-modal-close {
+  color: var(--color-flux-aqua);
+}
+
+.cyber-modal .ant-modal-close:hover {
+  color: var(--color-flux-aqua-light);
+  background: rgba(61, 170, 157, 0.1);
+}
+
+/* Terminal Modal */
+.terminal-modal .ant-modal-content {
+  background-color: var(--color-dark-gray-1);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  font-family: var(--font-family-code);
+  color: var(--color-light-gray-1);
+  box-shadow: var(--glow-primary);
+}
+
+.terminal-modal .ant-modal-header {
+  background-color: var(--color-dark-gray-1);
+  border-bottom: 1px solid var(--color-flux-aqua);
+}
+
+.terminal-modal .ant-modal-title {
+  color: var(--color-flux-aqua);
+  font-family: var(--font-family-code);
+}
+
+.terminal-modal .ant-modal-close {
+  color: var(--color-flux-aqua);
+}
+
+/* Glass Modal */
+.glass-modal .ant-modal-content {
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(61, 170, 157, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.glass-modal .ant-modal-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(61, 170, 157, 0.3);
+}
+
+/* Scanlines Effect */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* AI Card Styles */
+.ai-card {
+  border: 1px solid var(--color-flux-aqua);
+  background-color: var(--color-dark-gray-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ai-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ai-card-content {
+  margin-bottom: 16px;
+}
+
+.ai-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ai-card-footer {
+  border-top: 1px solid rgba(61, 170, 157, 0.3);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-model-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ai-confidence-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ai-tag {
+  background-color: rgba(61, 170, 157, 0.1);
+  border: 1px solid rgba(61, 170, 157, 0.3);
+  color: var(--color-light-gray-1);
+}
+
+.ai-retry-button {
+  background-color: var(--color-dark-gray-3);
+  color: var(--color-flux-aqua);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-retry-button:hover {
+  background-color: rgba(61, 170, 157, 0.1);
+  box-shadow: var(--glow-primary);
+}
+
+.ai-card-error {
+  border-color: var(--color-error-red);
+}
+
+/* Glitch Text Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both;
+}
+
+/* Neon Text Effect */
+.neon-text {
+  color: var(--color-flux-aqua);
+  text-shadow: 0 0 5px var(--color-flux-aqua), 0 0 10px var(--color-flux-aqua-light);
+}
+
+/* Circuit Background */
+.circuit-bg {
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 25px 25px, var(--color-flux-aqua) 2px, transparent 0),
+    linear-gradient(to right, rgba(61, 170, 157, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(61, 170, 157, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 25px 25px, 25px 25px;
+  background-position: 0 0;
+}
+
+/* Grid Background */
+.grid-bg {
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(61, 170, 157, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 170, 157, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Hexagonal Pattern Background */
+.hex-bg {
+  background-color: var(--color-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill='%233DAA9D' fill-opacity='0.05'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
+}

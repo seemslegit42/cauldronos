@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cauldronos/ui": ["../../packages/ui/src"],
+      "@cauldronos/ui/*": ["../../packages/ui/src/*"],
+      "@cauldronos/hooks": ["../../packages/hooks/src"],
+      "@cauldronos/hooks/*": ["../../packages/hooks/src/*"],
+      "@cauldronos/utils": ["../../packages/utils/src"],
+      "@cauldronos/utils/*": ["../../packages/utils/src/*"],
+      "@cauldronos/agents": ["../../packages/agents/src"],
+      "@cauldronos/agents/*": ["../../packages/agents/src/*"],
+      "@cauldronos/api": ["../../packages/api/src"],
+      "@cauldronos/api/*": ["../../packages/api/src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

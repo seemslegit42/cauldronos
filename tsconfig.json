@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "files": [],
+  "references": [
+    { "path": "apps/admin-dashboard" },
+    { "path": "apps/client-portal" },
+    { "path": "apps/cauldron-core" },
+    { "path": "packages/ui" },
+    { "path": "packages/hooks" },
+    { "path": "packages/utils" },
+    { "path": "packages/agents" },
+    { "path": "packages/api" }
+  ]
+}

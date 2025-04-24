@@ -1,0 +1,6 @@
+onlyBuiltDependencies:
+  - '@scarf/scarf'
+  - canvas
+  - core-js
+  - esbuild
+  - sqlite3

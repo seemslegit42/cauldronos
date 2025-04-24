@@ -1,0 +1,12 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+  - 'configs/*'
+  - 'e2e-tests'
+
+onlyBuiltDependencies:
+  - '@scarf/scarf'
+  - 'canvas'
+  - 'core-js'
+  - 'esbuild'
+  - 'sqlite3'

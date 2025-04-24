@@ -1,0 +1,180 @@
+/* Enhanced Alert Styles */
+
+.cauldron-alert {
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Cyberpunk variant */
+.cauldron-alert-cyber {
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.cauldron-alert-cyber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.05) 25%, 
+                                     rgba(255, 255, 255, 0.05) 50%, transparent 50%, 
+                                     transparent 75%, rgba(255, 255, 255, 0.05) 75%);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+.cauldron-alert-cyber.ant-alert-success {
+  background-color: rgba(0, 255, 0, 0.1);
+  border-color: rgba(0, 255, 0, 0.5);
+}
+
+.cauldron-alert-cyber.ant-alert-info {
+  background-color: rgba(24, 144, 255, 0.1);
+  border-color: rgba(24, 144, 255, 0.5);
+}
+
+.cauldron-alert-cyber.ant-alert-warning {
+  background-color: rgba(255, 165, 0, 0.1);
+  border-color: rgba(255, 165, 0, 0.5);
+}
+
+.cauldron-alert-cyber.ant-alert-error {
+  background-color: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.5);
+}
+
+/* Terminal variant */
+.cauldron-alert-terminal {
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cauldron-alert-terminal.ant-alert-success {
+  border-color: #00ff00;
+  color: #00ff00;
+}
+
+.cauldron-alert-terminal.ant-alert-info {
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.cauldron-alert-terminal.ant-alert-warning {
+  border-color: #ffff00;
+  color: #ffff00;
+}
+
+.cauldron-alert-terminal.ant-alert-error {
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+.cauldron-alert-terminal .ant-alert-message {
+  color: inherit;
+}
+
+.cauldron-alert-terminal .ant-alert-description {
+  color: inherit;
+  opacity: 0.8;
+}
+
+/* Glass variant */
+.cauldron-alert-glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cauldron-alert-glass.cauldron-alert-dark {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cauldron-alert-glass.ant-alert-success {
+  border-color: rgba(82, 196, 26, 0.3);
+}
+
+.cauldron-alert-glass.ant-alert-info {
+  border-color: rgba(24, 144, 255, 0.3);
+}
+
+.cauldron-alert-glass.ant-alert-warning {
+  border-color: rgba(250, 173, 20, 0.3);
+}
+
+.cauldron-alert-glass.ant-alert-error {
+  border-color: rgba(255, 77, 79, 0.3);
+}
+
+/* Glow effect */
+.cauldron-alert-glow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cauldron-alert-glow.ant-alert-success {
+  box-shadow: 0 0 10px rgba(82, 196, 26, 0.3);
+}
+
+.cauldron-alert-glow.ant-alert-info {
+  box-shadow: 0 0 10px rgba(24, 144, 255, 0.3);
+}
+
+.cauldron-alert-glow.ant-alert-warning {
+  box-shadow: 0 0 10px rgba(250, 173, 20, 0.3);
+}
+
+.cauldron-alert-glow.ant-alert-error {
+  box-shadow: 0 0 10px rgba(255, 77, 79, 0.3);
+}
+
+/* Dark mode specific styles */
+.cauldron-alert-dark.ant-alert {
+  background-color: #1f1f1f;
+  border-color: #303030;
+}
+
+.cauldron-alert-dark.ant-alert-success {
+  background-color: rgba(82, 196, 26, 0.1);
+}
+
+.cauldron-alert-dark.ant-alert-info {
+  background-color: rgba(24, 144, 255, 0.1);
+}
+
+.cauldron-alert-dark.ant-alert-warning {
+  background-color: rgba(250, 173, 20, 0.1);
+}
+
+.cauldron-alert-dark.ant-alert-error {
+  background-color: rgba(255, 77, 79, 0.1);
+}
+
+/* Light mode specific styles */
+.cauldron-alert-light.ant-alert {
+  background-color: #ffffff;
+}
+
+/* Animation enhancements */
+.cauldron-alert-cyber::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

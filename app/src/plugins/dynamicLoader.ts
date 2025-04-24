@@ -1,5 +1,6 @@
+
 import { z } from 'zod';
-import { PluginManifest, PluginRegistration } from './types';
+import { PluginManifest, PluginRegistration, FeatureBlockManifest, FeatureBlockRegistration, FeatureBlockManifest, FeatureBlockRegistration, FeatureBlockManifest, FeatureBlockRegistration, FeatureBlockManifest, FeatureBlockRegistration, FeatureBlockManifest, FeatureBlockRegistration, FeatureBlockManifest, FeatureBlockRegistration, FeatureBlockManifest, FeatureBlockRegistration } from './types';
 
 /**
  * Load a plugin from a URL
@@ -16,12 +17,116 @@ export async function loadPluginFromUrl(url: string): Promise<PluginRegistration
 
     const manifestData = await manifestResponse.json();
     
+    // Process feature blocks if they exist
+    const featureBlocks = manifest.featureBlocks?.map(blockManifest => {
+      return {
+        id: blockManifest.id,
+        name: blockManifest.name,
+        description: blockManifest.description,
+        configSchema: z.object(blockManifest.configSchema),
+        defaultConfig: blockManifest.defaultConfig,
+        icon: module.default.featureBlocks?.[blockManifest.id]?.icon,
+        render: module.default.featureBlocks?.[blockManifest.id]?.render,
+        renderSettings: module.default.featureBlocks?.[blockManifest.id]?.renderSettings,
+      } as FeatureBlockRegistration;
+    });
+    
+    // Process feature blocks if they exist
+    const featureBlocks = manifest.featureBlocks?.map(blockManifest => {
+      return {
+        id: blockManifest.id,
+        name: blockManifest.name,
+        description: blockManifest.description,
+        configSchema: z.object(blockManifest.configSchema),
+        defaultConfig: blockManifest.defaultConfig,
+        icon: module.default.featureBlocks?.[blockManifest.id]?.icon,
+        render: module.default.featureBlocks?.[blockManifest.id]?.render,
+        renderSettings: module.default.featureBlocks?.[blockManifest.id]?.renderSettings,
+      featureBlocks: featureBlocks,
+      } as FeatureBlockRegistration;
+    });
+    
     // Validate the manifest
     const manifest = validateManifest(manifestData);
     
     // Load the plugin module
     const moduleUrl = `${url}/${manifest.entryPoint}`;
     const module = await import(/* @vite-ignore */ moduleUrl);
+    
+    // Process feature blocks if they exist
+    const featureBlocks = manifest.featureBlocks?.map(blockManifest => {
+      return {
+        id: blockManifest.id,
+        name: blockManifest.name,
+        description: blockManifest.description,
+        configSchema: z.object(blockManifest.configSchema),
+        defaultConfig: blockManifest.defaultConfig,
+        icon: module.default.featureBlocks?.[blockManifest.id]?.icon,
+        render: module.default.featureBlocks?.[blockManifest.id]?.render,
+        renderSettings: module.default.featureBlocks?.[blockManifest.id]?.renderSettings,
+      featureBlocks: featureBlocks,
+      } as FeatureBlockRegistration;
+    });
+    
+    // Process feature blocks if they exist
+    const featureBlocks = manifest.featureBlocks?.map(blockManifest => {
+      return {
+        id: blockManifest.id,
+        name: blockManifest.name,
+        description: blockManifest.description,
+        configSchema: z.object(blockManifest.configSchema),
+        defaultConfig: blockManifest.defaultConfig,
+        icon: module.default.featureBlocks?.[blockManifest.id]?.icon,
+        render: module.default.featureBlocks?.[blockManifest.id]?.render,
+        renderSettings: module.default.featureBlocks?.[blockManifest.id]?.renderSettings,
+      featureBlocks: featureBlocks,
+      } as FeatureBlockRegistration;
+    });
+    
+    // Process feature blocks if they exist
+    const featureBlocks = manifest.featureBlocks?.map(blockManifest => {
+      return {
+        id: blockManifest.id,
+        name: blockManifest.name,
+        description: blockManifest.description,
+        configSchema: z.object(blockManifest.configSchema),
+        defaultConfig: blockManifest.defaultConfig,
+        icon: module.default.featureBlocks?.[blockManifest.id]?.icon,
+        render: module.default.featureBlocks?.[blockManifest.id]?.render,
+        renderSettings: module.default.featureBlocks?.[blockManifest.id]?.renderSettings,
+      featureBlocks: featureBlocks,
+      } as FeatureBlockRegistration;
+    });
+    
+    // Process feature blocks if they exist
+    const featureBlocks = manifest.featureBlocks?.map(blockManifest => {
+      return {
+        id: blockManifest.id,
+        name: blockManifest.name,
+        description: blockManifest.description,
+        configSchema: z.object(blockManifest.configSchema),
+        defaultConfig: blockManifest.defaultConfig,
+        icon: module.default.featureBlocks?.[blockManifest.id]?.icon,
+        render: module.default.featureBlocks?.[blockManifest.id]?.render,
+        renderSettings: module.default.featureBlocks?.[blockManifest.id]?.renderSettings,
+      featureBlocks: featureBlocks,
+      } as FeatureBlockRegistration;
+    });
+    
+    // Process feature blocks if they exist
+    const featureBlocks = manifest.featureBlocks?.map(blockManifest => {
+      return {
+        id: blockManifest.id,
+        name: blockManifest.name,
+        description: blockManifest.description,
+        configSchema: z.object(blockManifest.configSchema),
+        defaultConfig: blockManifest.defaultConfig,
+        icon: module.default.featureBlocks?.[blockManifest.id]?.icon,
+        render: module.default.featureBlocks?.[blockManifest.id]?.render,
+        renderSettings: module.default.featureBlocks?.[blockManifest.id]?.renderSettings,
+      featureBlocks: featureBlocks,
+      } as FeatureBlockRegistration;
+    });
     
     // Create the plugin registration
     const registration: PluginRegistration = {
@@ -38,6 +143,7 @@ export async function loadPluginFromUrl(url: string): Promise<PluginRegistration
       dependencies: manifest.dependencies,
       render: module.default.render,
       renderSettings: module.default.renderSettings,
+      featureBlocks: featureBlocks,
     };
     
     return registration;
@@ -53,6 +159,17 @@ export async function loadPluginFromUrl(url: string): Promise<PluginRegistration
  * @returns The validated manifest
  */
 function validateManifest(data: any): PluginManifest {
+  // Define the feature block manifest schema
+  const featureBlockManifestSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    description: z.string(),
+    configSchema: z.record(z.any()),
+    defaultConfig: z.record(z.any()),
+    iconUrl: z.string().optional(),
+    featureBlocks: z.array(featureBlockManifestSchema).optional(),
+  });
+  
   // Define the manifest schema
   const manifestSchema = z.object({
     id: z.string(),
@@ -69,6 +186,7 @@ function validateManifest(data: any): PluginManifest {
       'security', 
       'communication', 
       'ai', 
+      'feature',
       'other'
     ]),
     entryPoint: z.string(),
@@ -82,6 +200,7 @@ function validateManifest(data: any): PluginManifest {
       isRequired: z.boolean(),
     })).optional(),
     iconUrl: z.string().optional(),
+    featureBlocks: z.array(featureBlockManifestSchema).optional(),
   });
   
   // Validate the manifest

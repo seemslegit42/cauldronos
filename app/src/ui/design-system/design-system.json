@@ -1,0 +1,344 @@
+{
+  "name": "CauldronOS Design System",
+  "version": "1.0.0",
+  "description": "Design system for CauldronOS - an AI-first cyberpunk interface",
+  "colors": {
+    "primary": {
+      "voidPurple": {
+        "default": "#4A0D67",
+        "light": "#6A2D87",
+        "dark": "#2A0047"
+      },
+      "fluxAqua": {
+        "default": "#3DAA9D",
+        "light": "#5DCABD",
+        "dark": "#1D8A7D"
+      }
+    },
+    "accent": {
+      "alchemyGold": {
+        "default": "#B8860B",
+        "light": "#D8A62B"
+      },
+      "warningAmber": "#FFD166",
+      "errorRed": "#EF476F"
+    },
+    "neutral": {
+      "dark": {
+        "obsidianBlack": "#0D1117",
+        "darkGray": {
+          "1": "#121212",
+          "2": "#1E1E1E",
+          "3": "#2D2D2D"
+        },
+        "lightGray": {
+          "1": "#E0E0E0",
+          "2": "#9E9E9E"
+        },
+        "silver": "#C0C0C0"
+      },
+      "light": {
+        "white": "#FFFFFF",
+        "lightGray": {
+          "1": "#F5F5F7",
+          "2": "#E1E2E6"
+        },
+        "darkGray": {
+          "1": "#202124",
+          "2": "#5F6368"
+        }
+      }
+    },
+    "cyberpunk": {
+      "cyan": "#00F0FF",
+      "blue": "#0088FF",
+      "purple": "#BD00FF",
+      "pink": "#FF0099",
+      "yellow": "#FFD700"
+    },
+    "functional": {
+      "success": "#00FF66",
+      "warning": "#FFBB00",
+      "error": "#FF0033",
+      "info": "#00F0FF"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": "'Manrope', sans-serif",
+      "body": "'Inter', sans-serif",
+      "code": "'JetBrains Mono', monospace"
+    },
+    "fontSize": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "18px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "28px",
+      "4xl": "32px",
+      "5xl": "36px",
+      "6xl": "48px"
+    },
+    "fontWeight": {
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "none": 1,
+      "tight": 1.25,
+      "snug": 1.375,
+      "normal": 1.5,
+      "relaxed": 1.625,
+      "loose": 2
+    },
+    "letterSpacing": {
+      "tighter": "-0.05em",
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "0.5": "4px",
+    "1": "8px",
+    "2": "16px",
+    "3": "24px",
+    "4": "32px",
+    "5": "40px",
+    "6": "48px",
+    "7": "56px",
+    "8": "64px",
+    "9": "72px",
+    "10": "80px",
+    "12": "96px",
+    "16": "128px",
+    "20": "160px",
+    "24": "192px"
+  },
+  "breakpoints": {
+    "xs": "480px",
+    "sm": "576px",
+    "md": "768px",
+    "lg": "992px",
+    "xl": "1200px",
+    "xxl": "1600px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "default": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+    "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+    "none": "none",
+    "glow": {
+      "primary": "0 0 10px rgba(61, 170, 157, 0.5)",
+      "success": "0 0 10px rgba(184, 134, 11, 0.5)",
+      "warning": "0 0 10px rgba(255, 209, 102, 0.5)",
+      "error": "0 0 10px rgba(239, 71, 111, 0.5)",
+      "cyan": "0 0 15px rgba(0, 240, 255, 0.6)",
+      "purple": "0 0 15px rgba(189, 0, 255, 0.6)"
+    }
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "2px",
+    "default": "4px",
+    "md": "6px",
+    "lg": "8px",
+    "xl": "12px",
+    "2xl": "16px",
+    "3xl": "24px",
+    "full": "9999px"
+  },
+  "transitions": {
+    "duration": {
+      "75": "75ms",
+      "100": "100ms",
+      "150": "150ms",
+      "200": "200ms",
+      "300": "300ms",
+      "500": "500ms",
+      "700": "700ms",
+      "1000": "1000ms"
+    },
+    "easing": {
+      "linear": "linear",
+      "in": "cubic-bezier(0.4, 0, 1, 1)",
+      "out": "cubic-bezier(0, 0, 0.2, 1)",
+      "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "bounce": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+      "elastic": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+    }
+  },
+  "gradients": {
+    "primary": "linear-gradient(135deg, #4A0D67 0%, #3DAA9D 100%)",
+    "secondary": "linear-gradient(135deg, #BD00FF 0%, #FF0099 100%)",
+    "accent": "linear-gradient(135deg, #00F0FF 0%, #0088FF 100%)",
+    "dark": "linear-gradient(135deg, #0D1117 0%, #1E1E1E 100%)"
+  },
+  "components": {
+    "categories": [
+      {
+        "name": "Form",
+        "components": [
+          "Button",
+          "Checkbox",
+          "DatePicker",
+          "Input",
+          "Select",
+          "Switch",
+          "Upload",
+          "ZodForm"
+        ]
+      },
+      {
+        "name": "Data Display",
+        "components": [
+          "Card",
+          "Table",
+          "List"
+        ]
+      },
+      {
+        "name": "Layout",
+        "components": [
+          "PageContainer",
+          "ProLayout"
+        ]
+      },
+      {
+        "name": "AI",
+        "components": [
+          "AIInput",
+          "AITable",
+          "AIForm"
+        ]
+      },
+      {
+        "name": "Animation",
+        "components": [
+          "FadeIn",
+          "SlideIn",
+          "ScaleIn",
+          "Stagger",
+          "PageTransition",
+          "AnimatedModal",
+          "AnimatedDrawer"
+        ]
+      }
+    ],
+    "props": {
+      "common": [
+        {
+          "name": "animated",
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable animations for the component"
+        },
+        {
+          "name": "cyberpunk",
+          "type": "boolean",
+          "default": false,
+          "description": "Apply cyberpunk styling to the component"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "default": "",
+          "description": "Additional CSS class names"
+        }
+      ],
+      "Button": [
+        {
+          "name": "glowOnHover",
+          "type": "boolean",
+          "default": false,
+          "description": "Add a glow effect on hover"
+        }
+      ],
+      "Card": [
+        {
+          "name": "hoverable",
+          "type": "boolean",
+          "default": false,
+          "description": "Add hover animation to the card"
+        },
+        {
+          "name": "glowOnHover",
+          "type": "boolean",
+          "default": false,
+          "description": "Add a glow effect on hover"
+        }
+      ],
+      "Table": [
+        {
+          "name": "animateRows",
+          "type": "boolean",
+          "default": true,
+          "description": "Animate table rows when they appear"
+        }
+      ]
+    }
+  },
+  "animations": {
+    "presets": [
+      {
+        "name": "fadeIn",
+        "description": "Fade in animation"
+      },
+      {
+        "name": "slideUp",
+        "description": "Slide up animation"
+      },
+      {
+        "name": "slideDown",
+        "description": "Slide down animation"
+      },
+      {
+        "name": "slideLeft",
+        "description": "Slide left animation"
+      },
+      {
+        "name": "slideRight",
+        "description": "Slide right animation"
+      },
+      {
+        "name": "scale",
+        "description": "Scale animation"
+      },
+      {
+        "name": "staggerContainer",
+        "description": "Container for staggered animations"
+      },
+      {
+        "name": "staggerItem",
+        "description": "Item for staggered animations"
+      },
+      {
+        "name": "modal",
+        "description": "Modal animation"
+      },
+      {
+        "name": "drawer",
+        "description": "Drawer animation"
+      },
+      {
+        "name": "page",
+        "description": "Page transition animation"
+      },
+      {
+        "name": "glitch",
+        "description": "Cyberpunk glitch effect"
+      }
+    ]
+  }
+}

@@ -1,0 +1,240 @@
+/* WorkflowEditor Component Styles */
+
+.workflow-editor {
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Editor Header */
+.workflow-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.workflow-editor-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.workflow-editor-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Editor Canvas */
+.workflow-editor-canvas {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  min-height: 500px;
+}
+
+.workflow-editor-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-title {
+  margin-bottom: 16px;
+  color: #E0E0E0;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #3DAA9D;
+}
+
+/* Agent Nodes */
+.workflow-editor-agents {
+  margin-bottom: 32px;
+}
+
+.agent-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.agent-node {
+  width: 280px;
+  cursor: pointer;
+  position: relative;
+}
+
+.agent-node.selected .agent-card {
+  border: 2px solid #3DAA9D;
+  box-shadow: 0 0 0 2px rgba(61, 170, 157, 0.2);
+}
+
+.agent-card {
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.agent-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.agent-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #3DAA9D;
+}
+
+.agent-name {
+  font-size: 16px;
+  color: #E0E0E0;
+}
+
+.agent-description {
+  color: #9E9E9E;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.agent-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.agent-model {
+  font-size: 12px;
+}
+
+/* Task Nodes */
+.task-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.task-node {
+  width: 280px;
+  cursor: pointer;
+  position: relative;
+}
+
+.task-node.selected .task-card {
+  border: 2px solid #3DAA9D;
+  box-shadow: 0 0 0 2px rgba(61, 170, 157, 0.2);
+}
+
+.task-card {
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.task-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #3DAA9D;
+}
+
+.task-name {
+  font-size: 16px;
+  color: #E0E0E0;
+}
+
+.task-description {
+  color: #9E9E9E;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.task-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.task-dependencies {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.dependencies-label {
+  font-size: 12px;
+}
+
+/* Add Node Button */
+.add-node-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 100px;
+  background-color: rgba(61, 170, 157, 0.05);
+  border-radius: 8px;
+  border: 1px dashed #3DAA9D;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-node-button:hover {
+  background-color: rgba(61, 170, 157, 0.1);
+}
+
+/* Connection Line */
+.connection-line {
+  pointer-events: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .workflow-editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .workflow-editor-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .agent-node, .task-node, .add-node-button {
+    width: 100%;
+  }
+}

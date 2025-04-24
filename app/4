@@ -1,0 +1,303 @@
+--- src/ai/services/GroqSwarmIntegration.ts
++++ src/ai/services/GroqSwarmIntegration.ts
+@@ -0,0 +1,300 @@
++import { AIMessage } from '../components/FloatingAIAssistant';
++import { GROQ_MODELS } from './GroqService';
++
++// Define types for Groq Swarm integration
++export interface SwarmAgent {
++  name: string;
++  instructions: string;
++  model?: string;
++  functions?: SwarmFunction[];
++  tool_choice?: string | object;
++  parallel_tool_calls?: boolean;
++}
++
++export interface SwarmFunction {
++  name: string;
++  description: string;
++  parameters: {
++    type: string;
++    properties: Record<string, any>;
++    required: string[];
++  };
++}
++
++export interface SwarmStep {
++  agent: SwarmAgent;
++  input: string;
++  expectedOutput: string;
++  maxTokens?: number;
++  temperature?: number;
++}
++
++export interface SwarmWorkflow {
++  name: string;
++  description: string;
++  steps: SwarmStep[];
++  contextVariables?: Record<string, any>;
++}
++
++/**
++ * A service for integrating with Groq Swarm for multi-step AI tasks
++ */
++class GroqSwarmIntegration {
++  private apiUrl: string;
++  private apiKey: string;
++
++  constructor(apiUrl: string = '/api/ai/swarm', apiKey: string = '') {
++    this.apiUrl = apiUrl;
++    this.apiKey = apiKey;
++  }
++
++  /**
++   * Execute a Swarm workflow
++   * @param workflow The workflow to execute
++   * @param initialInput The initial input
++   * @param contextData Additional context data
++   * @returns A promise that resolves to the final output
++   */
++  async executeWorkflow(
++    workflow: SwarmWorkflow,
++    initialInput: string,
++    contextData: Record<string, any> = {}
++  ): Promise<AIMessage> {
++    try {
++      // Merge context variables
++      const context = {
++        ...workflow.contextVariables,
++        ...contextData
++      };
++      
++      // Initialize the input for the first step
++      let currentInput = initialInput;
++      let finalOutput: AIMessage = {
++        id: `workflow-${Date.now()}`,
++        role: 'assistant',
++        content: '',
++        timestamp: new Date(),
++        type: 'text'
++      };
++      
++      // Execute each step in sequence
++      for (let i = 0; i < workflow.steps.length; i++) {
++        const step = workflow.steps[i];
++        
++        // Update the input with the current input
++        const stepInput = step.input.replace('{input}', currentInput);
++        
++        // Execute the step
++        const response = await this.executeStep(step, stepInput, context);
++        
++        // Update the current input for the next step
++        currentInput = response.content;
++        
++        // If this is the last step, set the final output
++        if (i === workflow.steps.length - 1) {
++          finalOutput = response;
++        }
++      }
++      
++      return finalOutput;
++    } catch (error) {
++      console.error('Error executing workflow:', error);
++      return {
++        id: `error-${Date.now()}`,
++        role: 'assistant',
++        content: 'Sorry, I encountered an error executing the workflow. Please try again.',
++        timestamp: new Date(),
++        type: 'error'
++      };
++    }
++  }
++
++  /**
++   * Execute a single step in a workflow
++   * @param step The step to execute
++   * @param input The input for the step
++   * @param contextData Additional context data
++   * @returns A promise that resolves to an AI message
++   */
++  private async executeStep(
++    step: SwarmStep,
++    input: string,
++    contextData: Record<string, any> = {}
++  ): Promise<AIMessage> {
++    try {
++      // Create the request payload
++      const payload = {
++        messages: [{ role: 'user', content: input }],
++        context_variables: contextData,
++        agent: {
++          ...step.agent,
++          model: step.agent.model || GROQ_MODELS.LLAMA3_70B
++        },
++        max_tokens: step.maxTokens || 2048,
++        temperature: step.temperature || 0.7,
++        stream: false
++      };
++
++      // Make the API request
++      const response = await fetch(this.apiUrl, {
++        method: 'POST',
++        headers: {
++          'Content-Type': 'application/json',
++          'Authorization': `Bearer ${this.apiKey}`
++        },
++        body: JSON.stringify(payload)
++      });
++
++      if (!response.ok) {
++        throw new Error(`API request failed with status ${response.status}`);
++      }
++
++      const data = await response.json();
++      
++      // Find the last assistant message
++      const lastAssistantMessage = data.messages
++        .filter((msg: any) => msg.role === 'assistant')
++        .pop();
++
++      if (!lastAssistantMessage) {
++        return {
++          id: `error-${Date.now()}`,
++          role: 'assistant',
++          content: 'No response received from the assistant.',
++          timestamp: new Date(),
++          type: 'error'
++        };
++      }
++
++      // Determine the message type based on content
++      let messageType: 'text' | 'markdown' | 'code' | 'error' = 'text';
++      const content = lastAssistantMessage.content || '';
++
++      if (content.includes('```')) {
++        messageType = 'markdown';
++      }
++
++      return {
++        id: `assistant-${Date.now()}`,
++        role: 'assistant',
++        content: content,
++        timestamp: new Date(),
++        type: messageType
++      };
++    } catch (error) {
++      console.error('Error executing step:', error);
++      return {
++        id: `error-${Date.now()}`,
++        role: 'assistant',
++        content: 'Sorry, I encountered an error executing this step. Please try again.',
++        timestamp: new Date(),
++        type: 'error'
++      };
++    }
++  }
++
++  /**
++   * Create a workflow for a specific task
++   * @param name The name of the workflow
++   * @param description The description of the workflow
++   * @param task The task to perform
++   * @returns A workflow
++   */
++  createWorkflow(
++    name: string,
++    description: string,
++    task: string
++  ): SwarmWorkflow {
++    // Create a default workflow with three steps:
++    // 1. Planning - Analyze the task and create a plan
++    // 2. Execution - Execute the plan
++    // 3. Review - Review the results and provide a final response
++    
++    return {
++      name,
++      description,
++      steps: [
++        {
++          agent: {
++            name: 'Planner',
++            instructions: `You are a planning agent. Your job is to analyze the user's request and create a detailed plan for how to accomplish it. Break down complex tasks into smaller steps.
++            
++Current task: ${task}
++
++Your output should be a markdown-formatted plan with:
++1. A clear understanding of what the user is asking for
++2. A step-by-step breakdown of how to accomplish it
++3. Any clarifying questions that might be needed
++4. Identification of potential challenges`,
++            model: GROQ_MODELS.LLAMA3_70B
++          },
++          input: '{input}',
++          expectedOutput: 'A detailed plan for accomplishing the task',
++          temperature: 0.3
++        },
++        {
++          agent: {
++            name: 'Executor',
++            instructions: `You are an execution agent. Your job is to carry out the plan provided to you and generate the requested content or solution.
++            
++The plan you need to execute is:
++
++{input}
++
++Follow the plan step by step and generate the requested output. Be thorough and detailed in your work.`,
++            model: GROQ_MODELS.LLAMA3_70B
++          },
++          input: '{input}',
++          expectedOutput: 'The executed result of the plan',
++          temperature: 0.7
++        },
++        {
++          agent: {
++            name: 'Reviewer',
++            instructions: `You are a review agent. Your job is to review the output provided and ensure it meets the user's requirements. Provide a final, polished response.
++            
++The output to review is:
++
++{input}
++
++Evaluate this output for:
++1. Completeness - Does it fully address the user's request?
++2. Accuracy - Is the information correct?
++3. Clarity - Is it easy to understand?
++4. Formatting - Is it well-structured and properly formatted?
++
++Provide a final, polished response that addresses any issues you find.`,
++            model: GROQ_MODELS.LLAMA3_70B
++          },
++          input: '{input}',
++          expectedOutput: 'A final, polished response',
++          temperature: 0.3
++        }
++      ]
++    };
++  }
++
++  /**
++   * Create a custom workflow with specific steps
++   * @param name The name of the workflow
++   * @param description The description of the workflow
++   * @param steps The steps in the workflow
++   * @param contextVariables Additional context variables
++   * @returns A workflow
++   */
++  createCustomWorkflow(
++    name: string,
++    description: string,
++    steps: SwarmStep[],
++    contextVariables: Record<string, any> = {}
++  ): SwarmWorkflow {
++    return {
++      name,
++      description,
++      steps,
++      contextVariables
++    };
++  }
++}
++
++export default GroqSwarmIntegration;

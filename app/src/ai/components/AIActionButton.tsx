@@ -1,35 +1,50 @@
 import React, { useState } from 'react';
 import { Button, Tooltip, Modal, Space, Typography, Divider } from 'cauldronos-ui';
-import { RobotOutlined, LoadingOutlined, CloseOutlined } from 'cauldronos-ui';
+import { RobotOutlined, LoadingOutlined, CloseOutlined, ThunderboltOutlined } from 'cauldronos-ui';
 import AIOutputBlock, { AIOutputType } from './AIOutputBlock';
+import { useAI } from '../AIProvider';
+import { useAIAssistant } from '../../store/aiStore';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useMutation } from '@tanstack/react-query';
+import { z } from 'zod';
 
 const { Text, Title, Paragraph } = Typography;
 
-export interface AIAction {
-  id: string;
-  label: string;
-  description: string;
-  icon?: React.ReactNode;
-  prompt: string;
-  contextData?: Record<string, any>;
-  outputType?: AIOutputType;
-}
+// Define Zod schema for AIAction
+const AIActionSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  description: z.string(),
+  icon: z.any().optional(),
+  prompt: z.string(),
+  contextData: z.record(z.any()).optional(),
+  outputType: z.enum([
+    'text', 'markdown', 'code', 'table', 
+    'list', 'action', 'error', 'loading', 'empty'
+  ]).optional()
+});
 
-interface AIActionButtonProps {
-  action: AIAction;
-  size?: 'small' | 'middle' | 'large';
-  type?: 'default' | 'primary' | 'ghost' | 'dashed' | 'link' | 'text';
-  shape?: 'default' | 'circle' | 'round';
-  className?: string;
-  style?: React.CSSProperties;
-  showLabel?: boolean;
-  showTooltip?: boolean;
-  onActionComplete?: (result: any) => void;
-}
+export type AIAction = z.infer<typeof AIActionSchema>;
+
+// Define Zod schema for AIActionButtonProps
+const AIActionButtonPropsSchema = z.object({
+  action: AIActionSchema,
+  size: z.enum(['small', 'middle', 'large']).optional(),
+  type: z.enum(['default', 'primary', 'ghost', 'dashed', 'link', 'text']).optional(),
+  shape: z.enum(['default', 'circle', 'round']).optional(),
+  className: z.string().optional(),
+  style: z.record(z.any()).optional(),
+  showLabel: z.boolean().optional(),
+  showTooltip: z.boolean().optional(),
+  onActionComplete: z.function().args(z.any()).returns(z.void()).optional()
+});
+
+type AIActionButtonProps = z.infer<typeof AIActionButtonPropsSchema>;
 
 /**
  * A button that triggers an AI action when clicked.
  * It opens a modal to display the AI's response.
+ * This implementation uses Zustand for state management and React Query for data fetching.
  */
 const AIActionButton: React.FC<AIActionButtonProps> = ({
   action,
@@ -43,101 +58,99 @@ const AIActionButton: React.FC<AIActionButtonProps> = ({
   onActionComplete
 }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [outputType, setOutputType] = useState<AIOutputType>('loading');
+  
+  // Get AI context from the provider and store
+  const { contextData: globalContextData, isProcessing } = useAI();
+  const { 
+    addMessage, 
+    useSwarm, 
+    updateContextData, 
+    sendMessage,
+    sendMessageStreaming
+  } = useAIAssistant();
 
-  // Handle button click
-  const handleClick = async () => {
-    setIsModalVisible(true);
-    setIsLoading(true);
-    setOutputType('loading');
-    setResult('Processing your request...');
-
-    try {
-      // In a real implementation, this would call an API endpoint
-      // For now, we'll simulate a response after a delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      // Simulate different response types based on the action
-      let simulatedResult;
-      let simulatedOutputType: AIOutputType = action.outputType || 'text';
-
-      switch (action.id) {
-        case 'analyze-users':
-          simulatedResult = "Based on my analysis of user behavior:\n\n- 65% of users are active daily\n- 23% are weekly users\n- 12% haven't logged in for over 30 days\n\nThe most engaged users are in the Marketing and Sales departments. Consider reaching out to inactive users with a personalized email campaign.";
-          simulatedOutputType = 'markdown';
-          break;
-        case 'summarize-data':
-          simulatedResult = "## Data Summary\n\nTotal Records: 1,245\nTime Period: Last 30 days\n\n### Key Metrics:\n- Average Session Duration: 24 minutes\n- Conversion Rate: 3.2%\n- Bounce Rate: 42%\n\n### Recommendations:\n1. Focus on improving mobile experience\n2. Optimize checkout flow\n3. Add more product recommendations";
-          simulatedOutputType = 'markdown';
-          break;
-        case 'generate-report':
-          simulatedResult = {
-            columns: [
-              { title: 'Metric', dataIndex: 'metric', key: 'metric' },
-              { title: 'Current', dataIndex: 'current', key: 'current' },
-              { title: 'Previous', dataIndex: 'previous', key: 'previous' },
-              { title: 'Change', dataIndex: 'change', key: 'change', render: (text: string) => {
-                const value = parseFloat(text);
-                return (
-                  <Text type={value > 0 ? 'success' : value < 0 ? 'danger' : 'secondary'}>
-                    {value > 0 ? '+' : ''}{text}%
-                  </Text>
-                );
-              }}
-            ],
-            dataSource: [
-              { key: '1', metric: 'Active Users', current: '1,245', previous: '1,180', change: '5.5' },
-              { key: '2', metric: 'Revenue', current: '$45,678', previous: '$42,345', change: '7.9' },
-              { key: '3', metric: 'Conversion Rate', current: '3.2%', previous: '3.5%', change: '-8.6' },
-              { key: '4', metric: 'Avg. Session', current: '24 min', previous: '22 min', change: '9.1' }
-            ]
-          };
-          simulatedOutputType = 'table';
-          break;
-        case 'suggest-actions':
-          simulatedResult = [
-            {
-              label: 'Send Re-engagement Email',
-              onClick: () => console.log('Sending re-engagement email'),
-              type: 'primary',
-              icon: <RobotOutlined />,
-              tooltip: 'Send an email to inactive users'
-            },
-            {
-              label: 'Generate Full Report',
-              onClick: () => console.log('Generating full report'),
-              type: 'default',
-              tooltip: 'Create a detailed PDF report'
-            },
-            {
-              label: 'Schedule Follow-up',
-              onClick: () => console.log('Scheduling follow-up'),
-              type: 'dashed',
-              tooltip: 'Set a reminder to check progress'
+  // Create a mutation for handling the AI action
+  const actionMutation = useMutation({
+    mutationFn: async () => {
+      // Merge global context with action-specific context
+      const mergedContext = {
+        ...globalContextData,
+        ...action.contextData,
+        actionId: action.id,
+        actionType: action.outputType || 'text'
+      };
+      
+      // Update context data with action-specific context
+      updateContextData(action.contextData || {});
+      
+      // Add user message to the conversation
+      addMessage({
+        role: 'user',
+        content: action.prompt,
+      });
+      
+      // Use the appropriate output type
+      const outputType = action.outputType || 'text';
+      
+      // Send the message to the AI
+      const response = await sendMessage(action.prompt, mergedContext);
+      
+      // Process the response based on the expected output type
+      let processedResult;
+      
+      // If the response contains structured data in the content field
+      if (response.content && typeof response.content === 'string') {
+        try {
+          // Check if the content is JSON
+          if (response.content.trim().startsWith('{') || response.content.trim().startsWith('[')) {
+            const jsonData = JSON.parse(response.content);
+            
+            // If the action expects a table or list or action output
+            if (outputType === 'table' || outputType === 'list' || outputType === 'action') {
+              processedResult = jsonData;
+            } else {
+              // For other types, keep the original content
+              processedResult = response.content;
             }
-          ];
-          simulatedOutputType = 'action';
-          break;
-        default:
-          simulatedResult = `I've analyzed the ${action.id} and found some interesting patterns. Would you like me to provide more details or take any specific actions?`;
-          simulatedOutputType = 'text';
+          } else {
+            // Not JSON, use as is
+            processedResult = response.content;
+          }
+        } catch (e) {
+          // If JSON parsing fails, use the content as is
+          processedResult = response.content;
+        }
+      } else {
+        // Use the response content directly
+        processedResult = response.content;
       }
-
-      setResult(simulatedResult);
-      setOutputType(simulatedOutputType);
-
+      
+      return { result: processedResult, outputType };
+    },
+    onSuccess: (data) => {
+      setResult(data.result);
+      setOutputType(data.outputType as AIOutputType);
+      
+      // Call the completion callback if provided
       if (onActionComplete) {
-        onActionComplete(simulatedResult);
+        onActionComplete(data.result);
       }
-    } catch (error) {
+    },
+    onError: (error) => {
       console.error('Error executing AI action:', error);
       setResult('Sorry, there was an error processing your request. Please try again.');
       setOutputType('error');
-    } finally {
-      setIsLoading(false);
     }
+  });
+
+  // Handle button click
+  const handleClick = () => {
+    setIsModalVisible(true);
+    setOutputType('loading');
+    setResult('Processing your request...');
+    actionMutation.mutate();
   };
 
   // Close the modal
@@ -145,17 +158,20 @@ const AIActionButton: React.FC<AIActionButtonProps> = ({
     setIsModalVisible(false);
   };
 
+  // Determine which icon to use
+  const buttonIcon = action.icon || (useSwarm ? <ThunderboltOutlined /> : <RobotOutlined />);
+
   // Render the button with optional tooltip
   const button = (
     <Button
       type={type}
       size={size}
       shape={shape}
-      icon={<RobotOutlined />}
+      icon={buttonIcon}
       onClick={handleClick}
       className={`ai-action-button ${className}`}
       style={style}
-      loading={isLoading}
+      loading={actionMutation.isPending}
     >
       {showLabel && action.label}
     </Button>
@@ -172,7 +188,7 @@ const AIActionButton: React.FC<AIActionButtonProps> = ({
       <Modal
         title={
           <div className="flex items-center">
-            <RobotOutlined className="mr-2" />
+            {action.icon || (useSwarm ? <ThunderboltOutlined className="mr-2" /> : <RobotOutlined className="mr-2" />)}
             <span>{action.label}</span>
           </div>
         }
@@ -183,17 +199,28 @@ const AIActionButton: React.FC<AIActionButtonProps> = ({
         className="ai-action-modal"
         closeIcon={<CloseOutlined />}
       >
-        <Paragraph className="mb-4">
-          {action.description}
-        </Paragraph>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key="modal-content"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Paragraph className="mb-4">
+              {action.description}
+            </Paragraph>
 
-        <Divider />
+            <Divider />
 
-        <AIOutputBlock
-          type={outputType}
-          content={result}
-          isStreaming={isLoading && (outputType === 'text' || outputType === 'markdown')}
-        />
+            <AIOutputBlock
+              type={outputType}
+              content={result}
+              isStreaming={actionMutation.isPending && (outputType === 'text' || outputType === 'markdown')}
+              title={actionMutation.isPending ? "Processing..." : "Result"}
+            />
+          </motion.div>
+        </AnimatePresence>
       </Modal>
     </>
   );
