@@ -13,8 +13,24 @@
   },
   "dependencies": {
     "@cauldronos/utils": "workspace:*",
+    "@langchain/core": "^0.1.20",
+    "@langchain/groq": "^0.0.2",
+    "@langchain/openai": "^0.0.14",
+    "@langchain/anthropic": "^0.1.1",
+    "@langchain/community": "^0.0.29",
+    "crewai": "^1.0.1",
+    "langchain": "^0.1.9",
+    "@langchain/langgraph": "^0.0.6",
+    "@copilotkit/react-core": "^0.16.0",
+    "@copilotkit/react-ui": "^0.16.0",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "reactflow": "^11.10.1",
+    "zod": "^3.22.4",
+    "antd": "^5.12.2",
+    "@ant-design/icons": "^5.2.6",
+    "@ant-design/pro-components": "^2.6.43"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",

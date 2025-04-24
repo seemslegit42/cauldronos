@@ -58,6 +58,11 @@ export default defineConfig({
           access: 'canAccessAI', // Access control
         },
         {
+          path: '/ai/crew-demo',
+          component: '@/pages/ai/crew-demo',
+          access: 'canAccessAI', // Access control
+        },
+        {
           path: '/modules',
           component: '@/pages/modules',
           access: 'canManageModules', // Access control

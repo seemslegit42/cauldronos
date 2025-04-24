@@ -6,8 +6,10 @@ import {
   BarChartOutlined,
   SettingOutlined,
   PlusOutlined,
-  SyncOutlined
+  SyncOutlined,
+  TeamOutlined
 } from '@ant-design/icons';
+import { history } from 'umi';
 import PageTransition from '@/components/PageTransition';
 import AISearchBar from '@/components/AISearchBar';
 import InsightCard from '@/components/InsightCard';
@@ -199,6 +201,9 @@ const AIPage: React.FC = () => {
         <div className="flex justify-between items-center">
           <Title level={2}>{intl.formatMessage({ id: 'ai.title' })}</Title>
           <Space>
+            <Button icon={<TeamOutlined />} onClick={() => history.push('/ai/crew-demo')}>
+              AI Crew Demo
+            </Button>
             <Button icon={<SyncOutlined />}>
               {intl.formatMessage({ id: 'ai.sync' })}
             </Button>
