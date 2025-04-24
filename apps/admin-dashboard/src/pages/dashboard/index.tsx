@@ -16,7 +16,7 @@ import {
   AISearchBar,
   GestureCard,
   PredictiveForm
-} from '@cauldronos/ui';
+} from '../../components/ui';
 import { Form, Input, Select, DatePicker } from 'antd';
 import { useIntl } from 'umi';
 

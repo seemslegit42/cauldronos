@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageContainer } from '@ant-design/pro-components';
-import { CrewDemo } from '@cauldronos/agents';
+import { CrewDemo } from '../../components/CrewDemo';
 
 /**
  * CrewDemoPage - A page for demonstrating the AI agent crew system

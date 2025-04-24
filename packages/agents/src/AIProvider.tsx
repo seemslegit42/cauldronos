@@ -1,13 +1,13 @@
-import React, { createContext, useContext, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useAuth } from 'wasp/client/auth';
-import { useWorkspaces } from '../workspace/operations';
-import FloatingAIAssistant from './components/FloatingAIAssistant';
-import { useAIAssistant, AIMessage } from '../store/aiStore';
-import { useQueryClient } from '@tanstack/react-query';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { createContext, useContext } from 'react';
 
 // Context type
+interface AIMessage {
+  id: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+  timestamp: Date;
+}
+
 interface AIContextType {
   isVisible: boolean;
   toggleVisibility: () => void;
@@ -67,15 +67,15 @@ export const AIProvider: React.FC<AIProviderProps> = ({ children }) => {
     sendMessageStreaming,
     isProcessing
   } = useAIAssistant();
-  
+
   // Get React Query client for potential cache invalidation
   const queryClient = useQueryClient();
-  
+
   // Get current location, auth, and workspace
   const location = useLocation();
   const { data: user } = useAuth();
   const { currentWorkspace } = useWorkspaces();
-  
+
   // Update context data when location, user, or workspace changes
   useEffect(() => {
     updateContextData({
@@ -88,7 +88,7 @@ export const AIProvider: React.FC<AIProviderProps> = ({ children }) => {
       workspaceName: currentWorkspace?.name
     });
   }, [location, user, currentWorkspace, updateContextData]);
-  
+
   // Create context value from the Zustand store
   const contextValue: AIContextType = {
     isVisible: isOpen,
@@ -104,7 +104,7 @@ export const AIProvider: React.FC<AIProviderProps> = ({ children }) => {
     toggleUseSwarm,
     isProcessing
   };
-  
+
   return (
     <AIContext.Provider value={contextValue}>
       <AnimatePresence>
@@ -134,12 +134,12 @@ const getPageNameFromPath = (path: string): string => {
   if (path.includes('/modules')) return 'Modules';
   if (path.includes('/workspace-settings')) return 'Workspace Settings';
   if (path.includes('/account')) return 'Account Settings';
-  
+
   // Extract module name from path
   if (path.includes('/modules/')) {
     const moduleName = path.split('/modules/')[1].split('/')[0];
     return `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)} Module`;
   }
-  
+
   return path.split('/').pop()?.replace('-', ' ') || 'Unknown Page';
 };
