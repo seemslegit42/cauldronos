@@ -18,7 +18,7 @@ const Settings: ProLayoutProps & {
   colorWeak: false,
   title: 'CauldronOS',
   pwa: true,
-  logo: '/logo.svg', // Update with your actual logo path
+  logo: '/logo.svg',
   iconfontUrl: '',
   token: {
     // Customize layout tokens

@@ -11,20 +11,20 @@ export const cyberpunkColors = {
   mediumGray: '#1A1B23',
   lightGray: '#24262F',
   white: '#E6E6E8',
-  
+
   // Accent colors
   cyan: '#00F0FF',       // Electric cyan - primary accent
   blue: '#0088FF',       // Electric blue - secondary accent
   purple: '#BD00FF',     // Neon purple
   pink: '#FF0099',       // Hot pink
   yellow: '#FFD700',     // Cyber yellow
-  
+
   // Functional colors
   success: '#00FF66',    // Neon green
   warning: '#FFBB00',    // Amber
   error: '#FF0033',      // Bright red
   info: '#00F0FF',       // Same as cyan
-  
+
   // Gradients
   gradientCyan: 'linear-gradient(90deg, #00F0FF 0%, #0088FF 100%)',
   gradientPurple: 'linear-gradient(90deg, #BD00FF 0%, #FF0099 100%)',
@@ -32,14 +32,33 @@ export const cyberpunkColors = {
 
 // Typography settings
 export const typography = {
-  fontFamily: "'JetBrains Mono', 'Roboto Mono', monospace",
+  // Font families
+  fontFamilyHeading: "'Manrope', sans-serif",
+  fontFamilyBody: "'Inter', sans-serif",
+  fontFamilyCode: "'JetBrains Mono', monospace",
+  fontFamily: "'JetBrains Mono', 'Roboto Mono', monospace", // Legacy support
+
+  // Font sizes
   fontSize: 14,
   fontSizeHeading1: 32,
   fontSizeHeading2: 24,
   fontSizeHeading3: 20,
   fontSizeHeading4: 16,
   fontSizeHeading5: 14,
-  lineHeight: 1.6,
+
+  // Line heights
+  lineHeightHeading: 1.2,
+  lineHeightBody: 1.5,
+  lineHeightCode: 1.4,
+  lineHeight: 1.6, // Legacy support
+
+  // Font weights
+  fontWeightLight: 300,
+  fontWeightRegular: 400,
+  fontWeightMedium: 500,
+  fontWeightSemibold: 600,
+  fontWeightBold: 700,
+  fontWeightExtrabold: 800,
 };
 
 // Shared token overrides (common between light and dark themes)
@@ -48,7 +67,7 @@ export const sharedTokens: Partial<ThemeConfig['token']> = {
   fontSize: typography.fontSize,
   borderRadius: 2,
   wireframe: false,
-  
+
   // Motion
   motionUnit: 0.1,
   motionBase: 0,
@@ -295,14 +314,34 @@ export const getCssVariables = (mode: 'light' | 'dark') => {
   return {
     ...colors,
     // Typography variables (same for both modes)
-    '--font-family': typography.fontFamily,
+    '--font-family-heading': typography.fontFamilyHeading,
+    '--font-family-body': typography.fontFamilyBody,
+    '--font-family-code': typography.fontFamilyCode,
+    '--font-family': typography.fontFamily, // Legacy support
+
+    // Font sizes
     '--font-size-base': `${typography.fontSize}px`,
     '--font-size-h1': `${typography.fontSizeHeading1}px`,
     '--font-size-h2': `${typography.fontSizeHeading2}px`,
     '--font-size-h3': `${typography.fontSizeHeading3}px`,
     '--font-size-h4': `${typography.fontSizeHeading4}px`,
     '--font-size-h5': `${typography.fontSizeHeading5}px`,
-    '--line-height': `${typography.lineHeight}`,
+
+    // Line heights
+    '--line-height-heading': typography.lineHeightHeading,
+    '--line-height-body': typography.lineHeightBody,
+    '--line-height-code': typography.lineHeightCode,
+    '--line-height': typography.lineHeight, // Legacy support
+
+    // Font weights
+    '--font-weight-light': typography.fontWeightLight,
+    '--font-weight-regular': typography.fontWeightRegular,
+    '--font-weight-medium': typography.fontWeightMedium,
+    '--font-weight-semibold': typography.fontWeightSemibold,
+    '--font-weight-bold': typography.fontWeightBold,
+    '--font-weight-extrabold': typography.fontWeightExtrabold,
+
+    // Border radius
     '--border-radius-base': '2px',
     '--border-radius-sm': '2px',
     '--border-radius-md': '4px',

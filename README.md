@@ -2,6 +2,32 @@
 
 A modern, modular monorepo for the CauldronOS platform, optimized for scalability, developer experience, build speed, and component reusability. The UI system has been overhauled with Ant Design X and Motion Intelligence for a unified, intelligent, animated enterprise UI/UX system.
 
+## 🔑 Core Features
+
+- **Auth & Access Control**  
+  - Sign up / Sign in / Logout  
+  - Role-based access: Admin, Manager, User  
+  - Workspace support (multi-tenant)
+- **UI Layout**  
+  - Ant Design layout system  
+  - Left sidebar nav (with collapsible nested modules)  
+  - Top nav: Workspace switcher, notifications, user menu  
+  - Dark/light mode toggle
+- **Core Pages**  
+  1. **Dashboard** – Overview widgets per workspace (users, modules, recent activity)  
+  2. **Modules** – List of active modules, toggle on/off, and "Install New Module" button  
+  3. **Users** – Admin-only user manager, invites, role editor  
+  4. **Workspace Settings** – Plan info, rename, billing stub  
+  5. **Account Settings** – User profile, password, preferences  
+  6. **Dev Playground** – For devs to test future modules (Ant Design playground)
+
+## 🧩 Built for Extensibility
+
+- Modular routing (e.g., `/modules/crm`, `/modules/wiki`, `/modules/ai-assistant`)
+- Dynamic sidebar population based on installed modules
+- Module scaffold follows same page layout template (sidebar + topnav)
+- APIs stubbed per module, easy to expand later
+
 ## 🏗️ Architecture
 
 This monorepo follows a domain-driven, modular architecture with clear separation of concerns:

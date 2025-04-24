@@ -10,13 +10,13 @@ export interface InputProps extends AntInputProps {
    * @default false
    */
   cyberpunk?: boolean;
-  
+
   /**
    * Whether to animate the input on focus
    * @default true
    */
   animated?: boolean;
-  
+
   /**
    * Whether to show a glow effect on focus
    * @default false
@@ -24,28 +24,28 @@ export interface InputProps extends AntInputProps {
   glowOnFocus?: boolean;
 }
 
-const { TextArea, Password, Search, Group } = AntInput;
+const { Group } = AntInput;
 
 /**
  * Enhanced Input component with animation and accessibility features
  */
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ 
-    cyberpunk = false, 
-    animated = true, 
+  ({
+    cyberpunk = false,
+    animated = true,
     glowOnFocus = false,
     className = '',
-    ...props 
+    ...props
   }, ref) => {
     const { token } = useTheme();
     const { reducedMotionEnabled } = useAccessibility();
-    
+
     const inputClassName = `
-      ${className} 
-      ${cyberpunk ? 'cyberpunk-input' : ''} 
+      ${className}
+      ${cyberpunk ? 'cyberpunk-input' : ''}
       ${glowOnFocus ? 'glow-focus' : ''}
     `;
-    
+
     // Skip animation if reduced motion is enabled or animated is false
     if (reducedMotionEnabled || !animated) {
       return (
@@ -56,10 +56,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         />
       );
     }
-    
+
     // Use motion for animated inputs
     const MotionInput = motion(AntInput);
-    
+
     return (
       <MotionInput
         ref={ref}
@@ -79,22 +79,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
  * Enhanced TextArea component with animation and accessibility features
  */
 export const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
-  ({ 
-    cyberpunk = false, 
-    animated = true, 
+  ({
+    cyberpunk = false,
+    animated = true,
     glowOnFocus = false,
     className = '',
-    ...props 
+    ...props
   }, ref) => {
     const { token } = useTheme();
     const { reducedMotionEnabled } = useAccessibility();
-    
+
     const textAreaClassName = `
-      ${className} 
-      ${cyberpunk ? 'cyberpunk-input' : ''} 
+      ${className}
+      ${cyberpunk ? 'cyberpunk-input' : ''}
       ${glowOnFocus ? 'glow-focus' : ''}
     `;
-    
+
     // Skip animation if reduced motion is enabled or animated is false
     if (reducedMotionEnabled || !animated) {
       return (
@@ -105,10 +105,10 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
         />
       );
     }
-    
+
     // Use motion for animated text areas
     const MotionTextArea = motion(AntInput.TextArea);
-    
+
     return (
       <MotionTextArea
         ref={ref}
@@ -128,22 +128,22 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
  * Enhanced Password component with animation and accessibility features
  */
 export const Password = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ 
-    cyberpunk = false, 
-    animated = true, 
+  ({
+    cyberpunk = false,
+    animated = true,
     glowOnFocus = false,
     className = '',
-    ...props 
+    ...props
   }, ref) => {
     const { token } = useTheme();
     const { reducedMotionEnabled } = useAccessibility();
-    
+
     const passwordClassName = `
-      ${className} 
-      ${cyberpunk ? 'cyberpunk-input' : ''} 
+      ${className}
+      ${cyberpunk ? 'cyberpunk-input' : ''}
       ${glowOnFocus ? 'glow-focus' : ''}
     `;
-    
+
     // Skip animation if reduced motion is enabled or animated is false
     if (reducedMotionEnabled || !animated) {
       return (
@@ -154,10 +154,10 @@ export const Password = React.forwardRef<HTMLInputElement, InputProps>(
         />
       );
     }
-    
+
     // Use motion for animated password inputs
     const MotionPassword = motion(AntInput.Password);
-    
+
     return (
       <MotionPassword
         ref={ref}
@@ -177,22 +177,22 @@ export const Password = React.forwardRef<HTMLInputElement, InputProps>(
  * Enhanced Search component with animation and accessibility features
  */
 export const Search = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ 
-    cyberpunk = false, 
-    animated = true, 
+  ({
+    cyberpunk = false,
+    animated = true,
     glowOnFocus = false,
     className = '',
-    ...props 
+    ...props
   }, ref) => {
     const { token } = useTheme();
     const { reducedMotionEnabled } = useAccessibility();
-    
+
     const searchClassName = `
-      ${className} 
-      ${cyberpunk ? 'cyberpunk-input' : ''} 
+      ${className}
+      ${cyberpunk ? 'cyberpunk-input' : ''}
       ${glowOnFocus ? 'glow-focus' : ''}
     `;
-    
+
     // Skip animation if reduced motion is enabled or animated is false
     if (reducedMotionEnabled || !animated) {
       return (
@@ -203,10 +203,10 @@ export const Search = React.forwardRef<HTMLInputElement, InputProps>(
         />
       );
     }
-    
+
     // Use motion for animated search inputs
     const MotionSearch = motion(AntInput.Search);
-    
+
     return (
       <MotionSearch
         ref={ref}

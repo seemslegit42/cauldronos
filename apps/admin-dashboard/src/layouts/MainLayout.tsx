@@ -13,8 +13,6 @@ import {
   LogoutOutlined,
 } from '@ant-design/icons';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AIButton } from '@cauldronos/agents';
-import { PageTransition, FadeIn, SlideIn } from '@cauldronos/ui';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const { Header, Sider, Content } = Layout;
@@ -202,7 +200,6 @@ const MainLayout: React.FC = () => {
                 <span className={collapsed ? 'hidden' : ''}>Admin User</span>
               </Button>
             </Dropdown>
-            <AIButton className="ml-2" />
           </Space>
         </Header>
         <Content
@@ -215,9 +212,7 @@ const MainLayout: React.FC = () => {
             overflow: 'auto',
           }}
         >
-          <PageTransition>
-            <Outlet />
-          </PageTransition>
+          <Outlet />
         </Content>
       </Layout>
     </Layout>

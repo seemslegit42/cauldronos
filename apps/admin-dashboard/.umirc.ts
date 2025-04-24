@@ -5,7 +5,7 @@ export default defineConfig({
   favicons: ['/favicon.ico'],
   metas: [
     { name: 'description', content: 'CauldronOS Admin Dashboard' },
-    { name: 'theme-color', content: '#00F0FF' }, // Updated to match cyberpunk theme
+    { name: 'theme-color', content: '#00F0FF' }, // Cyberpunk theme color
   ],
   plugins: [
     '@umijs/plugins/dist/tailwindcss',
@@ -68,6 +68,11 @@ export default defineConfig({
   ],
   alias: {
     '@': './src',
+    '@cauldronos/ui': '../../packages/ui/src',
+    '@cauldronos/hooks': '../../packages/hooks/src',
+    '@cauldronos/utils': '../../packages/utils/src',
+    '@cauldronos/agents': '../../packages/agents/src',
+    '@cauldronos/api': '../../packages/api/src',
   },
   publicPath: '/',
   hash: true,
@@ -98,7 +103,7 @@ export default defineConfig({
 
   // MFSU optimization for faster development
   mfsu: {
-    strategy: 'normal',
+    strategy: 'eager',
     esbuild: true,
   },
 
@@ -114,5 +119,51 @@ export default defineConfig({
   ssr: process.env.NODE_ENV === 'production' ? {
     serverBuildPath: './dist/umi.server.js',
     builder: 'webpack',
+    mode: 'stream',
+    staticRoutes: {
+      '/': { extraRoutePaths: ['/dashboard'] },
+    },
+    removeUnusedCss: true,
   } : false,
+
+  // Webpack optimization
+  chainWebpack: (config, { webpack }) => {
+    // Add optimization for production build
+    if (process.env.NODE_ENV === 'production') {
+      config.merge({
+        optimization: {
+          splitChunks: {
+            chunks: 'all',
+            minSize: 30000,
+            minChunks: 1,
+            automaticNameDelimiter: '.',
+            cacheGroups: {
+              vendor: {
+                name: 'vendors',
+                test: /[\\/]node_modules[\\/]/,
+                priority: 10,
+              },
+              antd: {
+                name: 'antd',
+                test: /[\\/]node_modules[\\/](@ant-design|antd)[\\/]/,
+                priority: 20,
+              },
+              framerMotion: {
+                name: 'framer-motion',
+                test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+                priority: 20,
+              },
+              commons: {
+                name: 'commons',
+                minChunks: 2,
+                priority: 0,
+                reuseExistingChunk: true,
+              },
+            },
+          },
+        },
+      });
+    }
+    return config;
+  },
 });

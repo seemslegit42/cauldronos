@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Form, FormProps, Input, Select, DatePicker, Button, Space, Tooltip, Card, Alert, Progress, Badge, Popover } from 'antd';
+import { Form, FormProps, Input, Select, DatePicker, Button, Space, Tooltip, Card, Alert, Progress, Badge, Popover, Typography } from 'antd';
 import {
   InfoCircleOutlined,
   BulbOutlined,
@@ -11,11 +11,13 @@ import {
   SettingOutlined,
   LoadingOutlined
 } from '@ant-design/icons';
+
+const { Text } = Typography;
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../theme';
 import { transitions } from '../../animations/transitions';
-import { Insight, Suggestions, AIAssistant } from '@ant-design/x';
-import { AnimatedInput, AnimatedButton } from '@ant-design/move';
+import { Insight, Suggestions, AIAssistant } from '../../mocks/ant-design-x';
+import { AnimatedInput, AnimatedButton } from '../../mocks/ant-design-move';
 
 export interface PredictiveFormProps extends FormProps {
   /**

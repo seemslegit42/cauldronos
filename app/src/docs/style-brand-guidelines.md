@@ -364,3 +364,116 @@ Adequate spacing between touch targets
 Support both touch and pointer interactions
 Test with touch screen readers
 This comprehensive visual style guide provides detailed guidelines for imagery, layout, tone, and accessibility to ensure a consistent, engaging, and accessible user experience for CauldronOS. The guidelines balance professional functionality with the brand's unique personality while ensuring compliance with accessibility standards.
+
+## Typography
+
+### Font Families
+
+CauldronOS uses a carefully selected combination of fonts to create a balanced, professional, and slightly futuristic appearance:
+
+- **Manrope**: Primary heading font for key titles and important UI elements
+- **JetBrains Mono**: Monospace font for code, technical content, and terminal-like elements
+- **Inter**: Body text font for general content (fallback)
+
+### Font Implementation
+
+#### HTML Head Implementation
+
+Add the following code to the `<head>` section of your HTML:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+```
+
+#### Manrope Font Classes
+
+Use these CSS classes for Manrope with different weights:
+
+```css
+/* <weight>: Use a value from 200 to 800 */
+/* <uniquifier>: Use a unique and descriptive class name */
+
+.manrope-<uniquifier> {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+```
+
+Example implementations:
+
+```css
+.manrope-heading {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.manrope-subtitle {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+```
+
+#### JetBrains Mono Font Classes
+
+Use these CSS classes for JetBrains Mono with different weights:
+
+```css
+/* <weight>: Use a value from 100 to 800 */
+/* <uniquifier>: Use a unique and descriptive class name */
+
+.jetbrains-mono-<uniquifier> {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+```
+
+Example implementations:
+
+```css
+.jetbrains-mono-code {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jetbrains-mono-terminal {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+```
+
+### Typography Scale
+
+| Element | Font | Weight | Size | Line Height |
+|---------|------|--------|------|------------|
+| H1 (Page Title) | Manrope | 800 | 32px | 1.2 |
+| H2 (Section Title) | Manrope | 700 | 24px | 1.2 |
+| H3 (Subsection) | Manrope | 600 | 20px | 1.3 |
+| H4 (Card Title) | Manrope | 600 | 16px | 1.4 |
+| Body Text | Inter | 400 | 14px | 1.5 |
+| Small Text | Inter | 400 | 12px | 1.5 |
+| Code/Terminal | JetBrains Mono | 400 | 14px | 1.4 |
+| Button Text | Manrope | 600 | 14px | 1.4 |
+| Input Text | Inter | 400 | 14px | 1.5 |
+
+### Font Usage Guidelines
+
+- Use Manrope for headings, titles, and important UI elements
+- Use JetBrains Mono for code blocks, terminal-like interfaces, and technical data
+- Use Inter (or system fallback) for body text and general content
+- Maintain consistent font weights across similar elements
+- Ensure sufficient contrast between text and background colors
+- Use appropriate line height for readability
