@@ -1,8 +1,22 @@
 
-'tsup' is not recognized as an internal or external command,
-operable program or batch file.
 > @cauldronos/ui@0.1.0 build C:\Users\DevToolsUser\cauldronos\packages\ui
 > tsup
 
- ELIFECYCLE  Command failed with exit code 1.
- WARN   Local package.json exists, but node_modules missing, did you mean to install?
+[34mCLI[39m Building entry: src/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.4.0
+[34mCLI[39m Using tsup config: C:\Users\DevToolsUser\cauldronos\packages\ui\tsup.config.ts
+[34mCLI[39m Target: esnext
+[34mCLI[39m Cleaning output folder
+[34mCJS[39m Build start
+[34mESM[39m Build start
+[32mCJS[39m [1mdist\index.js     [22m[32m1.43 KB[39m
+[32mCJS[39m [1mdist\index.js.map [22m[32m6.07 KB[39m
+[32mCJS[39m ⚡️ Build success in 1454ms
+[32mESM[39m [1mdist\index.mjs     [22m[32m1.22 KB[39m
+[32mESM[39m [1mdist\index.mjs.map [22m[32m6.06 KB[39m
+[32mESM[39m ⚡️ Build success in 1470ms
+[34mDTS[39m Build start
+[32mDTS[39m ⚡️ Build success in 10461ms
+[32mDTS[39m [1mdist\index.d.ts  [22m[32m5.27 KB[39m
+[32mDTS[39m [1mdist\index.d.mts [22m[32m5.27 KB[39m

@@ -1,0 +1,236 @@
+
+> admin-dashboard@0.1.0 build C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard
+> pnpm exec umi build
+
+info  - [你知道吗？] 如果你需要增加 Git 提交消息校验和自动代码格式化, umi g precommit 就可以一键完成配置，详见 https://umijs.org/docs/guides/generator#precommit-配置生成器
+info  - Umi v4.4.9
+warn  - SSR feature is in beta, may be unstable
+info  - Preparing...
+X [ERROR] Can't resolve '../../packages/ui/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src' [plugin esbuildAliasPlugin]
+
+    ../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17:
+      309 │       const error = new Error("Can't " + message);
+          ╵                     ^
+
+    at finishWithoutResolve (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:309:18)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:386:15
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/prepare/esbuildPlugins/esbuildAliasPlugin.js:78:14:
+      78 │         build.onResolve({ filter }, async (args) => {
+         ╵               ~~~~~~~~~
+
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:78:15
+    at Array.forEach (<anonymous>)
+    at setup (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:75:10)
+    at handlePlugins (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1150:21)
+    at buildOrContextImpl (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:873:5)
+    at Object.buildOrContext (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:699:5)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2023:15
+    at new Promise (<anonymous>)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2022:25)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1873:51)
+    at build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\build.js:101:49)
+    at Hook.fn (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\prepare.js:106:40)
+    at async C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+core@4.4.9\node_modules\@umijs\core\dist\service\service.js:184:15
+
+  The plugin "esbuildAliasPlugin" was triggered by this import
+
+    src/app.tsx:4:30:
+      4 │ import { ThemeProvider } from '@cauldronos/ui';
+        ╵                               ~~~~~~~~~~~~~~~~
+
+X [ERROR] Can't resolve '../../packages/agents/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src\pages\ai' [plugin esbuildAliasPlugin]
+
+    ../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17:
+      309 │       const error = new Error("Can't " + message);
+          ╵                     ^
+
+    at finishWithoutResolve (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:309:18)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:386:15
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/prepare/esbuildPlugins/esbuildAliasPlugin.js:78:14:
+      78 │         build.onResolve({ filter }, async (args) => {
+         ╵               ~~~~~~~~~
+
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:78:15
+    at Array.forEach (<anonymous>)
+    at setup (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:75:10)
+    at handlePlugins (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1150:21)
+    at buildOrContextImpl (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:873:5)
+    at Object.buildOrContext (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:699:5)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2023:15
+    at new Promise (<anonymous>)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2022:25)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1873:51)
+    at build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\build.js:101:49)
+    at Hook.fn (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\prepare.js:106:40)
+    at async C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+core@4.4.9\node_modules\@umijs\core\dist\service\service.js:184:15
+
+  The plugin "esbuildAliasPlugin" was triggered by this import
+
+    src/pages/ai/crew-demo.tsx:3:25:
+      3 │ import { CrewDemo } from '@cauldronos/agents';
+        ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+X [ERROR] Can't resolve '../../packages/agents/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src' [plugin esbuildAliasPlugin]
+
+    ../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17:
+      309 │       const error = new Error("Can't " + message);
+          ╵                     ^
+
+    at finishWithoutResolve (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:309:18)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:386:15
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/prepare/esbuildPlugins/esbuildAliasPlugin.js:78:14:
+      78 │         build.onResolve({ filter }, async (args) => {
+         ╵               ~~~~~~~~~
+
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:78:15
+    at Array.forEach (<anonymous>)
+    at setup (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:75:10)
+    at handlePlugins (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1150:21)
+    at buildOrContextImpl (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:873:5)
+    at Object.buildOrContext (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:699:5)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2023:15
+    at new Promise (<anonymous>)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2022:25)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1873:51)
+    at build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\build.js:101:49)
+    at Hook.fn (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\prepare.js:106:40)
+    at async C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+core@4.4.9\node_modules\@umijs\core\dist\service\service.js:184:15
+
+  The plugin "esbuildAliasPlugin" was triggered by this import
+
+    src/app.tsx:5:27:
+      5 │ import { AIProvider } from '@cauldronos/agents';
+        ╵                            ~~~~~~~~~~~~~~~~~~~~
+
+X [ERROR] Can't resolve '../../packages/ui/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src\pages\dashboard' [plugin esbuildAliasPlugin]
+
+    ../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17:
+      309 │       const error = new Error("Can't " + message);
+          ╵                     ^
+
+    at finishWithoutResolve (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:309:18)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:386:15
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\Resolver.js:435:5
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tapable@2.2.1\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\enhanced-resolve@5.9.3\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/prepare/esbuildPlugins/esbuildAliasPlugin.js:78:14:
+      78 │         build.onResolve({ filter }, async (args) => {
+         ╵               ~~~~~~~~~
+
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:78:15
+    at Array.forEach (<anonymous>)
+    at setup (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\esbuildPlugins\esbuildAliasPlugin.js:75:10)
+    at handlePlugins (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1150:21)
+    at buildOrContextImpl (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:873:5)
+    at Object.buildOrContext (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:699:5)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2023:15
+    at new Promise (<anonymous>)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:2022:25)
+    at Object.build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1873:51)
+    at build (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\build.js:101:49)
+    at Hook.fn (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b\node_modules\@umijs\preset-umi\dist\features\prepare\prepare.js:106:40)
+    at async C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+core@4.4.9\node_modules\@umijs\core\dist\service\service.js:184:15
+
+  The plugin "esbuildAliasPlugin" was triggered by this import
+
+    src/pages/dashboard/index.tsx:19:7:
+      19 │ } from '@cauldronos/ui';
+         ╵        ~~~~~~~~~~~~~~~~
+
+fatal - Error: Build failed with 4 errors:
+../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17: ERROR: [plugin: esbuildAliasPlugin] Can't resolve '../../packages/agents/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src'
+../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17: ERROR: [plugin: esbuildAliasPlugin] Can't resolve '../../packages/agents/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src\pages\ai'
+../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17: ERROR: [plugin: esbuildAliasPlugin] Can't resolve '../../packages/ui/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src'
+../../node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve/lib/Resolver.js:309:17: ERROR: [plugin: esbuildAliasPlugin] Can't resolve '../../packages/ui/src' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src\pages\dashboard'
+    at failureErrorWithLog (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1472:15)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:945:25
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.21.4\node_modules\esbuild\lib\main.js:1353:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}
+fatal - A complete log of this run can be found in:
+fatal - C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\node_modules\.cache\logger\umi.log
+fatal - Consider reporting a GitHub issue on https://github.com/umijs/umi/issues
+ ELIFECYCLE  Command failed with exit code 1.

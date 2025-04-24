@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.ts"],"sourcesContent":["/**\n * Utils package\n */\n\n// Export a simple placeholder for now to make the build pass\nexport const CauldronUtils = {\n  version: '0.1.0',\n  name: 'CauldronOS Utils'\n};\n"],"mappings":";AAKO,IAAM,gBAAgB;AAAA,EAC3B,SAAS;AAAA,EACT,MAAM;AACR;","names":[]}

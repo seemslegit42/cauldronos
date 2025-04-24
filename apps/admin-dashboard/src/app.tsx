@@ -1,8 +1,8 @@
 import React from 'react';
 import { ConfigProvider, App as AntApp, message, notification } from 'antd';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ThemeProvider } from '@cauldronos/ui';
-import { AIProvider } from '@cauldronos/agents';
+import { ThemeProvider } from './components/ThemeProvider';
+import { AIProvider } from './components/AIProvider';
 import { RequestConfig } from 'umi';
 
 // Create a client for React Query
