@@ -32,8 +32,6 @@
     "ahooks": "^3.7.10"
   },
   "devDependencies": {
-    "@cauldronos/eslint-config": "workspace:*",
-    "@cauldronos/tsconfig": "workspace:*",
     "@storybook/addon-a11y": "^7.6.10",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",

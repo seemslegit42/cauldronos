@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",
+    "build:ssr": "cross-env UMI_ENV=ssr umi build",
     "start": "umi preview",
+    "start:ssr": "cross-env NODE_ENV=production ts-node server.ts",
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
@@ -30,8 +32,12 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@umijs/plugins": "^4.0.70",
+    "cross-env": "^7.0.3",
     "eslint": "^8.39.0",
+    "history": "^5.3.0",
+    "react-router-dom": "^6.10.0",
     "tailwindcss": "^3.3.2",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   }
 }

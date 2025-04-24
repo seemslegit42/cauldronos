@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Button, Avatar, Dropdown, Badge, Space, theme } from 'antd';
-import { Outlet, useLocation, useNavigate } from 'umi';
+import { Outlet, useLocation, useNavigate, useIntl } from 'umi';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -15,6 +15,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { AIButton } from '@cauldronos/agents';
 import { PageTransition, FadeIn, SlideIn } from '@cauldronos/ui';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const { Header, Sider, Content } = Layout;
 
@@ -22,6 +23,7 @@ const MainLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const intl = useIntl();
   const {
     token: { colorBgContainer, colorPrimary, borderRadiusLG },
   } = theme.useToken();
@@ -31,27 +33,27 @@ const MainLayout: React.FC = () => {
     {
       key: '/',
       icon: <DashboardOutlined />,
-      label: 'Dashboard',
+      label: intl.formatMessage({ id: 'menu.dashboard' }),
     },
     {
       key: '/users',
       icon: <UserOutlined />,
-      label: 'Users',
+      label: intl.formatMessage({ id: 'menu.users' }),
     },
     {
       key: '/modules',
       icon: <AppstoreOutlined />,
-      label: 'Modules',
+      label: intl.formatMessage({ id: 'menu.modules' }),
     },
     {
       key: '/ai',
       icon: <RobotOutlined />,
-      label: 'AI Tools',
+      label: intl.formatMessage({ id: 'menu.ai' }),
     },
     {
       key: '/settings',
       icon: <SettingOutlined />,
-      label: 'Settings',
+      label: intl.formatMessage({ id: 'menu.settings' }),
     },
   ];
 
@@ -188,6 +190,7 @@ const MainLayout: React.FC = () => {
             style={{ fontSize: '16px', width: 64, height: 64 }}
           />
           <Space className="mr-4">
+            <LanguageSwitcher />
             <Dropdown menu={notificationsMenu} placement="bottomRight" arrow>
               <Badge count={3} size="small">
                 <Button type="text" icon={<BellOutlined />} />

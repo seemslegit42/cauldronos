@@ -10,39 +10,41 @@ import {
   SearchOutlined,
   BarChartOutlined,
 } from '@ant-design/icons';
-import { 
-  PageTransition, 
-  InsightCard, 
-  AISearchBar, 
+import {
+  PageTransition,
+  InsightCard,
+  AISearchBar,
   GestureCard,
   PredictiveForm
 } from '@cauldronos/ui';
 import { Form, Input, Select, DatePicker } from 'antd';
+import { useIntl } from 'umi';
 
 const { Title, Paragraph, Text } = Typography;
 const { Option } = Select;
 
 const DashboardPage: React.FC = () => {
+  const intl = useIntl();
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   // Sample data for statistics
   const stats = [
     {
-      title: 'Total Users',
+      titleId: 'users.title',
       value: 1234,
       icon: <UserOutlined />,
       change: 12.5,
       changeType: 'increase',
     },
     {
-      title: 'Active Modules',
+      titleId: 'modules.title',
       value: 42,
       icon: <AppstoreOutlined />,
       change: 8.3,
       changeType: 'increase',
     },
     {
-      title: 'System Uptime',
+      titleId: 'dashboard.performance',
       value: '99.9%',
       icon: <ClockCircleOutlined />,
       change: 0.1,
@@ -85,22 +87,22 @@ const DashboardPage: React.FC = () => {
   // Table columns for recent activities
   const columns = [
     {
-      title: 'User',
+      title: intl.formatMessage({ id: 'users.title' }),
       dataIndex: 'user',
       key: 'user',
     },
     {
-      title: 'Action',
+      title: intl.formatMessage({ id: 'common.actions' }),
       dataIndex: 'action',
       key: 'action',
     },
     {
-      title: 'Time',
+      title: intl.formatMessage({ id: 'dashboard.activity' }),
       dataIndex: 'time',
       key: 'time',
     },
     {
-      title: 'Status',
+      title: intl.formatMessage({ id: 'common.status' }),
       dataIndex: 'status',
       key: 'status',
       render: (status: string) => {
@@ -218,19 +220,19 @@ const DashboardPage: React.FC = () => {
   const handleAIValidate = async (values: any) => {
     // In a real implementation, this would call an AI API
     const issues = [];
-    
+
     if (!values.name) {
       issues.push('Module name is required');
     }
-    
+
     if (values.name && values.name.length < 3) {
       issues.push('Module name should be at least 3 characters');
     }
-    
+
     if (!values.category) {
       issues.push('Category is required');
     }
-    
+
     return {
       valid: issues.length === 0,
       issues,
@@ -241,12 +243,12 @@ const DashboardPage: React.FC = () => {
     <PageTransition type="slide" direction="up" cyberpunk>
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
         <div className="flex justify-between items-center">
-          <Title level={2}>Dashboard</Title>
+          <Title level={2}>{intl.formatMessage({ id: 'dashboard.title' })}</Title>
           <Button type="primary" icon={<BulbOutlined />}>AI Assistant</Button>
         </div>
 
         <AISearchBar
-          placeholder="Search for users, modules, or activities..."
+          placeholder={intl.formatMessage({ id: 'common.search' })}
           onSearch={(query) => console.log('Search query:', query)}
           onAISearch={handleAISearch}
           recentSearches={true}
@@ -258,7 +260,7 @@ const DashboardPage: React.FC = () => {
         />
 
         <Paragraph className="text-gray-400">
-          Welcome to the CauldronOS Admin Dashboard. Here's an overview of your system.
+          {intl.formatMessage({ id: 'app.welcome' })}. {intl.formatMessage({ id: 'dashboard.overview' })}.
         </Paragraph>
 
         <Row gutter={[16, 16]}>
@@ -268,7 +270,7 @@ const DashboardPage: React.FC = () => {
                 title={
                   <div className="flex items-center text-gray-300">
                     <span className="mr-2">{stat.icon}</span>
-                    {stat.title}
+                    {intl.formatMessage({ id: stat.titleId })}
                   </div>
                 }
                 draggable={true}
@@ -317,9 +319,9 @@ const DashboardPage: React.FC = () => {
         </Row>
 
         <Card
-          title="Recent Activities"
+          title={intl.formatMessage({ id: 'dashboard.activity' })}
           className="bg-gray-900 border-gray-700 shadow-md"
-          extra={<Button type="link">View All</Button>}
+          extra={<Button type="link">{intl.formatMessage({ id: 'common.actions' })}</Button>}
         >
           <Table
             dataSource={recentActivities}
@@ -330,7 +332,7 @@ const DashboardPage: React.FC = () => {
         </Card>
 
         <Card
-          title="Create New Module"
+          title={intl.formatMessage({ id: 'modules.add' })}
           className="bg-gray-900 border-gray-700 shadow-md"
         >
           <PredictiveForm
@@ -350,38 +352,38 @@ const DashboardPage: React.FC = () => {
               status: ['category'],
             }}
           >
-            <Form.Item name="name" label="Module Name" rules={[{ required: true }]}>
-              <Input placeholder="Enter module name" />
+            <Form.Item name="name" label={intl.formatMessage({ id: 'modules.title' })} rules={[{ required: true }]}>
+              <Input placeholder={intl.formatMessage({ id: 'modules.title' })} />
             </Form.Item>
-            
-            <Form.Item name="description" label="Description">
-              <Input.TextArea placeholder="Enter module description" rows={4} />
+
+            <Form.Item name="description" label={intl.formatMessage({ id: 'common.description' })}>
+              <Input.TextArea placeholder={intl.formatMessage({ id: 'common.description' })} rows={4} />
             </Form.Item>
-            
-            <Form.Item name="category" label="Category" rules={[{ required: true }]}>
-              <Select placeholder="Select a category">
+
+            <Form.Item name="category" label={intl.formatMessage({ id: 'common.category' })} rules={[{ required: true }]}>
+              <Select placeholder={intl.formatMessage({ id: 'common.category' })}>
                 <Option value="general">General</Option>
                 <Option value="security">Security</Option>
                 <Option value="analytics">Analytics</Option>
                 <Option value="communication">Communication</Option>
               </Select>
             </Form.Item>
-            
-            <Form.Item name="status" label="Status">
-              <Select placeholder="Select status">
+
+            <Form.Item name="status" label={intl.formatMessage({ id: 'common.status' })}>
+              <Select placeholder={intl.formatMessage({ id: 'common.status' })}>
                 <Option value="active">Active</Option>
                 <Option value="inactive">Inactive</Option>
                 <Option value="pending">Pending</Option>
               </Select>
             </Form.Item>
-            
-            <Form.Item name="startDate" label="Start Date">
+
+            <Form.Item name="startDate" label={intl.formatMessage({ id: 'common.startDate' })}>
               <DatePicker style={{ width: '100%' }} />
             </Form.Item>
-            
+
             <Form.Item>
               <Button type="primary" htmlType="submit">
-                Create Module
+                {intl.formatMessage({ id: 'modules.add' })}
               </Button>
             </Form.Item>
           </PredictiveForm>

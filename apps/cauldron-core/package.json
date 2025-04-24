@@ -13,7 +13,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@ant-design/pro-components": "^2.4.4",
-    "@ant-design/x": "^0.1.0",
+    "@ant-design/x": "^1.1.1",
     "@cauldronos/agents": "workspace:*",
     "@cauldronos/api": "workspace:*",
     "@cauldronos/hooks": "workspace:*",
