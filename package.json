@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
+    "start": "turbo run start",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
@@ -20,12 +21,16 @@
     "e2e:test": "pnpm --filter e2e-tests e2e:playwright",
     "install:all": "pnpm install -r",
     "admin:dev": "pnpm --filter admin-dashboard dev",
+    "admin:start": "pnpm --filter admin-dashboard start",
     "client:dev": "pnpm --filter client-portal dev",
+    "client:start": "pnpm --filter client-portal start",
     "core:dev": "pnpm --filter cauldron-core dev",
+    "core:start": "pnpm --filter cauldron-core start",
     "create:package": "node scripts/create-package.js",
     "create:component": "node scripts/create-component.js",
     "migrate:files": "node scripts/migrate-files.js",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "production:check": "node scripts/production-check.js"
   },
   "engines": {
     "node": ">=18",

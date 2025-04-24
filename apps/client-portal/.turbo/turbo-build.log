@@ -1,0 +1,20 @@
+
+> client-portal@0.1.0 build C:\Users\DevToolsUser\cauldronos\apps\client-portal
+> umi build
+
+info  - [你知道吗？] 需要添加全局 React Context 吗？在 src/app.(ts|tsx) 运行时配置中轻松解决，详见 https://umijs.org/docs/api/runtime-config
+info  - Umi v4.4.9
+info  - Preparing...
+i Compiling Webpack
+√ Webpack: Compiled successfully in 55.12s
+info  - Memory Usage: 375.38 MB (RSS: 453.75 MB)
+info  - [esbuildHelperChecker] Checking esbuild helpers from your dist files...
+info  - [esbuildHelperChecker] No conflicts found.
+
+info  - File sizes after gzip:
+
+  232.48 kB  dist\umi.js
+  199.6 kB   dist\670.async.js
+  3.34 kB    dist\src__pages__dashboard__index.async.js
+
+event - Build index.html

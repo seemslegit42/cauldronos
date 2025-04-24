@@ -10,57 +10,12 @@
 [34mCLI[39m Cleaning output folder
 [34mCJS[39m Build start
 [34mESM[39m Build start
-X [ERROR] Could not resolve "../workspace/operations"
-
-    src/AIProvider.tsx:4:30:
-      4 │ import { useWorkspaces } from '../workspace/operations';
-        ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-X [ERROR] Could not resolve "../store/aiStore"
-
-    src/AIProvider.tsx:6:42:
-      6 │ import { useAIAssistant, AIMessage } from '../store/aiStore';
-        ╵                                           ~~~~~~~~~~~~~~~~~~
-
-X [ERROR] Could not resolve "../workspace/operations"
-
-    src/AIProvider.tsx:4:30:
-      4 │ import { useWorkspaces } from '../workspace/operations';
-        ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-X [ERROR] Could not resolve "../store/aiStore"
-
-    src/AIProvider.tsx:6:42:
-      6 │ import { useAIAssistant, AIMessage } from '../store/aiStore';
-        ╵                                           ~~~~~~~~~~~~~~~~~~
-
-[31mCJS[39m [31mBuild failed[39m
-[31mError: Build failed with 2 errors:
-src/AIProvider.tsx:4:30: ERROR: Could not resolve "../workspace/operations"
+[32mCJS[39m [1mdist\index.js     [22m[32m3.66 KB[39m
+[32mCJS[39m [1mdist\index.js.map [22m[32m6.85 KB[39m
+[32mCJS[39m ⚡️ Build success in 1170ms
+[32mESM[39m [1mdist\index.mjs     [22m[32m2.57 KB[39m
+[32mESM[39m [1mdist\index.mjs.map [22m[32m6.84 KB[39m
+[32mESM[39m ⚡️ Build success in 1262ms
 [34mDTS[39m Build start
-src/AIProvider.tsx:6:42: ERROR: Could not resolve "../store/aiStore"
-    at failureErrorWithLog (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:1636:15)
-    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:1048:25
-    at runOnEndCallbacks (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:1471:45)
-    at buildResponseToResult (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:1046:7)
-    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:1075:16
-    at responseCallbacks.<computed> (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:697:9)
-    at handleIncomingPacket (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:752:9)
-    at Socket.readFromStdout (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\esbuild@0.17.19\node_modules\esbuild\lib\main.js:673:7)
-    at Socket.emit (node:events:518:28)
-    at addChunk (node:internal/streams/readable:561:12)[39m
-[31mESM[39m [31mBuild failed[39m
-src/index.ts(6,10): error TS2305: Module '"./AIProvider"' has no exported member 'default'.
-src/index.ts(7,10): error TS2305: Module '"./AIAssistantProvider"' has no exported member 'default'.
-
-[31mDTS[39m [31mBuild error[39m
-[31mRollupError: Failed to compile. Check the logs above.
-    at error (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\rollup@3.29.5\node_modules\rollup\dist\shared\rollup.js:353:30)
-    at Object.error (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\rollup@3.29.5\node_modules\rollup\dist\shared\rollup.js:1721:20)
-    at Object.error (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\rollup@3.29.5\node_modules\rollup\dist\shared\rollup.js:25627:42)
-    at generateDtsFromTs (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tsup@6.7.0_@swc+core@1.11.2_3f02ab0156c2798711e0c3456ac05911\node_modules\tsup\dist\rollup.js:7498:22)
-    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tsup@6.7.0_@swc+core@1.11.2_3f02ab0156c2798711e0c3456ac05911\node_modules\tsup\dist\rollup.js:7505:59
-    at _nullishCoalesce (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tsup@6.7.0_@swc+core@1.11.2_3f02ab0156c2798711e0c3456ac05911\node_modules\tsup\dist\rollup.js:1:198)
-    at Object.transform (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\tsup@6.7.0_@swc+core@1.11.2_3f02ab0156c2798711e0c3456ac05911\node_modules\tsup\dist\rollup.js:7505:18)
- ELIFECYCLE  Command failed with exit code 1.
-    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\rollup@3.29.5\node_modules\rollup\dist\shared\rollup.js:1914:40[39m
+[32mDTS[39m ⚡️ Build success in 8786ms
+[32mDTS[39m [1mdist\index.d.ts [22m[32m860.00 B[39m

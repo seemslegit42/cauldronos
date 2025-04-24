@@ -75,21 +75,21 @@ Welcome to the operating system of the intelligent enterprise.
 
 ## 🔑 Core Features
 
-- **Auth & Access Control**  
-  - Sign up / Sign in / Logout  
-  - Role-based access: Admin, Manager, User  
+- **Auth & Access Control**
+  - Sign up / Sign in / Logout
+  - Role-based access: Admin, Manager, User
   - Workspace support (multi-tenant)
-- **UI Layout**  
-  - Ant Design layout system  
-  - Left sidebar nav (with collapsible nested modules)  
-  - Top nav: Workspace switcher, notifications, user menu  
+- **UI Layout**
+  - Ant Design layout system
+  - Left sidebar nav (with collapsible nested modules)
+  - Top nav: Workspace switcher, notifications, user menu
   - Dark/light mode toggle
-- **Core Pages**  
-  1. **Dashboard** – Overview widgets per workspace (users, modules, recent activity)  
-  2. **Modules** – List of active modules, toggle on/off, and "Install New Module" button  
-  3. **Users** – Admin-only user manager, invites, role editor  
-  4. **Workspace Settings** – Plan info, rename, billing stub  
-  5. **Account Settings** – User profile, password, preferences  
+- **Core Pages**
+  1. **Dashboard** – Overview widgets per workspace (users, modules, recent activity)
+  2. **Modules** – List of active modules, toggle on/off, and "Install New Module" button
+  3. **Users** – Admin-only user manager, invites, role editor
+  4. **Workspace Settings** – Plan info, rename, billing stub
+  5. **Account Settings** – User profile, password, preferences
   6. **Dev Playground** – For devs to test future modules (Ant Design playground)
 
 ## 🧩 Built for Extensibility
@@ -169,6 +169,78 @@ pnpm test
 # Run end-to-end tests
 pnpm e2e:test
 ```
+
+### Production Deployment
+
+#### Self-Hosted Deployment
+
+1. Build the production-ready application:
+   ```bash
+   pnpm build
+   ```
+
+2. Start the production server:
+   ```bash
+   # For all applications
+   pnpm start
+
+   # For specific applications
+   pnpm --filter admin-dashboard start
+   pnpm --filter client-portal start
+   pnpm --filter cauldron-core start
+   ```
+
+#### Cloud Deployment
+
+##### Vercel Deployment
+
+1. Connect your GitHub repository to Vercel
+2. Configure the following settings:
+   - Framework Preset: Other
+   - Build Command: `pnpm build`
+   - Output Directory: `dist`
+   - Install Command: `pnpm install`
+
+3. Set up environment variables in the Vercel dashboard
+
+##### Docker Deployment
+
+1. Build the Docker image:
+   ```bash
+   docker build -t cauldronos:latest .
+   ```
+
+2. Run the Docker container:
+   ```bash
+   docker run -p 3000:3000 -p 3001:3001 -p 3002:3002 cauldronos:latest
+   ```
+
+#### Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```
+# Database
+DATABASE_URL=postgresql://username:password@localhost:5432/cauldronos
+
+# Authentication
+JWT_SECRET=your-jwt-secret
+SESSION_SECRET=your-session-secret
+
+# AI Services
+OPENAI_API_KEY=your-openai-api-key
+GROQ_API_KEY=your-groq-api-key
+
+# Email
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your-smtp-username
+SMTP_PASSWORD=your-smtp-password
+```
+
+#### Production Checklist
+
+Before deploying to production, ensure you've completed the [production-readiness.md](./production-readiness.md) checklist.
 
 ## 📦 Packages
 

@@ -2,7 +2,33 @@
 > admin-dashboard@0.1.0 build C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard
 > pnpm exec umi build
 
-info  - [你知道吗？] 默认使用 esbuild 作为 JavaScript 压缩工具，也可通过 jsMinifier 配置项切换到 terser 或 uglifyJs 等，详见 https://umijs.org/docs/api/config#jsminifier-webpack
+info  - [你知道吗？] 需要添加全局 React Context 吗？在 src/app.(ts|tsx) 运行时配置中轻松解决，详见 https://umijs.org/docs/api/runtime-config
 warn  - SSR feature is in beta, may be unstable
 info  - Umi v4.4.9
 info  - Preparing...
+wait  - [SSR] Compiling...
+fatal - Error: ERROR in ./src/.umi-production/umi.server.ts 13:0-115
+Module not found: Error: Can't resolve 'C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/.umi-production/plugin-tailwindcss/tailwind.css' in 'C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\src\.umi-production'
+
+umi compiled with 1 error
+    at handler (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\dist\build.js:82:79)
+    at finalCallback (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:62945:32)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:62962:13
+    at Hook.eval [as callAsync] (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-utils@4.4.9\node_modules\@umijs\bundler-utils\compiled\tapable\index.js:1:7682), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-utils@4.4.9\node_modules\@umijs\bundler-utils\compiled\tapable\index.js:1:4851)
+    at onCompiled (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:62960:21)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:63704:17
+    at Hook.eval [as callAsync] (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-utils@4.4.9\node_modules\@umijs\bundler-utils\compiled\tapable\index.js:1:7682), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-utils@4.4.9\node_modules\@umijs\bundler-utils\compiled\tapable\index.js:1:4851)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:63700:33
+    at finalCallback (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:59981:11)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:60286:11
+    at Hook.eval [as callAsync] (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-utils@4.4.9\node_modules\@umijs\bundler-utils\compiled\tapable\index.js:1:7682), <anonymous>:6:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-utils@4.4.9\node_modules\@umijs\bundler-utils\compiled\tapable\index.js:1:4851)
+    at C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-webpack@4.4._968c39bf355f4826555c61c8d96803a4\node_modules\@umijs\bundler-webpack\compiled\webpack\index.js:60279:38
+    at eval (eval at create (C:\Users\DevToolsUser\cauldronos\node_modules\.pnpm\@umijs+bundler-utils@4.4.9\node_modules\@umijs\bundler-utils\compiled\tapable\index.js:1:7682), <anonymous>:17:1)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+fatal - A complete log of this run can be found in:
+fatal - C:\Users\DevToolsUser\cauldronos\apps\admin-dashboard\node_modules\.cache\logger\umi.log
+fatal - Consider reporting a GitHub issue on https://github.com/umijs/umi/issues
+ ELIFECYCLE  Command failed with exit code 1.

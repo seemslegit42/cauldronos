@@ -1,0 +1,18 @@
+
+> cauldron-core@0.1.0 build C:\Users\DevToolsUser\cauldronos\apps\cauldron-core
+> umi build
+
+info  - [你知道吗？] 如果你需要使用 Prettier, umi g prettier 就可以一键完成配置，详见 https://umijs.org/docs/guides/generator#prettier-配置生成器
+info  - Umi v4.4.9
+info  - Preparing...
+i Compiling Webpack
+√ Webpack: Compiled successfully in 16.60s
+info  - Memory Usage: 174.94 MB (RSS: 238.23 MB)
+info  - [esbuildHelperChecker] Checking esbuild helpers from your dist files...
+info  - [esbuildHelperChecker] No conflicts found.
+
+info  - File sizes after gzip:
+
+  119.76 kB  dist\umi.js
+
+event - Build index.html

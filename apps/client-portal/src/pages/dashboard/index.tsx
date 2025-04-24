@@ -10,19 +10,19 @@ import {
   CheckCircleOutlined,
   BellOutlined,
 } from '@ant-design/icons';
-import { 
-  PageTransition, 
-  InsightCard, 
-  AISearchBar, 
+import {
+  PageTransition,
+  InsightCard,
+  AISearchBar,
   GestureCard,
   PredictiveForm
-} from '@cauldronos/ui';
+} from '../../components/ui';
 
 const { Title, Paragraph, Text } = Typography;
 
 const DashboardPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   // Sample data for statistics
   const stats = [
     {
@@ -319,8 +319,8 @@ const DashboardPage: React.FC = () => {
           <Row gutter={[16, 16]}>
             {projects.map(project => (
               <Col xs={24} sm={12} key={project.id}>
-                <Card 
-                  size="small" 
+                <Card
+                  size="small"
                   title={project.name}
                   extra={<Tag color={project.progress > 70 ? 'green' : project.progress > 30 ? 'blue' : 'orange'}>{project.status}</Tag>}
                 >

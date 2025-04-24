@@ -75,20 +75,5 @@ export const AIProvider: React.FC<AIProviderProps> = ({ children }) => {
   );
 };
 
-// Helper function to get page name from path
-const getPageNameFromPath = (path: string): string => {
-  if (path === '/') return 'Dashboard';
-  if (path.includes('/dashboard')) return 'Dashboard';
-  if (path.includes('/users')) return 'User Management';
-  if (path.includes('/modules')) return 'Modules';
-  if (path.includes('/workspace-settings')) return 'Workspace Settings';
-  if (path.includes('/account')) return 'Account Settings';
-
-  // Extract module name from path
-  if (path.includes('/modules/')) {
-    const moduleName = path.split('/modules/')[1].split('/')[0];
-    return `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)} Module`;
-  }
-
-  return path.split('/').pop()?.replace('-', ' ') || 'Unknown Page';
-};
+// Export default for compatibility
+export default AIProvider;

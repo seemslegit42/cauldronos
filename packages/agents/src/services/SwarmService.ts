@@ -1,7 +1,8 @@
 import { AIMessage } from '../components/FloatingAIAssistant';
 import { GROQ_MODELS } from './GroqService';
-import { AI_CONFIG } from '../config/aiConfig';
+import { AI_CONFIG, AI_MODELS } from '../config/aiConfig';
 import CrewService, { CrewConfig, CrewTaskConfig } from './CrewService';
+import { AgentConfig } from './AgentService';
 
 // Define types for Swarm integration
 export interface SwarmAgent {
@@ -11,6 +12,7 @@ export interface SwarmAgent {
   functions?: SwarmFunction[];
   tool_choice?: string | object;
   parallel_tool_calls?: boolean;
+  memory?: SwarmMemoryConfig;
 }
 
 export interface SwarmFunction {
@@ -29,6 +31,11 @@ export interface SwarmStep {
   expectedOutput: string;
   maxTokens?: number;
   temperature?: number;
+  retry?: {
+    maxAttempts: number;
+    backoff: 'fixed' | 'exponential';
+    delay: number;
+  };
 }
 
 export interface SwarmWorkflow {
@@ -36,17 +43,75 @@ export interface SwarmWorkflow {
   description: string;
   steps: SwarmStep[];
   contextVariables?: Record<string, any>;
+  process?: 'sequential' | 'parallel' | 'adaptive';
+  maxIterations?: number;
+}
+
+// Define the swarm memory configuration
+export interface SwarmMemoryConfig {
+  type: 'simple' | 'vectorstore' | 'structured';
+  persistenceMode: 'session' | 'local' | 'remote';
+  contextWindow: number;
+  retrieval?: {
+    strategy: 'recency' | 'relevance' | 'hybrid';
+    topK: number;
+  };
+}
+
+// Define the swarm execution result
+export interface SwarmExecutionResult {
+  id: string;
+  swarmId: string;
+  input: string;
+  output: string;
+  startTime: Date;
+  endTime: Date;
+  duration: number;
+  taskResults: SwarmTaskResult[];
+  success: boolean;
+  error?: string;
+  metrics: {
+    tokensUsed: number;
+    costEstimate: number;
+    agentIterations: number;
+  };
+}
+
+// Define the swarm task result
+export interface SwarmTaskResult {
+  id: string;
+  taskId: string;
+  agentId: string;
+  input: string;
+  output: string;
+  startTime: Date;
+  endTime: Date;
+  duration: number;
+  success: boolean;
+  error?: string;
+  iterations: number;
 }
 
 /**
- * SwarmService - Legacy compatibility layer for Groq Swarm
+ * SwarmService - Enhanced AI orchestration service
  * This service provides compatibility with the existing Groq Swarm implementation
- * while leveraging the new CrewAI-based architecture
+ * while leveraging the new CrewAI-based architecture with enhanced capabilities
  */
 class SwarmService {
   private apiUrl: string;
   private apiKey: string;
   private crewService: typeof CrewService;
+  private swarms: Map<string, SwarmWorkflow> = new Map();
+  private executionResults: Map<string, SwarmExecutionResult> = new Map();
+  private defaultMemoryConfig: SwarmMemoryConfig = {
+    type: 'simple',
+    persistenceMode: 'session',
+    contextWindow: 4096,
+    retrieval: {
+      strategy: 'recency',
+      topK: 5
+    }
+  };
 
   constructor(
     apiUrl: string = '/api/ai/swarm', 
@@ -55,6 +120,75 @@ class SwarmService {
     this.apiUrl = apiUrl;
     this.apiKey = apiKey;
     this.crewService = CrewService;
+  }
+  
+  /**
+   * Create a new swarm workflow
+   * @param workflow The workflow configuration
+   * @returns The created workflow
+   */
+  createSwarm(workflow: Partial<SwarmWorkflow>): SwarmWorkflow {
+    const id = `swarm_${Date.now()}`;
+    
+    const swarmWorkflow: SwarmWorkflow = {
+      name: workflow.name || 'New Swarm',
+      description: workflow.description || 'A new AI agent swarm',
+      steps: workflow.steps || [],
+      contextVariables: workflow.contextVariables || {},
+      process: workflow.process || 'sequential',
+      maxIterations: workflow.maxIterations || 10
+    };
+    
+    this.swarms.set(id, swarmWorkflow);
+    return swarmWorkflow;
+  }
+  
+  /**
+   * Get a swarm by ID
+   * @param id The swarm ID
+   * @returns The swarm workflow or undefined if not found
+   */
+  getSwarm(id: string): SwarmWorkflow | undefined {
+    return this.swarms.get(id);
+  }
+  
+  /**
+   * Get all swarms
+   * @returns An array of all swarm workflows
+   */
+  getAllSwarms(): SwarmWorkflow[] {
+    return Array.from(this.swarms.values());
+  }
+  
+  /**
+   * Update a swarm
+   * @param id The swarm ID
+   * @param workflow The updated swarm workflow
+   * @returns The updated swarm workflow or undefined if not found
+   */
+  updateSwarm(id: string, workflow: Partial<SwarmWorkflow>): SwarmWorkflow | undefined {
+    const existingSwarm = this.swarms.get(id);
+    
+    if (!existingSwarm) {
+      return undefined;
+    }
+    
+    const updatedSwarm: SwarmWorkflow = {
+      ...existingSwarm,
+      ...workflow
+    };
+    
+    this.swarms.set(id, updatedSwarm);
+    return updatedSwarm;
+  }
+  
+  /**
+   * Delete a swarm
+   * @param id The swarm ID
+   * @returns True if the swarm was deleted, false otherwise
+   */
+  deleteSwarm(id: string): boolean {
+    return this.swarms.delete(id);
   }
 
   /**
@@ -259,11 +393,49 @@ You provide concise, accurate, and helpful responses to user queries.`;
       const crew = this.crewService.createCrew(crewConfig);
       const result = await this.crewService.runCrew(crewConfig.id, initialInput);
       
+      // Track execution metrics
+      const executionId = `execution_${Date.now()}`;
+      const executionResult: SwarmExecutionResult = {
+        id: executionId,
+        swarmId: workflow.name,
+        input: initialInput,
+        output: result.finalOutput,
+        startTime: new Date(result.startTime),
+        endTime: new Date(result.endTime),
+        duration: result.duration,
+        taskResults: result.taskResults.map(tr => ({
+          id: `task_result_${Date.now()}_${tr.taskId}`,
+          taskId: tr.taskId,
+          agentId: tr.agentId,
+          input: tr.input,
+          output: tr.output,
+          startTime: new Date(tr.startTime),
+          endTime: new Date(tr.endTime),
+          duration: tr.duration,
+          success: tr.success,
+          error: tr.error,
+          iterations: 1
+        })),
+        success: result.success,
+        error: result.error,
+        metrics: {
+          tokensUsed: result.tokensUsed || 0,
+          costEstimate: result.costEstimate || 0,
+          agentIterations: result.taskResults.length
+        }
+      };
+      
+      this.executionResults.set(executionId, executionResult);
+      
       return {
         id: `msg_${Date.now()}`,
         role: 'assistant',
         content: result.finalOutput,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        metadata: {
+          executionId,
+          metrics: executionResult.metrics
+        }
       };
     } catch (error) {
       console.error('Error in SwarmService.executeWorkflow:', error);
@@ -271,9 +443,31 @@ You provide concise, accurate, and helpful responses to user queries.`;
         id: `msg_${Date.now()}`,
         role: 'assistant',
         content: 'I encountered an error while executing the workflow. Please try again later.',
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        metadata: {
+          error: error instanceof Error ? error.message : String(error)
+        }
       };
     }
+  }
+  
+  /**
+   * Get execution results for a workflow
+   * @param workflowName The workflow name
+   * @returns An array of execution results
+   */
+  getExecutionResults(workflowName: string): SwarmExecutionResult[] {
+    return Array.from(this.executionResults.values())
+      .filter(result => result.swarmId === workflowName);
+  }
+  
+  /**
+   * Get an execution result by ID
+   * @param executionId The execution ID
+   * @returns The execution result or undefined if not found
+   */
+  getExecutionResultById(executionId: string): SwarmExecutionResult | undefined {
+    return this.executionResults.get(executionId);
   }
 
   /**
@@ -409,32 +603,68 @@ You provide concise, accurate, and helpful responses to user queries.`;
     
     // Create agent configurations
     const agents = workflow.steps.map((step, index) => {
+      // Determine the model to use
+      const model = step.agent.model || 
+                   (contextData.preferredModel ? 
+                    contextData.preferredModel : 
+                    GROQ_MODELS.LLAMA3_70B);
+      
+      // Create the agent configuration
       return {
         id: `agent_${index}`,
         name: step.agent.name,
         description: `Agent for step ${index + 1} of the workflow`,
         systemPrompt: step.agent.instructions,
-        model: step.agent.model || GROQ_MODELS.LLAMA3_70B,
-        tools: [],
+        model: model,
+        tools: step.agent.functions?.map(fn => ({
+          name: fn.name,
+          description: fn.description,
+          parameters: fn.parameters
+        })) || [],
+        temperature: step.temperature || 0.7,
+        maxTokens: step.maxTokens || 4096
       };
     });
     
     // Create task configurations
     const tasks: CrewTaskConfig[] = workflow.steps.map((step, index) => {
+      // Determine dependencies based on workflow process
+      let dependencies: string[] | undefined = undefined;
+      
+      if (workflow.process === 'sequential' || !workflow.process) {
+        // In sequential mode, each task depends on the previous one
+        dependencies = index > 0 ? [`task_${index - 1}`] : undefined;
+      } else if (workflow.process === 'parallel') {
+        // In parallel mode, no dependencies
+        dependencies = undefined;
+      } else if (workflow.process === 'adaptive') {
+        // In adaptive mode, custom dependencies could be defined
+        // For now, we'll use sequential as default
+        dependencies = index > 0 ? [`task_${index - 1}`] : undefined;
+      }
+      
+      // Create the task configuration
       return {
         id: `task_${index}`,
         description: step.input,
         agentId: `agent_${index}`,
         expectedOutput: step.expectedOutput,
+        dependencies: dependencies,
         contextData: {
           ...contextData,
           ...workflow.contextVariables,
           temperature: step.temperature,
           maxTokens: step.maxTokens,
+          retry: step.retry,
+          memory: step.agent.memory || this.defaultMemoryConfig
         },
-        dependencies: index > 0 ? [`task_${index - 1}`] : undefined,
       };
     });
+    
+    // Map the workflow process to crew process
+    const crewProcess = workflow.process === 'parallel' ? 'consensual' :
+                       workflow.process === 'adaptive' ? 'hierarchical' :
+                       'sequential';
     
     // Create the crew configuration
     return {
@@ -443,8 +673,9 @@ You provide concise, accurate, and helpful responses to user queries.`;
       description: workflow.description,
       agents,
       tasks,
-      process: 'sequential',
+      process: crewProcess,
       verbose: true,
+      maxIterations: workflow.maxIterations
     };
   }
 }

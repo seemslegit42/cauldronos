@@ -61,9 +61,37 @@ import { AgentConfig } from '../../services/AgentService';
 import { AI_MODELS, SYSTEM_PROMPTS } from '../../config/aiConfig';
 import CrewTemplates from '../../crews/CrewTemplates';
 import SpecializedAgents from '../../agents/SpecializedAgents';
-import AgentNode from './nodes/AgentNode';
-import TaskNode from './nodes/TaskNode';
-import ToolNode from './nodes/ToolNode';
+// Custom node components will be implemented later
+// For now, we'll use default nodes
+const AgentNode = ({ data }) => (
+  <div className="agent-node">
+    <div className="node-header">
+      <div>{data.agent.name}</div>
+    </div>
+    <div className="node-content">
+      <div>{data.agent.description}</div>
+    </div>
+  </div>
+);
+
+const TaskNode = ({ data }) => (
+  <div className="task-node">
+    <div className="node-header">
+      <div>{data.task.description}</div>
+    </div>
+    <div className="node-content">
+      <div>Agent: {data.agent?.name}</div>
+    </div>
+  </div>
+);
+
+const ToolNode = ({ data }) => (
+  <div className="tool-node">
+    <div className="node-header">
+      <div>{data.name}</div>
+    </div>
+  </div>
+);
 import './VisualCrewBuilder.css';
 
 const { Title, Text, Paragraph } = Typography;

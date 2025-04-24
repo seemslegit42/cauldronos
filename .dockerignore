@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build artifacts
+dist
+build
+.next
+out
+
+# Development files
+.git
+.github
+.vscode
+.idea
+*.log
+*.md
+!README.md
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Testing
+coverage
+e2e-tests
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
