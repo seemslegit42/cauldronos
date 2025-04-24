@@ -1,4 +1,12 @@
 # 🔥 CauldronOS
+[![Build Status](https://img.shields.io/github/actions/workflow/status/your-org/cauldronos/build.yml?branch=main&label=Build&style=for-the-badge)](https://github.com/your-org/cauldronos/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![Made with Wasp](https://img.shields.io/badge/Made%20with-Wasp-blue.svg?style=for-the-badge)](https://wasp-lang.dev)
+[![UI: Ant Design](https://img.shields.io/badge/UI-Ant%20Design-blueviolet.svg?style=for-the-badge)](https://ant.design)
+[![Deploy to Vercel](https://vercelbadge.vercel.app/api/your-org/cauldronos)](https://vercel.com/import/project?template=https://github.com/your-org/cauldronos)
+[![AI Powered by CrewAI](https://img.shields.io/badge/AI%20Powered-CrewAI-yellow.svg?style=for-the-badge)](https://github.com/joaomdmoura/crewAI)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](CONTRIBUTING.md)
+
 
 > **Command your enterprise like a starship.**
 
