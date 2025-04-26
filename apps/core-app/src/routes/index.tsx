@@ -16,103 +16,125 @@ import Signup from '../auth/SignupPage';
 import { useModules } from '../modules/ModuleRegistry';
 import ModuleLoader from '../modules/ModuleLoader';
 
+// Import UI components
+import { LoadingState, ErrorState } from '../ui/components/feedback';
+
 // Protected route component
 const ProtectedRoute = ({ children, requiredRole }: { children: React.ReactNode, requiredRole?: string }) => {
-  const { data: user, isLoading } = useAuth();
-  
+  const { data: user, isLoading, error } = useAuth();
+
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <LoadingState
+        tip="Loading authentication..."
+        withCard
+        cyberpunk
+        className="h-screen flex items-center justify-center"
+      />
+    );
   }
-  
+
+  if (error) {
+    return (
+      <ErrorState
+        error={error}
+        withCard
+        cyberpunk
+        className="h-screen flex items-center justify-center"
+        retry={() => window.location.reload()}
+      />
+    );
+  }
+
   if (!user) {
     return <Navigate to="/login" replace />;
   }
-  
+
   if (requiredRole && user.role !== requiredRole && user.role !== 'ADMIN') {
     return <Navigate to="/" replace />;
   }
-  
+
   return <>{children}</>;
 };
 
 const AppRoutes = () => {
   const { modules, getModuleRoutes } = useModules();
-  
+
   return (
     <Router>
       <Routes>
         {/* Auth routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        
+
         {/* Protected routes */}
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/modules" 
+
+        <Route
+          path="/modules"
           element={
             <ProtectedRoute>
               <Modules />
             </ProtectedRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/users" 
+
+        <Route
+          path="/users"
           element={
             <ProtectedRoute requiredRole="ADMIN">
               <Users />
             </ProtectedRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/workspace/settings" 
+
+        <Route
+          path="/workspace/settings"
           element={
             <ProtectedRoute>
               <WorkspaceSettings />
             </ProtectedRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/account/settings" 
+
+        <Route
+          path="/account/settings"
           element={
             <ProtectedRoute>
               <AccountSettings />
             </ProtectedRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/dev-playground" 
+
+        <Route
+          path="/dev-playground"
           element={
             <ProtectedRoute requiredRole="ADMIN">
               <DevPlayground />
             </ProtectedRoute>
-          } 
+          }
         />
-        
+
         {/* Dynamic module routes */}
         {modules.map(module => (
-          <Route 
+          <Route
             key={module.id}
-            path={`${module.path}/*`} 
+            path={`${module.path}/*`}
             element={
               <ProtectedRoute>
                 <ModuleLoader moduleSlug={module.slug} />
               </ProtectedRoute>
-            } 
+            }
           />
         ))}
-        
+
         {/* Fallback route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

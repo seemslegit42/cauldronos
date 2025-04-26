@@ -1,0 +1,23 @@
+# CauldronOS Core App Changelog
+
+## [Unreleased]
+
+### Added
+- Added comprehensive loading, success, and error states to the main app
+- Created reusable AsyncContent component for handling async operations
+- Created LoadingState component for consistent loading UI
+- Created ErrorState component for consistent error handling
+- Created SuccessState component for consistent success messages
+- Created ErrorBoundary component for catching and displaying component errors
+- Added withAsyncStates higher-order component for easily adding async states to any component
+- Enhanced ModuleLoader with better loading and error states
+- Improved ProtectedRoute component with better loading and error states
+
+### Changed
+- Updated routes to use new loading and error components
+- Improved error handling in ModuleLoader
+- Enhanced module loading with error boundary
+
+### Fixed
+- Fixed inconsistent loading states across the application
+- Improved error handling and user feedback

@@ -1,33 +1,36 @@
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { useParams, useNavigate, Routes, Route } from 'react-router-dom';
-import { Result, Spin, Button, Typography, Card, Tabs } from 'antd';
+import { Result, Button, Typography, Card, Tabs } from 'antd';
 import { useModules } from './ModuleRegistry';
 import { useWorkspaces } from '../workspace/operations';
 import { ModuleComponentProps, ModuleRoute } from './types';
 import { SettingOutlined, AppstoreOutlined, ApiOutlined, LockOutlined } from '@ant-design/icons';
 import RoleBasedAccess from '../auth/RoleBasedAccess';
+import { LoadingState, ErrorState, ErrorBoundary } from '../ui/components/feedback';
 
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
 
 // Fallback component for when a module is loading
 const ModuleLoading: React.FC = () => (
-  <div className="flex items-center justify-center h-64">
-    <Spin size="large" tip="Loading module..." />
-  </div>
+  <LoadingState
+    tip="Loading module..."
+    cyberpunk
+    withCard
+    className="h-64 flex items-center justify-center"
+  />
 );
 
 // Fallback component for when a module is not found
 const ModuleNotFound: React.FC = () => (
-  <Result
-    status="404"
+  <ErrorState
     title="Module Not Found"
-    subTitle="Sorry, the module you are looking for does not exist or you don't have access to it."
-    extra={
-      <Button type="primary" href="/modules">
-        Back to Modules
-      </Button>
-    }
+    subtitle="Sorry, the module you are looking for does not exist or you don't have access to it."
+    cyberpunk
+    withCard
+    className="h-64"
+    retryText="Back to Modules"
+    retry={() => window.location.href = '/modules'}
   />
 );
 
@@ -158,7 +161,10 @@ const ModuleView: React.FC<ModuleViewProps> = ({ moduleSlug, view }) => {
       </Tabs>
 
       <Suspense fallback={<ModuleLoading />}>
-        <Component module={module} workspace={workspace} />
+        {/* Wrap the component in an error boundary */}
+        <ErrorBoundary>
+          <Component module={module} workspace={workspace} />
+        </ErrorBoundary>
       </Suspense>
     </div>
   );
@@ -167,10 +173,30 @@ const ModuleView: React.FC<ModuleViewProps> = ({ moduleSlug, view }) => {
 // Main module loader component
 const ModuleLoader: React.FC = () => {
   const { moduleSlug, view } = useParams<{ moduleSlug: string; view?: string }>();
-  const { isLoading } = useModules();
+  const { isLoading, error } = useModules();
+  const [moduleError, setModuleError] = useState<Error | null>(null);
+
+  // Handle module loading errors
+  useEffect(() => {
+    if (error) {
+      setModuleError(error instanceof Error ? error : new Error('Failed to load module'));
+    }
+  }, [error]);
 
   if (isLoading) {
     return <ModuleLoading />;
+  }
+
+  if (moduleError) {
+    return (
+      <ErrorState
+        error={moduleError}
+        title="Failed to Load Module"
+        cyberpunk
+        withCard
+        retry={() => window.location.reload()}
+      />
+    );
   }
 
   if (!moduleSlug) {
