@@ -1,0 +1,292 @@
+/* Sidebar Animation Styles */
+.sidebar-container {
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  will-change: width;
+}
+
+/* Smooth transition for menu items */
+.ant-menu-item,
+.ant-menu-submenu-title {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  will-change: transform, opacity;
+}
+
+/* Enhance menu item hover effect */
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover {
+  transform: translateX(4px);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Smooth transition for menu item icons */
+.ant-menu-item .anticon,
+.ant-menu-submenu-title .anticon {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  will-change: transform, margin;
+}
+
+/* Enhance icon animation when sidebar is collapsed */
+.ant-layout-sider-collapsed .ant-menu-item .anticon,
+.ant-layout-sider-collapsed .ant-menu-submenu-title .anticon {
+  font-size: 18px;
+  margin-right: 0;
+  transform: scale(1.2);
+}
+
+/* Enhance selected menu item animation */
+.ant-menu-item-selected {
+  position: relative;
+  overflow: hidden;
+}
+
+.ant-menu-item-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #1677ff;
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ant-menu-item-selected::before {
+  transform: scaleY(1);
+}
+
+/* Add a subtle highlight effect for selected menu item */
+.ant-menu-item-selected {
+  background: linear-gradient(to right, rgba(22, 119, 255, 0.1), transparent) !important;
+}
+
+/* Dark mode adjustments */
+.dark .ant-menu {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.dark .ant-menu-item-selected {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.2), transparent) !important;
+}
+
+.dark .ant-menu-item:hover,
+.dark .ant-menu-submenu-title:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Smooth transition for submenu expansion */
+.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+/* Logo container animation */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Logo hover effect */
+.logo-container:hover .logo-icon {
+  transform: scale(1.1);
+}
+
+/* Enhance scrollbar for sidebar */
+.sidebar-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Ensure menu items don't overflow when collapsed */
+.ant-layout-sider-collapsed .ant-menu-item,
+.ant-layout-sider-collapsed .ant-menu-submenu-title {
+  padding: 0 calc(50% - 16px) !important;
+}
+
+/* Add a subtle pulse animation to the selected menu item icon */
+.ant-menu-item-selected .anticon {
+  animation: subtle-pulse 2s infinite;
+}
+
+@keyframes subtle-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add a subtle transition for the content area */
+.content-transition {
+  transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Enhance submenu animations */
+.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+.ant-menu-submenu-open.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow {
+  transform: rotate(90deg) !important;
+}
+
+/* Add a subtle fade-in effect for submenu items */
+.ant-menu-sub.ant-menu-inline {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add a subtle bounce effect to the toggle icon */
+.sidebar-toggle-icon {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.sidebar-toggle-icon:hover {
+  transform: rotate(180deg);
+}
+
+/* Ant Design Motion Animation Classes */
+.sidebar-motion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Appear Motion */
+.sidebar-motion-appear,
+.sidebar-motion-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.sidebar-motion-appear-active,
+.sidebar-motion-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.sidebar-motion-appear-done,
+.sidebar-motion-enter-done {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Leave Motion */
+.sidebar-motion-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sidebar-motion-leave-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.sidebar-motion-leave-done {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Text Motion Animation Classes */
+.sidebar-text-motion-appear,
+.sidebar-text-motion-enter {
+  opacity: 0;
+  transform: translateX(-10px) scale(0.9);
+}
+
+.sidebar-text-motion-appear-active,
+.sidebar-text-motion-enter-active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.sidebar-text-motion-appear-done,
+.sidebar-text-motion-enter-done {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.sidebar-text-motion-leave {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.sidebar-text-motion-leave-active {
+  opacity: 0;
+  transform: translateX(-10px) scale(0.9);
+  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.sidebar-text-motion-leave-done {
+  opacity: 0;
+  transform: translateX(-10px) scale(0.9);
+}
+
+/* Mobile Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), visibility 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.sidebar-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 100% !important;
+    max-width: 250px;
+  }
+
+  .sidebar-motion-enter-active,
+  .sidebar-motion-appear-active {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+}

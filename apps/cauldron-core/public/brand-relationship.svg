@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="pixelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A0D67" />
+      <stop offset="100%" stop-color="#2E1A47" />
+    </linearGradient>
+    <linearGradient id="cauldronGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3DAA9D" />
+      <stop offset="100%" stop-color="#25D5EC" />
+    </linearGradient>
+    <linearGradient id="futureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B8860B" />
+      <stop offset="100%" stop-color="#D8A62B" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#121212" />
+  
+  <!-- Grid lines -->
+  <g stroke="#3DAA9D" stroke-width="0.5" opacity="0.1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Manrope, sans-serif" font-weight="800" font-size="32" text-anchor="middle" fill="#E0E0E0">
+    BRAND RELATIONSHIP
+  </text>
+  
+  <!-- Parent Brand: Pixel Potion -->
+  <g transform="translate(400, 150)">
+    <!-- Hexagon -->
+    <path d="M0 -60L52 -30V30L0 60L-52 30V-30L0 -60Z" fill="url(#pixelGradient)" stroke="#3DAA9D" stroke-width="2"/>
+    
+    <!-- Potion flask simplified -->
+    <path d="M-15 -20V0C-15 10 -20 15 -20 25C-20 35 -10 45 0 45C10 45 20 35 20 25C20 15 15 10 15 0V-20H-15Z" fill="url(#cauldronGradient)" stroke="#FFFFFF" stroke-width="1.5" />
+    
+    <!-- Flask neck -->
+    <rect x="-15" y="-25" width="30" height="5" fill="url(#cauldronGradient)" stroke="#FFFFFF" stroke-width="1.5" />
+    
+    <!-- Flask cap -->
+    <rect x="-18" y="-30" width="36" height="5" rx="2" fill="#B8860B" stroke="#FFFFFF" stroke-width="1.5" />
+    
+    <!-- Label -->
+    <text x="0" y="90" font-family="Manrope, sans-serif" font-weight="800" font-size="24" text-anchor="middle" fill="#E0E0E0">
+      PIXEL POTION
+    </text>
+    <text x="0" y="115" font-family="Inter, sans-serif" font-weight="400" font-size="14" text-anchor="middle" fill="#9E9E9E">
+      PARENT BRAND
+    </text>
+    
+    <!-- Description -->
+    <text x="0" y="140" font-family="Inter, sans-serif" font-weight="400" font-size="12" text-anchor="middle" fill="#E0E0E0">
+      The "Alchemist Studio" of AI
+    </text>
+  </g>
+  
+  <!-- Product: CauldronOS -->
+  <g transform="translate(200, 350)">
+    <!-- Hexagon -->
+    <path d="M0 -50L43 -25V25L0 50L-43 25V-25L0 -50Z" fill="url(#pixelGradient)" stroke="#3DAA9D" stroke-width="2"/>
+    
+    <!-- Node network simplified -->
+    <circle cx="0" cy="0" r="6" fill="#3DAA9D" />
+    <circle cx="-15" cy="-15" r="3" fill="#2E1A47" stroke="#25D5EC" stroke-width="1" />
+    <circle cx="15" cy="-15" r="3" fill="#2E1A47" stroke="#25D5EC" stroke-width="1" />
+    <circle cx="-15" cy="15" r="3" fill="#2E1A47" stroke="#25D5EC" stroke-width="1" />
+    <circle cx="15" cy="15" r="3" fill="#2E1A47" stroke="#25D5EC" stroke-width="1" />
+    
+    <line x1="0" y1="0" x2="-15" y2="-15" stroke="#25D5EC" stroke-width="1" />
+    <line x1="0" y1="0" x2="15" y2="-15" stroke="#25D5EC" stroke-width="1" />
+    <line x1="0" y1="0" x2="-15" y2="15" stroke="#25D5EC" stroke-width="1" />
+    <line x1="0" y1="0" x2="15" y2="15" stroke="#25D5EC" stroke-width="1" />
+    
+    <!-- Label -->
+    <text x="0" y="80" font-family="Manrope, sans-serif" font-weight="700" font-size="20" text-anchor="middle" fill="#E0E0E0">
+      CAULDRON<tspan fill="#3DAA9D">OS</tspan>
+    </text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-weight="400" font-size="14" text-anchor="middle" fill="#9E9E9E">
+      FLAGSHIP PRODUCT
+    </text>
+    
+    <!-- Description -->
+    <text x="0" y="125" font-family="Inter, sans-serif" font-weight="400" font-size="12" text-anchor="middle" fill="#E0E0E0">
+      The OS for AI Apps
+    </text>
+  </g>
+  
+  <!-- Future Product Placeholder -->
+  <g transform="translate(600, 350)">
+    <!-- Hexagon -->
+    <path d="M0 -50L43 -25V25L0 50L-43 25V-25L0 -50Z" fill="url(#pixelGradient)" stroke="#B8860B" stroke-width="2" opacity="0.7"/>
+    
+    <!-- Question mark -->
+    <text x="0" y="10" font-family="Manrope, sans-serif" font-weight="800" font-size="40" text-anchor="middle" fill="#B8860B">
+      ?
+    </text>
+    
+    <!-- Label -->
+    <text x="0" y="80" font-family="Manrope, sans-serif" font-weight="700" font-size="20" text-anchor="middle" fill="#E0E0E0">
+      FUTURE PRODUCTS
+    </text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-weight="400" font-size="14" text-anchor="middle" fill="#9E9E9E">
+      EXPANDING THE ECOSYSTEM
+    </text>
+  </g>
+  
+  <!-- Connection lines -->
+  <g stroke="#3DAA9D" stroke-width="2" stroke-dasharray="5,5">
+    <line x1="400" y1="210" x2="200" y2="300" />
+    <line x1="400" y1="210" x2="600" y2="300" />
+  </g>
+  
+  <!-- Relationship descriptions -->
+  <text x="270" y="270" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#3DAA9D" transform="rotate(-30 270 270)">
+    Core Platform
+  </text>
+  
+  <text x="530" y="270" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#B8860B" transform="rotate(30 530 270)">
+    Future Innovation
+  </text>
+  
+  <!-- Footer -->
+  <text x="400" y="470" font-family="Inter, sans-serif" font-weight="400" font-size="12" text-anchor="middle" fill="#9E9E9E">
+    Pixel Potion creates Cauldron. We're the masterminds, Cauldron is our masterpiece.
+  </text>
+</svg>

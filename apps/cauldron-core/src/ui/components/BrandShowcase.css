@@ -1,0 +1,84 @@
+/* BrandShowcase Component Styles */
+
+.brand-showcase {
+  margin-bottom: 3rem;
+}
+
+.brand-showcase .ant-card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.brand-showcase .ant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 178, 201, 0.1);
+}
+
+.brand-showcase .color-sample {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand-showcase .color-sample:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.brand-showcase .terminal {
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-flux-aqua);
+  border-radius: 4px;
+  padding: 16px;
+  font-family: var(--font-family-code);
+  color: var(--color-text);
+  box-shadow: 0 0 10px rgba(0, 178, 201, 0.1);
+  transition: all 0.3s ease;
+}
+
+.brand-showcase .terminal:hover {
+  box-shadow: 0 0 15px rgba(0, 178, 201, 0.2);
+}
+
+/* Typography utility classes */
+.font-heading {
+  font-family: var(--font-family-heading);
+}
+
+.font-body {
+  font-family: var(--font-family-body);
+}
+
+.font-code {
+  font-family: var(--font-family-code);
+}
+
+/* Brand color utility classes */
+.text-void-purple {
+  color: var(--color-void-purple);
+}
+
+.text-flux-aqua {
+  color: var(--color-flux-aqua);
+}
+
+.text-growth-green {
+  color: var(--color-growth-green);
+}
+
+.text-accent-yellow {
+  color: var(--color-accent-yellow);
+}
+
+.text-accent-red {
+  color: var(--color-accent-red);
+}
+
+/* Animation for logo hover */
+.brand-showcase img {
+  transition: all 0.3s ease;
+}
+
+.brand-showcase img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(0, 178, 201, 0.4));
+}

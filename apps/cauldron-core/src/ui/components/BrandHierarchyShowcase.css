@@ -1,0 +1,169 @@
+/* BrandHierarchyShowcase Component Styles */
+
+.brand-hierarchy-showcase {
+  margin-bottom: 3rem;
+}
+
+/* Relationship Diagram */
+.relationship-diagram {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.relationship-image {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* Brand Cards */
+.brand-card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 178, 201, 0.1);
+}
+
+.pixel-potion-card {
+  border-left: 3px solid #4A0D67;
+}
+
+.cauldron-card {
+  border-left: 3px solid #3DAA9D;
+}
+
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Brand Lists */
+.brand-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.brand-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.brand-list li:before {
+  content: "•";
+  color: #3DAA9D;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Color Swatches */
+.color-swatches {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.color-swatch {
+  width: 30%;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.purple-swatch {
+  background-color: #4A0D67;
+}
+
+.aqua-swatch {
+  background-color: #3DAA9D;
+}
+
+.gold-swatch {
+  background-color: #B8860B;
+}
+
+.color-swatch.emphasis {
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #3DAA9D;
+}
+
+/* Voice Examples */
+.voice-example {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+.pixel-voice {
+  background-color: rgba(74, 13, 103, 0.1);
+  border-left: 3px solid #4A0D67;
+}
+
+.cauldron-voice {
+  background-color: rgba(61, 170, 157, 0.1);
+  border-left: 3px solid #3DAA9D;
+}
+
+.voice-example-large {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Application Cards */
+.application-card {
+  margin-bottom: 1.5rem;
+}
+
+.co-branding-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.voice-card {
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.pixel-voice-card {
+  background-color: rgba(74, 13, 103, 0.05);
+}
+
+.cauldron-voice-card {
+  background-color: rgba(61, 170, 157, 0.05);
+}
+
+/* Utility Classes */
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.font-heading {
+  font-family: var(--font-family-heading);
+}
+
+.font-body {
+  font-family: var(--font-family-body);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .co-branding-example {
+    margin-bottom: 1.5rem;
+  }
+}

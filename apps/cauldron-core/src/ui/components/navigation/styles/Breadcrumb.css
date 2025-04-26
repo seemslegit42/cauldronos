@@ -1,0 +1,109 @@
+/* Enhanced Breadcrumb Styles */
+
+.cauldron-breadcrumb {
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+/* Cyberpunk variant */
+.cauldron-breadcrumb-cyber {
+  color: rgba(102, 16, 242, 0.8);
+}
+
+.cauldron-breadcrumb-cyber .ant-breadcrumb-link a {
+  color: rgba(102, 16, 242, 0.8);
+}
+
+.cauldron-breadcrumb-cyber .ant-breadcrumb-link a:hover {
+  color: rgba(102, 16, 242, 1);
+  text-shadow: 0 0 5px rgba(102, 16, 242, 0.5);
+}
+
+.cauldron-breadcrumb-cyber .ant-breadcrumb-separator {
+  color: rgba(102, 16, 242, 0.5);
+}
+
+/* Terminal variant */
+.cauldron-breadcrumb-terminal {
+  font-family: 'JetBrains Mono', monospace;
+  color: #00ff00;
+}
+
+.cauldron-breadcrumb-terminal .ant-breadcrumb-link a {
+  color: #00ff00;
+}
+
+.cauldron-breadcrumb-terminal .ant-breadcrumb-link a:hover {
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.cauldron-breadcrumb-terminal .ant-breadcrumb-separator {
+  color: rgba(0, 255, 0, 0.5);
+}
+
+/* Glass variant */
+.cauldron-breadcrumb-glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cauldron-breadcrumb-glass.cauldron-breadcrumb-dark {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Glow effect */
+.cauldron-breadcrumb-glow .ant-breadcrumb-link a:hover {
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Dark mode specific styles */
+.cauldron-breadcrumb-dark {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cauldron-breadcrumb-dark .ant-breadcrumb-link a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cauldron-breadcrumb-dark .ant-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Light mode specific styles */
+.cauldron-breadcrumb-light {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.cauldron-breadcrumb-light .ant-breadcrumb-link a {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.cauldron-breadcrumb-light .ant-breadcrumb-separator {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Animation enhancements */
+.cauldron-breadcrumb .ant-breadcrumb-link,
+.cauldron-breadcrumb .ant-breadcrumb-separator {
+  transition: all 0.3s ease;
+}
+
+/* Cyberpunk separator style */
+.cauldron-breadcrumb-cyber .ant-breadcrumb-separator {
+  position: relative;
+}
+
+.cauldron-breadcrumb-cyber .ant-breadcrumb-separator::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(102, 16, 242, 0.5), transparent);
+}

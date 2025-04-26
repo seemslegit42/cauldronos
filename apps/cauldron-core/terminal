@@ -1,0 +1,2 @@
+npx create-next-app@latest my-app --typescript --tailwind --eslint --app --src-dir
+cd my-app

@@ -1,0 +1,176 @@
+/* Admin Dashboard Styles */
+
+/* Sidebar styles */
+.sidebar-container {
+  transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.logo-container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+.sidebar-collapse-button {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  cursor: pointer;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+/* Cyberpunk theme enhancements */
+.theme-dark .ant-menu-dark {
+  background: transparent;
+}
+
+.theme-dark .ant-menu-dark .ant-menu-item-selected {
+  background: rgba(0, 240, 255, 0.1);
+  border-right: 3px solid var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.theme-dark .ant-menu-dark .ant-menu-item:hover:not(.ant-menu-item-selected) {
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.theme-dark .ant-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .ant-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+.theme-dark .ant-btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.theme-dark .ant-btn-primary:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.theme-dark .ant-table-row.error-row {
+  background-color: rgba(255, 0, 51, 0.05);
+}
+
+.theme-dark .ant-table-row.warning-row {
+  background-color: rgba(255, 187, 0, 0.05);
+}
+
+.theme-dark .ant-statistic-title {
+  color: var(--color-text-secondary);
+}
+
+.theme-dark .ant-statistic-content {
+  color: var(--color-text-base);
+}
+
+.theme-dark .ant-progress-bg {
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+/* Light theme adjustments */
+.theme-light .ant-menu-light .ant-menu-item-selected {
+  background: rgba(0, 136, 255, 0.1);
+  border-right: 3px solid var(--color-primary);
+}
+
+.theme-light .ant-menu-light .ant-menu-item:hover:not(.ant-menu-item-selected) {
+  background: rgba(0, 136, 255, 0.05);
+}
+
+.theme-light .ant-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.theme-light .ant-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 136, 255, 0.1);
+}
+
+.theme-light .ant-btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.theme-light .ant-btn-primary:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.theme-light .ant-table-row.error-row {
+  background-color: rgba(255, 0, 51, 0.05);
+}
+
+.theme-light .ant-table-row.warning-row {
+  background-color: rgba(255, 187, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ant-layout-content {
+    padding: 16px !important;
+    margin: 64px 8px 8px !important;
+  }
+  
+  .ant-card-head-title {
+    font-size: 16px !important;
+  }
+  
+  .ant-statistic-content-value {
+    font-size: 20px !important;
+  }
+}
+
+/* Animation effects */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow effects for cyberpunk theme */
+.theme-dark .glow-card {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.theme-dark .glow-text {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.theme-dark .glow-icon {
+  filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.5));
+}
+
+/* Neon borders for cards in dark mode */
+.theme-dark .neon-border {
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), inset 0 0 5px rgba(0, 240, 255, 0.1);
+}
