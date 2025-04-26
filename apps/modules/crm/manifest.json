@@ -1,0 +1,135 @@
+{
+  "name": "Customer Relationship Management",
+  "slug": "crm",
+  "description": "Manage your contacts, leads, and deals with this comprehensive CRM module",
+  "version": "1.0.0",
+  "author": "CauldronOS Team",
+  "category": "BUSINESS",
+  "icon": "CustomerServiceOutlined",
+  "requiredRoles": ["USER", "MANAGER", "ADMIN"],
+  "isCore": false,
+  "isPublic": true,
+  "menuLabel": "CRM",
+  "menuOrder": 10,
+  "path": "/modules/crm",
+  "defaultConfig": {
+    "enableLeads": true,
+    "enableDeals": true,
+    "enableTasks": true,
+    "enableEmails": true,
+    "enableReports": true,
+    "contactsPerPage": 10,
+    "defaultCurrency": "USD"
+  },
+  "permissions": [
+    {
+      "id": "crm:read",
+      "name": "Read CRM Data",
+      "description": "View customers, contacts, leads, and deals",
+      "defaultRoles": ["USER", "MANAGER", "ADMIN"]
+    },
+    {
+      "id": "crm:write",
+      "name": "Write CRM Data",
+      "description": "Create and update customers, contacts, leads, and deals",
+      "defaultRoles": ["USER", "MANAGER", "ADMIN"]
+    },
+    {
+      "id": "crm:delete",
+      "name": "Delete CRM Data",
+      "description": "Delete customers, contacts, leads, and deals",
+      "defaultRoles": ["MANAGER", "ADMIN"]
+    },
+    {
+      "id": "crm:admin",
+      "name": "Administer CRM",
+      "description": "Configure CRM settings and manage permissions",
+      "defaultRoles": ["ADMIN"]
+    }
+  ],
+  "apiEndpoints": [
+    {
+      "path": "/api/modules/crm/contacts",
+      "method": "GET",
+      "description": "Get all contacts",
+      "requiresAuth": true,
+      "requiredRoles": ["USER", "MANAGER", "ADMIN"]
+    },
+    {
+      "path": "/api/modules/crm/contacts/:id",
+      "method": "GET",
+      "description": "Get contact by ID",
+      "requiresAuth": true,
+      "requiredRoles": ["USER", "MANAGER", "ADMIN"]
+    },
+    {
+      "path": "/api/modules/crm/contacts",
+      "method": "POST",
+      "description": "Create a new contact",
+      "requiresAuth": true,
+      "requiredRoles": ["USER", "MANAGER", "ADMIN"]
+    },
+    {
+      "path": "/api/modules/crm/contacts/:id",
+      "method": "PUT",
+      "description": "Update a contact",
+      "requiresAuth": true,
+      "requiredRoles": ["USER", "MANAGER", "ADMIN"]
+    },
+    {
+      "path": "/api/modules/crm/contacts/:id",
+      "method": "DELETE",
+      "description": "Delete a contact",
+      "requiresAuth": true,
+      "requiredRoles": ["MANAGER", "ADMIN"]
+    },
+    {
+      "path": "/api/modules/crm/leads",
+      "method": "GET",
+      "description": "Get all leads",
+      "requiresAuth": true,
+      "requiredRoles": ["USER", "MANAGER", "ADMIN"]
+    },
+    {
+      "path": "/api/modules/crm/deals",
+      "method": "GET",
+      "description": "Get all deals",
+      "requiresAuth": true,
+      "requiredRoles": ["USER", "MANAGER", "ADMIN"]
+    }
+  ],
+  "dependencies": [],
+  "routes": [
+    {
+      "path": "/",
+      "component": "Dashboard",
+      "exact": true
+    },
+    {
+      "path": "/contacts",
+      "component": "Contacts",
+      "exact": true
+    },
+    {
+      "path": "/contacts/:id",
+      "component": "ContactDetail",
+      "exact": true
+    },
+    {
+      "path": "/leads",
+      "component": "Leads",
+      "exact": true
+    },
+    {
+      "path": "/deals",
+      "component": "Deals",
+      "exact": true
+    },
+    {
+      "path": "/settings",
+      "component": "Settings",
+      "exact": true,
+      "requiredRoles": ["MANAGER", "ADMIN"]
+    }
+  ]
+}

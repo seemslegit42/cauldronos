@@ -1,0 +1,2018 @@
+{
+  "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+  "pkg": {
+    "name": "client-portal",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "umi dev",
+      "build": "umi build",
+      "start": "umi preview",
+      "lint": "eslint src --ext .ts,.tsx",
+      "typecheck": "tsc --noEmit",
+      "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    },
+    "dependencies": {
+      "@ant-design/icons": "^5.0.1",
+      "@ant-design/pro-components": "^2.4.4",
+      "@cauldronos/agents": "workspace:*",
+      "@cauldronos/api": "workspace:*",
+      "@cauldronos/hooks": "workspace:*",
+      "@cauldronos/ui": "workspace:*",
+      "@cauldronos/utils": "workspace:*",
+      "antd": "^5.4.0",
+      "framer-motion": "^10.12.4",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-query": "^3.39.3",
+      "umi": "^4.0.70",
+      "zustand": "^4.3.8"
+    },
+    "devDependencies": {
+      "@types/react": "^18.2.0",
+      "@types/react-dom": "^18.2.0",
+      "@umijs/plugins": "^4.0.70",
+      "eslint": "^8.39.0",
+      "tailwindcss": "^3.3.2",
+      "typescript": "^5.0.4"
+    }
+  },
+  "pkgPath": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\package.json",
+  "plugins": {
+    "@umijs/core/dist/service/servicePlugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "preset",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+core@4.4.9/node_modules/@umijs/core/dist/service/servicePlugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/core/dist/service/servicePlugin",
+      "key": "servicePlugin"
+    },
+    "@umijs/preset-umi": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 79
+      },
+      "enableBy": "register",
+      "type": "preset",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/index.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi",
+      "key": "umi"
+    },
+    "@umijs/preset-umi/dist/registerMethods": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onStart": [
+            0
+          ]
+        },
+        "register": 15
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/registerMethods.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/registerMethods",
+      "key": "registerMethods"
+    },
+    "@umijs/did-you-know": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onStart": [
+            4
+          ]
+        },
+        "register": 6
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+did-you-know@1.0.3/node_modules/@umijs/did-you-know/dist/plugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/did-you-know",
+      "key": "umijsDidYouKnow"
+    },
+    "@umijs/preset-umi/dist/features/404/404": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyRoutes": [
+            0
+          ]
+        },
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/404/404.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/404/404",
+      "key": "404"
+    },
+    "@umijs/preset-umi/dist/features/appData/appData": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyAppData": [
+            329
+          ]
+        },
+        "register": 92
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/appData/appData.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/appData/appData",
+      "key": "appData"
+    },
+    "@umijs/preset-umi/dist/features/appData/umiInfo": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/appData/umiInfo.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/appData/umiInfo",
+      "key": "umiInfo"
+    },
+    "@umijs/preset-umi/dist/features/check/check": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onCheckConfig": [
+            0
+          ],
+          "onCheck": [
+            1
+          ]
+        },
+        "register": 5
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/check/check.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/check/check",
+      "key": "check"
+    },
+    "@umijs/preset-umi/dist/features/check/babel722": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onCheck": [
+            0
+          ]
+        },
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/check/babel722.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/check/babel722",
+      "key": "babel722"
+    },
+    "@umijs/preset-umi/dist/features/codeSplitting/codeSplitting": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/codeSplitting/codeSplitting",
+      "key": "codeSplitting"
+    },
+    "@umijs/preset-umi/dist/features/configPlugins/configPlugins": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyConfig": [
+            0
+          ]
+        },
+        "register": 36
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/configPlugins/configPlugins",
+      "key": "configPlugins"
+    },
+    "virtual: config-title": {
+      "id": "virtual: config-title",
+      "key": "title",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-styles": {
+      "id": "virtual: config-styles",
+      "key": "styles",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-scripts": {
+      "id": "virtual: config-scripts",
+      "key": "scripts",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-routes": {
+      "id": "virtual: config-routes",
+      "key": "routes",
+      "config": {
+        "onChange": "regenerateTmpFiles"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-routeLoader": {
+      "id": "virtual: config-routeLoader",
+      "key": "routeLoader",
+      "config": {
+        "default": {
+          "moduleType": "esm"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-reactRouter5Compat": {
+      "id": "virtual: config-reactRouter5Compat",
+      "key": "reactRouter5Compat",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-presets": {
+      "id": "virtual: config-presets",
+      "key": "presets",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-plugins": {
+      "id": "virtual: config-plugins",
+      "key": "plugins",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-npmClient": {
+      "id": "virtual: config-npmClient",
+      "key": "npmClient",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-mountElementId": {
+      "id": "virtual: config-mountElementId",
+      "key": "mountElementId",
+      "config": {
+        "default": "root"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-metas": {
+      "id": "virtual: config-metas",
+      "key": "metas",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-links": {
+      "id": "virtual: config-links",
+      "key": "links",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-historyWithQuery": {
+      "id": "virtual: config-historyWithQuery",
+      "key": "historyWithQuery",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-history": {
+      "id": "virtual: config-history",
+      "key": "history",
+      "config": {
+        "default": {
+          "type": "browser"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-headScripts": {
+      "id": "virtual: config-headScripts",
+      "key": "headScripts",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-esbuildMinifyIIFE": {
+      "id": "virtual: config-esbuildMinifyIIFE",
+      "key": "esbuildMinifyIIFE",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-conventionRoutes": {
+      "id": "virtual: config-conventionRoutes",
+      "key": "conventionRoutes",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-conventionLayout": {
+      "id": "virtual: config-conventionLayout",
+      "key": "conventionLayout",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-base": {
+      "id": "virtual: config-base",
+      "key": "base",
+      "config": {
+        "default": "/"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-analyze": {
+      "id": "virtual: config-analyze",
+      "key": "analyze",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-writeToDisk": {
+      "id": "virtual: config-writeToDisk",
+      "key": "writeToDisk",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-theme": {
+      "id": "virtual: config-theme",
+      "key": "theme",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-targets": {
+      "id": "virtual: config-targets",
+      "key": "targets",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-svgr": {
+      "id": "virtual: config-svgr",
+      "key": "svgr",
+      "config": {
+        "default": {}
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-svgo": {
+      "id": "virtual: config-svgo",
+      "key": "svgo",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-stylusLoader": {
+      "id": "virtual: config-stylusLoader",
+      "key": "stylusLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-styleLoader": {
+      "id": "virtual: config-styleLoader",
+      "key": "styleLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-srcTranspilerOptions": {
+      "id": "virtual: config-srcTranspilerOptions",
+      "key": "srcTranspilerOptions",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-srcTranspiler": {
+      "id": "virtual: config-srcTranspiler",
+      "key": "srcTranspiler",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-sassLoader": {
+      "id": "virtual: config-sassLoader",
+      "key": "sassLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-runtimePublicPath": {
+      "id": "virtual: config-runtimePublicPath",
+      "key": "runtimePublicPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-purgeCSS": {
+      "id": "virtual: config-purgeCSS",
+      "key": "purgeCSS",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-publicPath": {
+      "id": "virtual: config-publicPath",
+      "key": "publicPath",
+      "config": {
+        "default": "/"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-proxy": {
+      "id": "virtual: config-proxy",
+      "key": "proxy",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-postcssLoader": {
+      "id": "virtual: config-postcssLoader",
+      "key": "postcssLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-outputPath": {
+      "id": "virtual: config-outputPath",
+      "key": "outputPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-normalCSSLoaderModules": {
+      "id": "virtual: config-normalCSSLoaderModules",
+      "key": "normalCSSLoaderModules",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-mfsu": {
+      "id": "virtual: config-mfsu",
+      "key": "mfsu",
+      "config": {
+        "default": {
+          "strategy": "eager"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-mdx": {
+      "id": "virtual: config-mdx",
+      "key": "mdx",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-manifest": {
+      "id": "virtual: config-manifest",
+      "key": "manifest",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-lessLoader": {
+      "id": "virtual: config-lessLoader",
+      "key": "lessLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-jsMinifierOptions": {
+      "id": "virtual: config-jsMinifierOptions",
+      "key": "jsMinifierOptions",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-jsMinifier": {
+      "id": "virtual: config-jsMinifier",
+      "key": "jsMinifier",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-inlineLimit": {
+      "id": "virtual: config-inlineLimit",
+      "key": "inlineLimit",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-ignoreMomentLocale": {
+      "id": "virtual: config-ignoreMomentLocale",
+      "key": "ignoreMomentLocale",
+      "config": {
+        "default": true
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-https": {
+      "id": "virtual: config-https",
+      "key": "https",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-hash": {
+      "id": "virtual: config-hash",
+      "key": "hash",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-forkTSChecker": {
+      "id": "virtual: config-forkTSChecker",
+      "key": "forkTSChecker",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-fastRefresh": {
+      "id": "virtual: config-fastRefresh",
+      "key": "fastRefresh",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraPostCSSPlugins": {
+      "id": "virtual: config-extraPostCSSPlugins",
+      "key": "extraPostCSSPlugins",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraBabelPresets": {
+      "id": "virtual: config-extraBabelPresets",
+      "key": "extraBabelPresets",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraBabelPlugins": {
+      "id": "virtual: config-extraBabelPlugins",
+      "key": "extraBabelPlugins",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraBabelIncludes": {
+      "id": "virtual: config-extraBabelIncludes",
+      "key": "extraBabelIncludes",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-externals": {
+      "id": "virtual: config-externals",
+      "key": "externals",
+      "config": {
+        "default": {}
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-esm": {
+      "id": "virtual: config-esm",
+      "key": "esm",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-devtool": {
+      "id": "virtual: config-devtool",
+      "key": "devtool",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-depTranspiler": {
+      "id": "virtual: config-depTranspiler",
+      "key": "depTranspiler",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-define": {
+      "id": "virtual: config-define",
+      "key": "define",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-deadCode": {
+      "id": "virtual: config-deadCode",
+      "key": "deadCode",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssPublicPath": {
+      "id": "virtual: config-cssPublicPath",
+      "key": "cssPublicPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssMinifierOptions": {
+      "id": "virtual: config-cssMinifierOptions",
+      "key": "cssMinifierOptions",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssMinifier": {
+      "id": "virtual: config-cssMinifier",
+      "key": "cssMinifier",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssLoaderModules": {
+      "id": "virtual: config-cssLoaderModules",
+      "key": "cssLoaderModules",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssLoader": {
+      "id": "virtual: config-cssLoader",
+      "key": "cssLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-copy": {
+      "id": "virtual: config-copy",
+      "key": "copy",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-checkDepCssModules": {
+      "id": "virtual: config-checkDepCssModules",
+      "key": "checkDepCssModules",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-chainWebpack": {
+      "id": "virtual: config-chainWebpack",
+      "key": "chainWebpack",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cacheDirectoryPath": {
+      "id": "virtual: config-cacheDirectoryPath",
+      "key": "cacheDirectoryPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-babelLoaderCustomize": {
+      "id": "virtual: config-babelLoaderCustomize",
+      "key": "babelLoaderCustomize",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-autoprefixer": {
+      "id": "virtual: config-autoprefixer",
+      "key": "autoprefixer",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-autoCSSModules": {
+      "id": "virtual: config-autoCSSModules",
+      "key": "autoCSSModules",
+      "config": {
+        "default": true
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-alias": {
+      "id": "virtual: config-alias",
+      "key": "alias",
+      "config": {
+        "default": {
+          "umi": "@@/exports",
+          "react": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react",
+          "react-dom": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react-dom",
+          "react-router": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router@6.3.0_react@18.3.1\\node_modules\\react-router",
+          "react-router-dom": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router-dom@6.3.0_reac_beb70b932a60871592d5dec302f52003\\node_modules\\react-router-dom"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "@umijs/preset-umi/dist/features/crossorigin/crossorigin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/crossorigin/crossorigin",
+      "key": "crossorigin"
+    },
+    "@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onStart": [
+            1
+          ]
+        },
+        "register": 6
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand",
+      "key": "depsOnDemand"
+    },
+    "@umijs/preset-umi/dist/features/devTool/devTool": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/devTool/devTool.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/devTool/devTool",
+      "key": "devTool"
+    },
+    "@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 382
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker",
+      "key": "esbuildHelperChecker"
+    },
+    "@umijs/preset-umi/dist/features/esmi/esmi": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 418
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/esmi/esmi.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/esmi/esmi",
+      "key": "esmi"
+    },
+    "@umijs/preset-umi/dist/features/exportStatic/exportStatic": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 57
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/exportStatic/exportStatic",
+      "key": "exportStatic"
+    },
+    "@umijs/preset-umi/dist/features/favicons/favicons": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyAppData": [
+            1
+          ]
+        },
+        "register": 4
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/favicons/favicons.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/favicons/favicons",
+      "key": "favicons"
+    },
+    "@umijs/preset-umi/dist/features/helmet/helmet": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 4
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/helmet/helmet.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/helmet/helmet",
+      "key": "helmet"
+    },
+    "@umijs/preset-umi/dist/features/icons/icons": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 13
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/icons/icons.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/icons/icons",
+      "key": "icons"
+    },
+    "@umijs/preset-umi/dist/features/mock/mock": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 136
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/mock/mock",
+      "key": "mock"
+    },
+    "@umijs/preset-umi/dist/features/mpa/mpa": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 4
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/mpa/mpa.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/mpa/mpa",
+      "key": "mpa"
+    },
+    "@umijs/preset-umi/dist/features/okam/okam": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/okam/okam",
+      "key": "okam"
+    },
+    "@umijs/preset-umi/dist/features/overrides/overrides": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/overrides/overrides.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/overrides/overrides",
+      "key": "overrides"
+    },
+    "@umijs/preset-umi/dist/features/phantomDependency/phantomDependency": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 8
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/phantomDependency/phantomDependency",
+      "key": "phantomDependency"
+    },
+    "@umijs/preset-umi/dist/features/polyfill/polyfill": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyConfig": [
+            3
+          ]
+        },
+        "register": 8
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/polyfill/polyfill",
+      "key": "polyfill"
+    },
+    "@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill",
+      "key": "publicPathPolyfill"
+    },
+    "@umijs/preset-umi/dist/features/prepare/prepare": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 14
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/prepare/prepare.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/prepare/prepare",
+      "key": "prepare"
+    },
+    "@umijs/preset-umi/dist/features/routePrefetch/routePrefetch": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/routePrefetch/routePrefetch",
+      "key": "routePrefetch"
+    },
+    "@umijs/preset-umi/dist/features/terminal/terminal": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 4
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/terminal/terminal.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/terminal/terminal",
+      "key": "terminal"
+    },
+    "@umijs/preset-umi/dist/features/tmpFiles/tmpFiles": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 54
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/tmpFiles/tmpFiles",
+      "key": "tmpFiles"
+    },
+    "@umijs/preset-umi/dist/features/clientLoader/clientLoader": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 5
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/clientLoader/clientLoader",
+      "key": "clientLoader"
+    },
+    "@umijs/preset-umi/dist/features/routeProps/routeProps": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/routeProps/routeProps",
+      "key": "routeProps"
+    },
+    "@umijs/preset-umi/dist/features/ssr/ssr": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 13
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/ssr/ssr.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/ssr/ssr",
+      "key": "ssr"
+    },
+    "@umijs/preset-umi/dist/features/tmpFiles/configTypes": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 18
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/tmpFiles/configTypes",
+      "key": "configTypes"
+    },
+    "@umijs/preset-umi/dist/features/transform/transform": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 15
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/transform/transform.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/transform/transform",
+      "key": "transform"
+    },
+    "@umijs/preset-umi/dist/features/lowImport/lowImport": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 11
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/lowImport/lowImport",
+      "key": "lowImport"
+    },
+    "@umijs/preset-umi/dist/features/vite/vite": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/vite/vite.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/vite/vite",
+      "key": "vite"
+    },
+    "@umijs/preset-umi/dist/features/apiRoute/apiRoute": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 61
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/apiRoute/apiRoute",
+      "key": "apiRoute"
+    },
+    "@umijs/preset-umi/dist/features/monorepo/redirect": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 166
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/monorepo/redirect.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/monorepo/redirect",
+      "key": "monorepoRedirect"
+    },
+    "@umijs/preset-umi/dist/features/test/test": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 7
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/test/test.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/test/test",
+      "key": "test"
+    },
+    "@umijs/preset-umi/dist/features/clickToComponent/clickToComponent": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 6
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/clickToComponent/clickToComponent",
+      "key": "clickToComponent"
+    },
+    "@umijs/preset-umi/dist/features/legacy/legacy": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 11
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/legacy/legacy.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/legacy/legacy",
+      "key": "legacy"
+    },
+    "@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose",
+      "key": "classPropertiesLoose"
+    },
+    "@umijs/preset-umi/dist/features/webpack/webpack": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/webpack/webpack",
+      "key": "preset-umi:webpack"
+    },
+    "@umijs/preset-umi/dist/features/swc/swc": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "addOnDemandDeps": [
+            0
+          ]
+        },
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/swc/swc.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/swc/swc",
+      "key": "swc"
+    },
+    "@umijs/preset-umi/dist/features/ui/ui": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 16
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/ui/ui",
+      "key": "ui"
+    },
+    "@umijs/preset-umi/dist/features/mako/mako": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 10
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/mako/mako.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/mako/mako",
+      "key": "mako"
+    },
+    "@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 31
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian",
+      "key": "hmrGuardian"
+    },
+    "@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 7
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad",
+      "key": "routePreloadOnLoad"
+    },
+    "@umijs/preset-umi/dist/features/forget/forget": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 4
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/forget/forget.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/features/forget/forget",
+      "key": "forget"
+    },
+    "@umijs/preset-umi/dist/commands/build": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 30
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/build.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/build",
+      "key": "build"
+    },
+    "@umijs/preset-umi/dist/commands/config/config": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 202
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/config/config.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/config/config",
+      "key": "config"
+    },
+    "@umijs/preset-umi/dist/commands/dev/dev": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 155
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/dev/dev",
+      "key": "dev"
+    },
+    "@umijs/preset-umi/dist/commands/help": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/help.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/help",
+      "key": "help"
+    },
+    "@umijs/preset-umi/dist/commands/lint": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/lint.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/lint",
+      "key": "lint"
+    },
+    "@umijs/preset-umi/dist/commands/setup": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/setup.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/setup",
+      "key": "setup"
+    },
+    "@umijs/preset-umi/dist/commands/deadcode": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/deadcode.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/deadcode",
+      "key": "deadcode"
+    },
+    "@umijs/preset-umi/dist/commands/version": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/version.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/version",
+      "key": "version"
+    },
+    "@umijs/preset-umi/dist/commands/generators/page": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 26
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/page.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/page",
+      "key": "generator:page"
+    },
+    "@umijs/preset-umi/dist/commands/generators/prettier": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/prettier.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/prettier",
+      "key": "generator:prettier"
+    },
+    "@umijs/preset-umi/dist/commands/generators/tsconfig": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/tsconfig",
+      "key": "generator:tsconfig"
+    },
+    "@umijs/preset-umi/dist/commands/generators/jest": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/jest.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/jest",
+      "key": "generator:jest"
+    },
+    "@umijs/preset-umi/dist/commands/generators/tailwindcss": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/tailwindcss",
+      "key": "generator:tailwindcss"
+    },
+    "@umijs/preset-umi/dist/commands/generators/dva": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/dva.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/dva",
+      "key": "generator:dva"
+    },
+    "@umijs/preset-umi/dist/commands/generators/component": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/component.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/component",
+      "key": "generator:component"
+    },
+    "@umijs/preset-umi/dist/commands/generators/mock": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/mock.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/mock",
+      "key": "generator:mock"
+    },
+    "@umijs/preset-umi/dist/commands/generators/cypress": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/cypress.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/cypress",
+      "key": "generator:cypress"
+    },
+    "@umijs/preset-umi/dist/commands/generators/api": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/api.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/api",
+      "key": "generator:api"
+    },
+    "@umijs/preset-umi/dist/commands/generators/precommit": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 7
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/precommit.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/generators/precommit",
+      "key": "generator:precommit"
+    },
+    "@umijs/preset-umi/dist/commands/plugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 10
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/plugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/plugin",
+      "key": "command:plugin"
+    },
+    "@umijs/preset-umi/dist/commands/verify-commit": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 4
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/verify-commit.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/verify-commit",
+      "key": "verifyCommit"
+    },
+    "@umijs/preset-umi/dist/commands/preview": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 85
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/preview.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/preview",
+      "key": "preview"
+    },
+    "@umijs/preset-umi/dist/commands/mfsu/mfsu": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 4
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/preset-umi/dist/commands/mfsu/mfsu",
+      "key": "mfsu-cli"
+    },
+    "@umijs/plugin-run": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 15
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+plugin-run@4.4.9/node_modules/@umijs/plugin-run/dist/index.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/plugin-run",
+      "key": "run"
+    },
+    "@umijs/core/dist/service/generatePlugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+core@4.4.9/node_modules/@umijs/core/dist/service/generatePlugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal",
+      "id": "@umijs/core/dist/service/generatePlugin",
+      "key": "generatePlugin"
+    }
+  },
+  "presets": [],
+  "name": "build",
+  "args": {
+    "_": []
+  },
+  "userConfig": {},
+  "mainConfigFile": null,
+  "config": {
+    "routeLoader": {
+      "moduleType": "esm"
+    },
+    "mountElementId": "root",
+    "history": {
+      "type": "browser"
+    },
+    "base": "/",
+    "svgr": {},
+    "publicPath": "/",
+    "mfsu": {
+      "strategy": "eager"
+    },
+    "ignoreMomentLocale": true,
+    "externals": {},
+    "autoCSSModules": true,
+    "alias": {
+      "umi": "@@/exports",
+      "react": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react",
+      "react-dom": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react-dom",
+      "react-router": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router@6.3.0_react@18.3.1\\node_modules\\react-router",
+      "react-router-dom": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router-dom@6.3.0_reac_beb70b932a60871592d5dec302f52003\\node_modules\\react-router-dom",
+      "@": "C:/Users/DevToolsUser/cauldronos/apps/client-portal/src",
+      "@@": "C:/Users/DevToolsUser/cauldronos/apps/client-portal/src/.umi-production",
+      "regenerator-runtime": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\regenerator-runtime@0.13.11\\node_modules\\regenerator-runtime"
+    },
+    "targets": {
+      "chrome": 80
+    }
+  },
+  "defaultConfig": {
+    "routeLoader": {
+      "moduleType": "esm"
+    },
+    "mountElementId": "root",
+    "history": {
+      "type": "browser"
+    },
+    "base": "/",
+    "svgr": {},
+    "publicPath": "/",
+    "mfsu": {
+      "strategy": "eager"
+    },
+    "ignoreMomentLocale": true,
+    "externals": {},
+    "autoCSSModules": true,
+    "alias": {
+      "umi": "@@/exports",
+      "react": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react",
+      "react-dom": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react-dom",
+      "react-router": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router@6.3.0_react@18.3.1\\node_modules\\react-router",
+      "react-router-dom": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router-dom@6.3.0_reac_beb70b932a60871592d5dec302f52003\\node_modules\\react-router-dom",
+      "@": "C:/Users/DevToolsUser/cauldronos/apps/client-portal/src",
+      "@@": "C:/Users/DevToolsUser/cauldronos/apps/client-portal/src/.umi-production",
+      "regenerator-runtime": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\regenerator-runtime@0.13.11\\node_modules\\regenerator-runtime"
+    },
+    "targets": {
+      "chrome": 80
+    }
+  },
+  "routes": {
+    "dashboard/index": {
+      "path": "dashboard",
+      "id": "dashboard/index",
+      "file": "dashboard/index.tsx",
+      "absPath": "/dashboard",
+      "__content": "import React, { useState } from 'react';\nimport { Card, Row, Col, Statistic, Typography, Space, Button, Table, Tag, Avatar, Progress } from 'antd';\nimport {\n  UserOutlined,\n  RiseOutlined,\n  FallOutlined,\n  ClockCircleOutlined,\n  BulbOutlined,\n  FileTextOutlined,\n  CheckCircleOutlined,\n  BellOutlined,\n} from '@ant-design/icons';\nimport {\n  PageTransition,\n  InsightCard,\n  AISearchBar,\n  GestureCard,\n  PredictiveForm\n} from '../../components/ui';\n\nconst { Title, Paragraph, Text } = Typography;\n\nconst DashboardPage: React.FC = () => {\n  const [searchQuery, setSearchQuery] = useState('');\n\n  // Sample data for statistics\n  const stats = [\n    {\n      title: 'Projects',\n      value: 8,\n      icon: <FileTextOutlined />,\n      change: 2,\n      changeType: 'increase',\n    },\n    {\n      title: 'Tasks Completed',\n      value: 42,\n      icon: <CheckCircleOutlined />,\n      change: 12.3,\n      changeType: 'increase',\n    },\n    {\n      title: 'Notifications',\n      value: 5,\n      icon: <BellOutlined />,\n      change: 3,\n      changeType: 'increase',\n    },\n  ];\n\n  // Sample data for recent activities\n  const recentActivities = [\n    {\n      key: '1',\n      user: 'System',\n      action: 'Project \"Website Redesign\" updated',\n      time: '2 hours ago',\n      status: 'info',\n    },\n    {\n      key: '2',\n      user: 'Admin',\n      action: 'New task assigned to you',\n      time: '4 hours ago',\n      status: 'success',\n    },\n    {\n      key: '3',\n      user: 'System',\n      action: 'Payment processed',\n      time: '1 day ago',\n      status: 'success',\n    },\n    {\n      key: '4',\n      user: 'Admin',\n      action: 'Document requires your review',\n      time: '2 days ago',\n      status: 'warning',\n    },\n  ];\n\n  // Table columns for recent activities\n  const columns = [\n    {\n      title: 'User',\n      dataIndex: 'user',\n      key: 'user',\n      render: (user: string) => (\n        <Space>\n          <Avatar icon={<UserOutlined />} />\n          {user}\n        </Space>\n      ),\n    },\n    {\n      title: 'Action',\n      dataIndex: 'action',\n      key: 'action',\n    },\n    {\n      title: 'Time',\n      dataIndex: 'time',\n      key: 'time',\n    },\n    {\n      title: 'Status',\n      dataIndex: 'status',\n      key: 'status',\n      render: (status: string) => {\n        let color = 'green';\n        if (status === 'warning') color = 'orange';\n        if (status === 'info') color = 'blue';\n        return <Tag color={color}>{status.toUpperCase()}</Tag>;\n      },\n    },\n  ];\n\n  // Sample projects data\n  const projects = [\n    {\n      id: 1,\n      name: 'Website Redesign',\n      progress: 75,\n      status: 'In Progress',\n      dueDate: '2023-12-15',\n    },\n    {\n      id: 2,\n      name: 'Mobile App Development',\n      progress: 40,\n      status: 'In Progress',\n      dueDate: '2024-01-30',\n    },\n    {\n      id: 3,\n      name: 'Brand Identity Update',\n      progress: 90,\n      status: 'Almost Complete',\n      dueDate: '2023-11-30',\n    },\n    {\n      id: 4,\n      name: 'Content Strategy',\n      progress: 20,\n      status: 'Just Started',\n      dueDate: '2024-02-28',\n    },\n  ];\n\n  // Sample insights data\n  const insights = [\n    {\n      title: 'Project Progress Insights',\n      description: 'Your \"Website Redesign\" project is ahead of schedule by 5 days. The team has completed 75% of tasks, which is 10% more than expected at this stage.',\n      source: 'Project Analytics',\n      confidence: 0.85,\n      timestamp: new Date(),\n      tags: ['Projects', 'Performance', 'Timeline'],\n      type: 'trend',\n      metrics: [\n        {\n          name: 'Completion',\n          value: '75%',\n          change: 10.0,\n          changeType: 'increase',\n        },\n        {\n          name: 'Timeline',\n          value: '5 days',\n          change: 15,\n          changeType: 'increase',\n        },\n        {\n          name: 'Budget',\n          value: 'On track',\n          change: 0,\n          changeType: 'neutral',\n        },\n      ],\n      recommendations: [\n        'Consider allocating resources to other projects',\n        'Review quality metrics to ensure standards are maintained',\n        'Prepare for early delivery discussions',\n      ],\n    },\n    {\n      title: 'Task Completion Trend',\n      description: 'Your task completion rate has increased by 15% this month compared to last month. This suggests improved productivity and workflow efficiency.',\n      source: 'Task Analytics',\n      confidence: 0.78,\n      timestamp: new Date(),\n      tags: ['Tasks', 'Productivity', 'Efficiency'],\n      type: 'trend',\n      metrics: [\n        {\n          name: 'Current Month',\n          value: '42 tasks',\n          change: 15.0,\n          changeType: 'increase',\n        },\n        {\n          name: 'Previous Month',\n          value: '36 tasks',\n          change: 0,\n          changeType: 'neutral',\n        },\n        {\n          name: 'Average Time',\n          value: '2.5 days',\n          change: 12.0,\n          changeType: 'decrease',\n        },\n      ],\n      recommendations: [\n        'Maintain current workflow processes',\n        'Share best practices with team members',\n        'Consider taking on additional tasks if capacity allows',\n      ],\n    },\n  ];\n\n  // Handle AI search\n  const handleAISearch = async (query: string) => {\n    console.log('Searching for:', query);\n    setSearchQuery(query);\n    // In a real implementation, this would call an API\n    return [\n      `Project information for \"${query}\"`,\n      `Tasks related to \"${query}\"`,\n      `Documents containing \"${query}\"`,\n    ];\n  };\n\n  return (\n    <PageTransition type=\"slide\" direction=\"up\" cyberpunk>\n      <Space direction=\"vertical\" size=\"large\" style={{ width: '100%' }}>\n        <div className=\"flex justify-between items-center\">\n          <Title level={2}>Client Dashboard</Title>\n          <Button type=\"primary\" icon={<BulbOutlined />}>AI Assistant</Button>\n        </div>\n\n        <AISearchBar\n          placeholder=\"Search for projects, tasks, or documents...\"\n          onSearch={(query) => console.log('Search query:', query)}\n          onAISearch={handleAISearch}\n          recentSearches={true}\n          maxRecentSearches={5}\n          suggestionsSource=\"ai\"\n          scope=\"global\"\n          allowVoiceInput={true}\n          cyberpunk={true}\n        />\n\n        <Paragraph className=\"text-gray-400\">\n          Welcome to your client portal. Here's an overview of your projects and activities.\n        </Paragraph>\n\n        <Row gutter={[16, 16]}>\n          {stats.map((stat, index) => (\n            <Col xs={24} sm={12} md={8} key={index}>\n              <GestureCard\n                title={\n                  <div className=\"flex items-center text-gray-300\">\n                    <span className=\"mr-2\">{stat.icon}</span>\n                    {stat.title}\n                  </div>\n                }\n                draggable={true}\n                swipeable={true}\n                cyberpunk={true}\n              >\n                <Statistic\n                  value={stat.value}\n                  valueStyle={{ color: '#1677ff', fontWeight: 'bold' }}\n                  suffix={\n                    <div className=\"ml-2\">\n                      {stat.changeType === 'increase' ? (\n                        <Tag color=\"green\" className=\"flex items-center\">\n                          <RiseOutlined /> {stat.change}%\n                        </Tag>\n                      ) : (\n                        <Tag color=\"red\" className=\"flex items-center\">\n                          <FallOutlined /> {stat.change}%\n                        </Tag>\n                      )}\n                    </div>\n                  }\n                />\n              </GestureCard>\n            </Col>\n          ))}\n        </Row>\n\n        <Row gutter={[16, 16]}>\n          <Col xs={24} md={12}>\n            <InsightCard\n              insight={insights[0]}\n              cyberpunk={true}\n              showRecommendations={true}\n              defaultExpanded={false}\n            />\n          </Col>\n          <Col xs={24} md={12}>\n            <InsightCard\n              insight={insights[1]}\n              cyberpunk={true}\n              showRecommendations={true}\n              defaultExpanded={false}\n            />\n          </Col>\n        </Row>\n\n        <Card\n          title=\"Your Projects\"\n          className=\"bg-gray-900 border-gray-700 shadow-md\"\n          extra={<Button type=\"link\">View All Projects</Button>}\n        >\n          <Row gutter={[16, 16]}>\n            {projects.map(project => (\n              <Col xs={24} sm={12} key={project.id}>\n                <Card\n                  size=\"small\"\n                  title={project.name}\n                  extra={<Tag color={project.progress > 70 ? 'green' : project.progress > 30 ? 'blue' : 'orange'}>{project.status}</Tag>}\n                >\n                  <Space direction=\"vertical\" style={{ width: '100%' }}>\n                    <div>\n                      <Text type=\"secondary\">Progress:</Text>\n                      <Progress percent={project.progress} status={project.progress === 100 ? 'success' : 'active'} />\n                    </div>\n                    <div>\n                      <Text type=\"secondary\">Due Date: {project.dueDate}</Text>\n                    </div>\n                    <Button type=\"link\" style={{ padding: 0 }}>View Details</Button>\n                  </Space>\n                </Card>\n              </Col>\n            ))}\n          </Row>\n        </Card>\n\n        <Card\n          title=\"Recent Activities\"\n          className=\"bg-gray-900 border-gray-700 shadow-md\"\n          extra={<Button type=\"link\">View All</Button>}\n        >\n          <Table\n            dataSource={recentActivities}\n            columns={columns}\n            pagination={false}\n            className=\"bg-gray-900\"\n          />\n        </Card>\n      </Space>\n    </PageTransition>\n  );\n};\n\nexport default DashboardPage;\n",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/client-portal/src/pages/dashboard/index.tsx"
+    }
+  },
+  "apiRoutes": {},
+  "hasSrcDir": true,
+  "npmClient": "pnpm",
+  "umi": {
+    "version": "4.4.9",
+    "name": "Umi",
+    "importSource": "umi",
+    "cliName": "umi"
+  },
+  "bundleStatus": {
+    "done": false
+  },
+  "mfsuBundleStatus": {
+    "done": false
+  },
+  "react": {
+    "version": "18.3.1",
+    "path": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react"
+  },
+  "react-dom": {
+    "version": "18.3.1",
+    "path": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\node_modules\\react-dom"
+  },
+  "appJS": {
+    "path": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\client-portal\\src\\app.tsx",
+    "exports": [
+      "rootContainer",
+      "runtime"
+    ]
+  },
+  "locale": "en-US",
+  "globalCSS": [],
+  "globalJS": [],
+  "overridesCSS": [],
+  "bundler": "webpack",
+  "git": {
+    "originUrl": "https://github.com/seemslegit42/cauldronos.git"
+  },
+  "framework": "react",
+  "typescript": {
+    "tsVersion": "5.8.3",
+    "tslibVersion": "2.8.1"
+  },
+  "faviconFiles": []
+}

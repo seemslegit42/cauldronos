@@ -1,0 +1,41 @@
+{
+  "name": "@cauldronos/module-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Customer Relationship Management module for CauldronOS",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@cauldronos/ui": "workspace:*",
+    "@cauldronos/hooks": "workspace:*",
+    "@cauldronos/utils": "workspace:*",
+    "@cauldronos/types": "workspace:*",
+    "@ant-design/icons": "^5.0.1",
+    "@ant-design/pro-components": "^2.8.7",
+    "antd": "^5.24.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "zustand": "^4.4.1",
+    "framer-motion": "^10.16.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-beautiful-dnd": "^13.1.4",
+    "eslint": "^8.47.0",
+    "typescript": "^5.1.6",
+    "tsup": "^7.2.0",
+    "rimraf": "^5.0.1",
+    "jest": "^29.5.0"
+  }
+}

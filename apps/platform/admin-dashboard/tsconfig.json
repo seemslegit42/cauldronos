@@ -1,0 +1,21 @@
+{
+  "extends": "../../configs/tsconfig/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@cauldronos/ui": ["../../packages/ui/src"],
+      "@cauldronos/ui/*": ["../../packages/ui/src/*"],
+      "@cauldronos/hooks": ["../../packages/hooks/src"],
+      "@cauldronos/hooks/*": ["../../packages/hooks/src/*"],
+      "@cauldronos/utils": ["../../packages/utils/src"],
+      "@cauldronos/utils/*": ["../../packages/utils/src/*"],
+      "@cauldronos/agents": ["../../packages/agents/src"],
+      "@cauldronos/agents/*": ["../../packages/agents/src/*"],
+      "@cauldronos/api": ["../../packages/api/src"],
+      "@cauldronos/api/*": ["../../packages/api/src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

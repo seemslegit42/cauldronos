@@ -1,6 +1,10 @@
-# CauldronOS
+# CauldronOS - The WordPress of AI-driven Micro-SaaS
 
-CauldronOS is a modular operating system for micro-SaaS tools, built with modern web technologies.
+CauldronOS is a modular platform that enables users—from solopreneurs to enterprises—to easily deploy, configure, and manage autonomous AI-driven internal tools and workflows, all without requiring deep technical knowledge.
+
+## Vision
+
+CauldronOS aims to become the WordPress of AI-driven Micro-SaaS, offering a platform that combines the accessibility, modularity, and extensibility of WordPress with the cutting-edge potential of artificial intelligence, creating a scalable ecosystem for AI-powered operations.
 
 ## Branding
 
@@ -16,12 +20,6 @@ The brand identity is complemented by a sophisticated typography system:
 - **Inter** - Used for body text and UI elements
 - **JetBrains Mono** - Used for code blocks and technical content
 
-The iconography system uses geometric precision and clean lines:
-
-- **UI Icons** - Navigation, actions, and interface elements
-- **Feature Icons** - Specific features or modules within CauldronOS
-- **Status Icons** - System status, notifications, and alerts
-
 For detailed usage guidelines, please refer to the [Brand Guidelines](docs/brand-guidelines.md) document.
 
 ## Tech Stack
@@ -33,43 +31,85 @@ For detailed usage guidelines, please refer to the [Brand Guidelines](docs/brand
 - **Schema Validation**: [Zod](https://zod.dev/)
 - **Authentication**: Wasp Auth with role-based access and tenant isolation
 - **Animation**: [Framer Motion](https://www.framer.com/motion/)
-- **AI Integration**: [Groq Swarm](https://groq.com/) for orchestrating multi-step AI tasks
+- **AI Integration**: [CrewAI](https://github.com/joaomdmoura/crewAI) and [Groq Swarm](https://groq.com/) for orchestrating multi-step AI tasks
 
-## Project Structure
+## New Project Structure
+
+The apps directory follows a WordPress-like architecture with clear separation between core platform and modules:
 
 ```
-src/
-├── api/                  # API client and React Query hooks
-├── auth/                 # Authentication and authorization
-│   ├── components/       # Auth-related components
-│   ├── email-and-pass/   # Email authentication
-│   └── permissions/      # Permission system
-├── client/               # Client-side code
-│   ├── components/       # Shared components
-│   ├── hooks/            # Custom React hooks
-│   └── providers/        # Context providers
-├── layout/               # Layout components
-├── modules/              # Modular features
-├── pages/                # Page components
-├── schemas/              # Zod schemas
-├── store/                # Zustand stores
-├── styles/               # Global styles and theme
-├── theme/                # Theme configuration
-├── docs/                 # Documentation including brand guidelines
-├── icons/                # Custom icon components
-├── utils/                # Utility functions
-└── workspace/            # Workspace-related code
+apps/
+├── platform/                # Core platform applications
+│   ├── admin-dashboard/     # Admin interface for managing the platform
+│   ├── client-portal/       # Client-facing portal
+│   └── core-api/            # Core API services
+│
+├── modules/                 # Pluggable modules (like WordPress plugins)
+│   ├── ai-assistant/        # AI assistant module
+│   ├── crm/                 # Customer Relationship Management module
+│   ├── analytics/           # Analytics and reporting module
+│   ├── knowledge-base/      # Knowledge base and documentation module
+│   ├── calendar/            # Calendar and scheduling module
+│   └── email/               # Email marketing module
+│
+├── themes/                  # UI themes (like WordPress themes)
+│   ├── corporate/           # Corporate theme
+│   ├── startup/             # Startup theme
+│   └── enterprise/          # Enterprise theme
+│
+└── tools/                   # Development and utility tools
+    ├── module-creator/      # Tool for creating new modules
+    ├── theme-creator/       # Tool for creating new themes
+    └── dev-playground/      # Development playground
 ```
+
+## Core Concepts
+
+### Platform
+
+The platform apps provide the foundation of CauldronOS. They include:
+
+- **Admin Dashboard**: The main interface for administrators to manage the platform, users, modules, and settings.
+- **Client Portal**: The interface that end-users interact with to access their modules and tools.
+- **Core API**: The backend services that power the platform, including authentication, user management, and module orchestration.
+
+### Modules
+
+Modules are self-contained applications that provide specific functionality, similar to WordPress plugins. Each module follows a standardized structure:
+
+```
+module-name/
+├── api/                # Module-specific API endpoints
+├── components/         # UI components
+├── hooks/              # Custom React hooks
+├── pages/              # Page components
+├── store/              # State management
+├── utils/              # Utility functions
+├── index.ts            # Main entry point
+├── manifest.json       # Module metadata and configuration
+└── README.md           # Documentation
+```
+
+### Themes
+
+Themes control the visual appearance and layout of the platform, similar to WordPress themes. They can be switched without affecting functionality.
+
+### Tools
+
+Tools are utilities for developers to create, test, and deploy modules and themes.
 
 ## Development
 
 ### Prerequisites
+
 - Node.js 16+ (Current version: 22.14.0)
 - npm (11.3.0+) or Yarn package manager (1.22.0+)
 - PostgreSQL 13+
 
 ### Running locally
+
 1. Install dependencies using either npm or yarn:
+
 ```bash
 # Using npm
 npm install
@@ -79,6 +119,7 @@ yarn install
 ```
 
 2. Set up environment:
+
 - Create `.env.client` and `.env.server` files with correct dev values
 - Run the database: `wasp start db`
 - Run migrations (if needed): `wasp db migrate-dev`

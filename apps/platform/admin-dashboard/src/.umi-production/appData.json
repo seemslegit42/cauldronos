@@ -1,0 +1,2572 @@
+{
+  "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+  "pkg": {
+    "name": "admin-dashboard",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "pnpm exec umi dev",
+      "build": "pnpm exec umi build",
+      "build:ssr": "cross-env UMI_ENV=ssr pnpm exec umi build",
+      "start": "pnpm exec umi preview",
+      "start:ssr": "cross-env NODE_ENV=production ts-node server.ts",
+      "lint": "eslint src --ext .ts,.tsx",
+      "typecheck": "tsc --noEmit",
+      "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    },
+    "dependencies": {
+      "@ant-design/icons": "^5.0.1",
+      "@ant-design/pro-components": "^2.4.4",
+      "antd": "^5.4.0",
+      "framer-motion": "^10.12.4",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-query": "^3.39.3",
+      "umi": "^4.0.70",
+      "zustand": "^4.3.8"
+    },
+    "devDependencies": {
+      "@types/react": "^18.2.0",
+      "@types/react-dom": "^18.2.0",
+      "@umijs/plugins": "^4.0.70",
+      "cross-env": "^7.0.3",
+      "eslint": "^8.39.0",
+      "history": "^5.3.0",
+      "react-router-dom": "^6.30.0",
+      "tailwindcss": "^3.3.2",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.0.4"
+    }
+  },
+  "pkgPath": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\package.json",
+  "plugins": {
+    "@umijs/core/dist/service/servicePlugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "preset",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+core@4.4.9/node_modules/@umijs/core/dist/service/servicePlugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/core/dist/service/servicePlugin",
+      "key": "servicePlugin"
+    },
+    "@umijs/preset-umi": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1005
+      },
+      "enableBy": "register",
+      "type": "preset",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/index.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi",
+      "key": "umi"
+    },
+    "@umijs/preset-umi/dist/registerMethods": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onStart": [
+            0
+          ]
+        },
+        "register": 39
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/registerMethods.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/registerMethods",
+      "key": "registerMethods"
+    },
+    "@umijs/did-you-know": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onStart": [
+            17
+          ]
+        },
+        "register": 7
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+did-you-know@1.0.3/node_modules/@umijs/did-you-know/dist/plugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/did-you-know",
+      "key": "umijsDidYouKnow"
+    },
+    "@umijs/preset-umi/dist/features/404/404": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyRoutes": [
+            1
+          ]
+        },
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/404/404.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/404/404",
+      "key": "404"
+    },
+    "@umijs/preset-umi/dist/features/appData/appData": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyAppData": [
+            1830
+          ]
+        },
+        "register": 134
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/appData/appData.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/appData/appData",
+      "key": "appData"
+    },
+    "@umijs/preset-umi/dist/features/appData/umiInfo": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/appData/umiInfo.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/appData/umiInfo",
+      "key": "umiInfo"
+    },
+    "@umijs/preset-umi/dist/features/check/check": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onCheckConfig": [
+            0
+          ],
+          "onCheck": [
+            1
+          ]
+        },
+        "register": 5
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/check/check.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/check/check",
+      "key": "check"
+    },
+    "@umijs/preset-umi/dist/features/check/babel722": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onCheck": [
+            1
+          ]
+        },
+        "register": 5
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/check/babel722.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/check/babel722",
+      "key": "babel722"
+    },
+    "@umijs/preset-umi/dist/features/codeSplitting/codeSplitting": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 11
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/codeSplitting/codeSplitting",
+      "key": "codeSplitting"
+    },
+    "@umijs/preset-umi/dist/features/configPlugins/configPlugins": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyConfig": [
+            0
+          ]
+        },
+        "register": 55
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/configPlugins/configPlugins",
+      "key": "configPlugins"
+    },
+    "virtual: config-title": {
+      "id": "virtual: config-title",
+      "key": "title",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-styles": {
+      "id": "virtual: config-styles",
+      "key": "styles",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-scripts": {
+      "id": "virtual: config-scripts",
+      "key": "scripts",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-routes": {
+      "id": "virtual: config-routes",
+      "key": "routes",
+      "config": {
+        "onChange": "regenerateTmpFiles"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-routeLoader": {
+      "id": "virtual: config-routeLoader",
+      "key": "routeLoader",
+      "config": {
+        "default": {
+          "moduleType": "esm"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-reactRouter5Compat": {
+      "id": "virtual: config-reactRouter5Compat",
+      "key": "reactRouter5Compat",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-presets": {
+      "id": "virtual: config-presets",
+      "key": "presets",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-plugins": {
+      "id": "virtual: config-plugins",
+      "key": "plugins",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-npmClient": {
+      "id": "virtual: config-npmClient",
+      "key": "npmClient",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-mountElementId": {
+      "id": "virtual: config-mountElementId",
+      "key": "mountElementId",
+      "config": {
+        "default": "root"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-metas": {
+      "id": "virtual: config-metas",
+      "key": "metas",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-links": {
+      "id": "virtual: config-links",
+      "key": "links",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-historyWithQuery": {
+      "id": "virtual: config-historyWithQuery",
+      "key": "historyWithQuery",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-history": {
+      "id": "virtual: config-history",
+      "key": "history",
+      "config": {
+        "default": {
+          "type": "browser"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-headScripts": {
+      "id": "virtual: config-headScripts",
+      "key": "headScripts",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-esbuildMinifyIIFE": {
+      "id": "virtual: config-esbuildMinifyIIFE",
+      "key": "esbuildMinifyIIFE",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-conventionRoutes": {
+      "id": "virtual: config-conventionRoutes",
+      "key": "conventionRoutes",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-conventionLayout": {
+      "id": "virtual: config-conventionLayout",
+      "key": "conventionLayout",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-base": {
+      "id": "virtual: config-base",
+      "key": "base",
+      "config": {
+        "default": "/"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-analyze": {
+      "id": "virtual: config-analyze",
+      "key": "analyze",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-writeToDisk": {
+      "id": "virtual: config-writeToDisk",
+      "key": "writeToDisk",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-theme": {
+      "id": "virtual: config-theme",
+      "key": "theme",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-targets": {
+      "id": "virtual: config-targets",
+      "key": "targets",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-svgr": {
+      "id": "virtual: config-svgr",
+      "key": "svgr",
+      "config": {
+        "default": {}
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-svgo": {
+      "id": "virtual: config-svgo",
+      "key": "svgo",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-stylusLoader": {
+      "id": "virtual: config-stylusLoader",
+      "key": "stylusLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-styleLoader": {
+      "id": "virtual: config-styleLoader",
+      "key": "styleLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-srcTranspilerOptions": {
+      "id": "virtual: config-srcTranspilerOptions",
+      "key": "srcTranspilerOptions",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-srcTranspiler": {
+      "id": "virtual: config-srcTranspiler",
+      "key": "srcTranspiler",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-sassLoader": {
+      "id": "virtual: config-sassLoader",
+      "key": "sassLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-runtimePublicPath": {
+      "id": "virtual: config-runtimePublicPath",
+      "key": "runtimePublicPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-purgeCSS": {
+      "id": "virtual: config-purgeCSS",
+      "key": "purgeCSS",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-publicPath": {
+      "id": "virtual: config-publicPath",
+      "key": "publicPath",
+      "config": {
+        "default": "/"
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-proxy": {
+      "id": "virtual: config-proxy",
+      "key": "proxy",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-postcssLoader": {
+      "id": "virtual: config-postcssLoader",
+      "key": "postcssLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-outputPath": {
+      "id": "virtual: config-outputPath",
+      "key": "outputPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-normalCSSLoaderModules": {
+      "id": "virtual: config-normalCSSLoaderModules",
+      "key": "normalCSSLoaderModules",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-mfsu": {
+      "id": "virtual: config-mfsu",
+      "key": "mfsu",
+      "config": {
+        "default": {
+          "strategy": "eager"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-mdx": {
+      "id": "virtual: config-mdx",
+      "key": "mdx",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-manifest": {
+      "id": "virtual: config-manifest",
+      "key": "manifest",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-lessLoader": {
+      "id": "virtual: config-lessLoader",
+      "key": "lessLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-jsMinifierOptions": {
+      "id": "virtual: config-jsMinifierOptions",
+      "key": "jsMinifierOptions",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-jsMinifier": {
+      "id": "virtual: config-jsMinifier",
+      "key": "jsMinifier",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-inlineLimit": {
+      "id": "virtual: config-inlineLimit",
+      "key": "inlineLimit",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-ignoreMomentLocale": {
+      "id": "virtual: config-ignoreMomentLocale",
+      "key": "ignoreMomentLocale",
+      "config": {
+        "default": true
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-https": {
+      "id": "virtual: config-https",
+      "key": "https",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-hash": {
+      "id": "virtual: config-hash",
+      "key": "hash",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-forkTSChecker": {
+      "id": "virtual: config-forkTSChecker",
+      "key": "forkTSChecker",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-fastRefresh": {
+      "id": "virtual: config-fastRefresh",
+      "key": "fastRefresh",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraPostCSSPlugins": {
+      "id": "virtual: config-extraPostCSSPlugins",
+      "key": "extraPostCSSPlugins",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraBabelPresets": {
+      "id": "virtual: config-extraBabelPresets",
+      "key": "extraBabelPresets",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraBabelPlugins": {
+      "id": "virtual: config-extraBabelPlugins",
+      "key": "extraBabelPlugins",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-extraBabelIncludes": {
+      "id": "virtual: config-extraBabelIncludes",
+      "key": "extraBabelIncludes",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-externals": {
+      "id": "virtual: config-externals",
+      "key": "externals",
+      "config": {
+        "default": {}
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-esm": {
+      "id": "virtual: config-esm",
+      "key": "esm",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-devtool": {
+      "id": "virtual: config-devtool",
+      "key": "devtool",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-depTranspiler": {
+      "id": "virtual: config-depTranspiler",
+      "key": "depTranspiler",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-define": {
+      "id": "virtual: config-define",
+      "key": "define",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-deadCode": {
+      "id": "virtual: config-deadCode",
+      "key": "deadCode",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssPublicPath": {
+      "id": "virtual: config-cssPublicPath",
+      "key": "cssPublicPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssMinifierOptions": {
+      "id": "virtual: config-cssMinifierOptions",
+      "key": "cssMinifierOptions",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssMinifier": {
+      "id": "virtual: config-cssMinifier",
+      "key": "cssMinifier",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssLoaderModules": {
+      "id": "virtual: config-cssLoaderModules",
+      "key": "cssLoaderModules",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cssLoader": {
+      "id": "virtual: config-cssLoader",
+      "key": "cssLoader",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-copy": {
+      "id": "virtual: config-copy",
+      "key": "copy",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-checkDepCssModules": {
+      "id": "virtual: config-checkDepCssModules",
+      "key": "checkDepCssModules",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-chainWebpack": {
+      "id": "virtual: config-chainWebpack",
+      "key": "chainWebpack",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-cacheDirectoryPath": {
+      "id": "virtual: config-cacheDirectoryPath",
+      "key": "cacheDirectoryPath",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-babelLoaderCustomize": {
+      "id": "virtual: config-babelLoaderCustomize",
+      "key": "babelLoaderCustomize",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-autoprefixer": {
+      "id": "virtual: config-autoprefixer",
+      "key": "autoprefixer",
+      "config": {},
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-autoCSSModules": {
+      "id": "virtual: config-autoCSSModules",
+      "key": "autoCSSModules",
+      "config": {
+        "default": true
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "virtual: config-alias": {
+      "id": "virtual: config-alias",
+      "key": "alias",
+      "config": {
+        "default": {
+          "umi": "@@/exports",
+          "react": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react",
+          "react-dom": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react-dom",
+          "react-router": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router@6.3.0_react@18.3.1\\node_modules\\react-router",
+          "react-router-dom": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router-dom@6.3.0_reac_beb70b932a60871592d5dec302f52003\\node_modules\\react-router-dom"
+        }
+      },
+      "type": "plugin",
+      "enableBy": "register",
+      "time": {
+        "hooks": {},
+        "register": 0
+      }
+    },
+    "@umijs/preset-umi/dist/features/crossorigin/crossorigin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/crossorigin/crossorigin",
+      "key": "crossorigin"
+    },
+    "@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "onStart": [
+            12
+          ]
+        },
+        "register": 4
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand",
+      "key": "depsOnDemand"
+    },
+    "@umijs/preset-umi/dist/features/devTool/devTool": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 4
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/devTool/devTool.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/devTool/devTool",
+      "key": "devTool"
+    },
+    "@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 458
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker",
+      "key": "esbuildHelperChecker"
+    },
+    "@umijs/preset-umi/dist/features/esmi/esmi": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3252
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/esmi/esmi.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/esmi/esmi",
+      "key": "esmi"
+    },
+    "@umijs/preset-umi/dist/features/exportStatic/exportStatic": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 244
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/exportStatic/exportStatic",
+      "key": "exportStatic"
+    },
+    "@umijs/preset-umi/dist/features/favicons/favicons": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyAppData": [
+            1
+          ]
+        },
+        "register": 11
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/favicons/favicons.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/favicons/favicons",
+      "key": "favicons"
+    },
+    "@umijs/preset-umi/dist/features/helmet/helmet": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 23
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/helmet/helmet.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/helmet/helmet",
+      "key": "helmet"
+    },
+    "@umijs/preset-umi/dist/features/icons/icons": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 72
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/icons/icons.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/icons/icons",
+      "key": "icons"
+    },
+    "@umijs/preset-umi/dist/features/mock/mock": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 683
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/mock/mock",
+      "key": "mock"
+    },
+    "@umijs/preset-umi/dist/features/mpa/mpa": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 30
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/mpa/mpa.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/mpa/mpa",
+      "key": "mpa"
+    },
+    "@umijs/preset-umi/dist/features/okam/okam": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 19
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/okam/okam",
+      "key": "okam"
+    },
+    "@umijs/preset-umi/dist/features/overrides/overrides": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 23
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/overrides/overrides.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/overrides/overrides",
+      "key": "overrides"
+    },
+    "@umijs/preset-umi/dist/features/phantomDependency/phantomDependency": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 54
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/phantomDependency/phantomDependency",
+      "key": "phantomDependency"
+    },
+    "@umijs/preset-umi/dist/features/polyfill/polyfill": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyConfig": [
+            24
+          ]
+        },
+        "register": 73
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/polyfill/polyfill",
+      "key": "polyfill"
+    },
+    "@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 17
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill",
+      "key": "publicPathPolyfill"
+    },
+    "@umijs/preset-umi/dist/features/prepare/prepare": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 37
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/prepare/prepare.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/prepare/prepare",
+      "key": "prepare"
+    },
+    "@umijs/preset-umi/dist/features/routePrefetch/routePrefetch": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 26
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/routePrefetch/routePrefetch",
+      "key": "routePrefetch"
+    },
+    "@umijs/preset-umi/dist/features/terminal/terminal": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 39
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/terminal/terminal.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/terminal/terminal",
+      "key": "terminal"
+    },
+    "@umijs/preset-umi/dist/features/tmpFiles/tmpFiles": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 169
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/tmpFiles/tmpFiles",
+      "key": "tmpFiles"
+    },
+    "@umijs/preset-umi/dist/features/clientLoader/clientLoader": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 27
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/clientLoader/clientLoader",
+      "key": "clientLoader"
+    },
+    "@umijs/preset-umi/dist/features/routeProps/routeProps": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 6
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/routeProps/routeProps",
+      "key": "routeProps"
+    },
+    "@umijs/preset-umi/dist/features/ssr/ssr": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyConfig": [
+            0
+          ],
+          "modifyDefaultConfig": [
+            0
+          ],
+          "onCheck": [
+            0
+          ],
+          "onStart": [
+            3
+          ]
+        },
+        "register": 75
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/ssr/ssr.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/ssr/ssr",
+      "key": "ssr"
+    },
+    "@umijs/preset-umi/dist/features/tmpFiles/configTypes": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 126
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/tmpFiles/configTypes",
+      "key": "configTypes"
+    },
+    "@umijs/preset-umi/dist/features/transform/transform": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 114
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/transform/transform.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/transform/transform",
+      "key": "transform"
+    },
+    "@umijs/preset-umi/dist/features/lowImport/lowImport": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 61
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/lowImport/lowImport",
+      "key": "lowImport"
+    },
+    "@umijs/preset-umi/dist/features/vite/vite": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/vite/vite.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/vite/vite",
+      "key": "vite"
+    },
+    "@umijs/preset-umi/dist/features/apiRoute/apiRoute": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 378
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/apiRoute/apiRoute",
+      "key": "apiRoute"
+    },
+    "@umijs/preset-umi/dist/features/monorepo/redirect": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1472
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/monorepo/redirect.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/monorepo/redirect",
+      "key": "monorepoRedirect"
+    },
+    "@umijs/preset-umi/dist/features/test/test": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 63
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/test/test.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/test/test",
+      "key": "test"
+    },
+    "@umijs/preset-umi/dist/features/clickToComponent/clickToComponent": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 88
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/clickToComponent/clickToComponent",
+      "key": "clickToComponent"
+    },
+    "@umijs/preset-umi/dist/features/legacy/legacy": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 234
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/legacy/legacy.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/legacy/legacy",
+      "key": "legacy"
+    },
+    "@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 25
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose",
+      "key": "classPropertiesLoose"
+    },
+    "@umijs/preset-umi/dist/features/webpack/webpack": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 44
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/webpack/webpack",
+      "key": "preset-umi:webpack"
+    },
+    "@umijs/preset-umi/dist/features/swc/swc": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "addOnDemandDeps": [
+            10
+          ]
+        },
+        "register": 17
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/swc/swc.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/swc/swc",
+      "key": "swc"
+    },
+    "@umijs/preset-umi/dist/features/ui/ui": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 314
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/ui/ui",
+      "key": "ui"
+    },
+    "@umijs/preset-umi/dist/features/mako/mako": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 395
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/mako/mako.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/mako/mako",
+      "key": "mako"
+    },
+    "@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 839
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian",
+      "key": "hmrGuardian"
+    },
+    "@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 545
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad",
+      "key": "routePreloadOnLoad"
+    },
+    "@umijs/preset-umi/dist/features/forget/forget": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 183
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/features/forget/forget.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/features/forget/forget",
+      "key": "forget"
+    },
+    "@umijs/preset-umi/dist/commands/build": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 324
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/build.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/build",
+      "key": "build"
+    },
+    "@umijs/preset-umi/dist/commands/config/config": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1206
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/config/config.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/config/config",
+      "key": "config"
+    },
+    "@umijs/preset-umi/dist/commands/dev/dev": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1349
+      },
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/dev/dev",
+      "key": "dev"
+    },
+    "@umijs/preset-umi/dist/commands/help": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 16
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/help.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/help",
+      "key": "help"
+    },
+    "@umijs/preset-umi/dist/commands/lint": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 24
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/lint.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/lint",
+      "key": "lint"
+    },
+    "@umijs/preset-umi/dist/commands/setup": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 18
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/setup.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/setup",
+      "key": "setup"
+    },
+    "@umijs/preset-umi/dist/commands/deadcode": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 19
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/deadcode.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/deadcode",
+      "key": "deadcode"
+    },
+    "@umijs/preset-umi/dist/commands/version": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 24
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/version.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/version",
+      "key": "version"
+    },
+    "@umijs/preset-umi/dist/commands/generators/page": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 67
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/page.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/page",
+      "key": "generator:page"
+    },
+    "@umijs/preset-umi/dist/commands/generators/prettier": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/prettier.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/prettier",
+      "key": "generator:prettier"
+    },
+    "@umijs/preset-umi/dist/commands/generators/tsconfig": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 46
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/tsconfig",
+      "key": "generator:tsconfig"
+    },
+    "@umijs/preset-umi/dist/commands/generators/jest": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 16
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/jest.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/jest",
+      "key": "generator:jest"
+    },
+    "@umijs/preset-umi/dist/commands/generators/tailwindcss": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 184
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/tailwindcss",
+      "key": "generator:tailwindcss"
+    },
+    "@umijs/preset-umi/dist/commands/generators/dva": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 53
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/dva.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/dva",
+      "key": "generator:dva"
+    },
+    "@umijs/preset-umi/dist/commands/generators/component": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 226
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/component.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/component",
+      "key": "generator:component"
+    },
+    "@umijs/preset-umi/dist/commands/generators/mock": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 74
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/mock.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/mock",
+      "key": "generator:mock"
+    },
+    "@umijs/preset-umi/dist/commands/generators/cypress": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 48
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/cypress.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/cypress",
+      "key": "generator:cypress"
+    },
+    "@umijs/preset-umi/dist/commands/generators/api": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 27
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/api.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/api",
+      "key": "generator:api"
+    },
+    "@umijs/preset-umi/dist/commands/generators/precommit": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 26
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/generators/precommit.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/generators/precommit",
+      "key": "generator:precommit"
+    },
+    "@umijs/preset-umi/dist/commands/plugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 22
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/plugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/plugin",
+      "key": "command:plugin"
+    },
+    "@umijs/preset-umi/dist/commands/verify-commit": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 73
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/verify-commit.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/verify-commit",
+      "key": "verifyCommit"
+    },
+    "@umijs/preset-umi/dist/commands/preview": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 822
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/preview.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/preview",
+      "key": "preview"
+    },
+    "@umijs/preset-umi/dist/commands/mfsu/mfsu": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 76
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+preset-umi@4.4.9_@ty_51464aaf3e0596f294bd366ea098633b/node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/preset-umi/dist/commands/mfsu/mfsu",
+      "key": "mfsu-cli"
+    },
+    "@umijs/plugin-run": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 149
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+plugin-run@4.4.9/node_modules/@umijs/plugin-run/dist/index.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/plugin-run",
+      "key": "run"
+    },
+    "@umijs/core/dist/service/generatePlugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 23
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@umijs+core@4.4.9/node_modules/@umijs/core/dist/service/generatePlugin.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "@umijs/core/dist/service/generatePlugin",
+      "key": "generatePlugin"
+    },
+    "./node_modules/@umijs/plugins/dist/tailwindcss": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 115
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/node_modules/@umijs/plugins/dist/tailwindcss.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "./node_modules/@umijs/plugins/dist/tailwindcss",
+      "key": "tailwindcss"
+    },
+    "./node_modules/@umijs/plugins/dist/react-query": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyConfig": [
+            50
+          ],
+          "onStart": [
+            1
+          ]
+        },
+        "register": 119
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/node_modules/@umijs/plugins/dist/react-query.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "./node_modules/@umijs/plugins/dist/react-query",
+      "key": "reactQuery"
+    },
+    "./node_modules/@umijs/plugins/dist/access": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 17
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/node_modules/@umijs/plugins/dist/access.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "./node_modules/@umijs/plugins/dist/access",
+      "key": "access"
+    },
+    "./node_modules/@umijs/plugins/dist/initial-state": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 51
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/node_modules/@umijs/plugins/dist/initial-state.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "./node_modules/@umijs/plugins/dist/initial-state",
+      "key": "initialState"
+    },
+    "./node_modules/@umijs/plugins/dist/locale": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 141
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/node_modules/@umijs/plugins/dist/locale.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "./node_modules/@umijs/plugins/dist/locale",
+      "key": "locale"
+    },
+    "./node_modules/@umijs/plugins/dist/model": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 183
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/node_modules/@umijs/plugins/dist/model.js",
+      "cwd": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard",
+      "id": "./node_modules/@umijs/plugins/dist/model",
+      "key": "model"
+    }
+  },
+  "presets": [],
+  "name": "build",
+  "args": {
+    "_": []
+  },
+  "userConfig": {
+    "title": "CauldronOS Admin Dashboard",
+    "favicons": [
+      "/favicon.ico"
+    ],
+    "metas": [
+      {
+        "name": "description",
+        "content": "CauldronOS Admin Dashboard"
+      },
+      {
+        "name": "theme-color",
+        "content": "#00F0FF"
+      }
+    ],
+    "plugins": [
+      "@umijs/plugins/dist/tailwindcss",
+      "@umijs/plugins/dist/react-query",
+      "@umijs/plugins/dist/access",
+      "@umijs/plugins/dist/initial-state",
+      "@umijs/plugins/dist/locale",
+      "@umijs/plugins/dist/model"
+    ],
+    "tailwindcss": {},
+    "reactQuery": {},
+    "npmClient": "pnpm",
+    "access": {},
+    "initialState": {},
+    "locale": {
+      "default": "en-US",
+      "antd": true,
+      "baseNavigator": true,
+      "baseSeparator": "-",
+      "title": true
+    },
+    "model": {},
+    "routes": [
+      {
+        "path": "/",
+        "component": "@/layouts/MainLayout",
+        "routes": [
+          {
+            "path": "/",
+            "component": "@/pages/dashboard"
+          },
+          {
+            "path": "/users",
+            "component": "@/pages/users",
+            "access": "canManageUsers"
+          },
+          {
+            "path": "/settings",
+            "component": "@/pages/settings",
+            "access": "canManageSettings"
+          },
+          {
+            "path": "/ai",
+            "component": "@/pages/ai",
+            "access": "canAccessAI"
+          },
+          {
+            "path": "/ai/crew-demo",
+            "component": "@/pages/ai/crew-demo",
+            "access": "canAccessAI"
+          },
+          {
+            "path": "/modules",
+            "component": "@/pages/modules",
+            "access": "canManageModules"
+          },
+          {
+            "path": "*",
+            "component": "@/pages/404"
+          }
+        ]
+      }
+    ],
+    "alias": {
+      "@": "./src",
+      "@cauldronos/ui": "../../packages/ui/dist",
+      "@cauldronos/hooks": "../../packages/hooks/dist",
+      "@cauldronos/utils": "../../packages/utils/dist",
+      "@cauldronos/agents": "../../packages/agents/dist",
+      "@cauldronos/api": "../../packages/api/dist"
+    },
+    "publicPath": "/",
+    "hash": true,
+    "history": {
+      "type": "browser"
+    },
+    "targets": {
+      "chrome": 80,
+      "firefox": 80,
+      "safari": 13,
+      "edge": 80
+    },
+    "codeSplitting": {
+      "jsStrategy": "granularChunks"
+    },
+    "devtool": false,
+    "fastRefresh": true,
+    "jsMinifier": "terser",
+    "cssMinifier": "cssnano",
+    "mfsu": {
+      "strategy": "eager",
+      "esbuild": true
+    },
+    "proxy": {
+      "/api": {
+        "target": "http://localhost:3001",
+        "changeOrigin": true
+      }
+    },
+    "ssr": {
+      "serverBuildPath": "./dist/umi.server.js",
+      "builder": "webpack",
+      "mode": "stream",
+      "staticRoutes": {
+        "/": {
+          "extraRoutePaths": [
+            "/dashboard"
+          ]
+        }
+      },
+      "removeUnusedCss": true
+    }
+  },
+  "mainConfigFile": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\.umirc.ts",
+  "config": {
+    "routeLoader": {
+      "moduleType": "esm"
+    },
+    "mountElementId": "root",
+    "history": {
+      "type": "browser"
+    },
+    "base": "/",
+    "svgr": {},
+    "publicPath": "/",
+    "mfsu": {
+      "strategy": "eager",
+      "esbuild": true
+    },
+    "ignoreMomentLocale": true,
+    "externals": {},
+    "autoCSSModules": true,
+    "alias": {
+      "umi": "@@/exports",
+      "react": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react",
+      "react-dom": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react-dom",
+      "react-router": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router@6.3.0_react@18.3.1\\node_modules\\react-router",
+      "react-router-dom": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router-dom@6.3.0_reac_beb70b932a60871592d5dec302f52003\\node_modules\\react-router-dom",
+      "@": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src",
+      "@cauldronos/ui": "../../packages/ui/dist",
+      "@cauldronos/hooks": "../../packages/hooks/dist",
+      "@cauldronos/utils": "../../packages/utils/dist",
+      "@cauldronos/agents": "../../packages/agents/dist",
+      "@cauldronos/api": "../../packages/api/dist",
+      "@@": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/.umi-production",
+      "regenerator-runtime": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\regenerator-runtime@0.13.11\\node_modules\\regenerator-runtime",
+      "@tanstack/react-query": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@tanstack+react-query@4.36._0f261c9fbe22bd62978d878f4b0f9d5d/node_modules/@tanstack/react-query",
+      "@tanstack/react-query-devtools": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@tanstack+react-query-devto_7093df4b8f8e71d99b893f56732cddac/node_modules/@tanstack/react-query-devtools"
+    },
+    "title": "CauldronOS Admin Dashboard",
+    "favicons": [
+      "/favicon.ico"
+    ],
+    "metas": [
+      {
+        "name": "description",
+        "content": "CauldronOS Admin Dashboard"
+      },
+      {
+        "name": "theme-color",
+        "content": "#00F0FF"
+      }
+    ],
+    "plugins": [
+      "@umijs/plugins/dist/tailwindcss",
+      "@umijs/plugins/dist/react-query",
+      "@umijs/plugins/dist/access",
+      "@umijs/plugins/dist/initial-state",
+      "@umijs/plugins/dist/locale",
+      "@umijs/plugins/dist/model"
+    ],
+    "tailwindcss": {},
+    "reactQuery": {},
+    "npmClient": "pnpm",
+    "access": {},
+    "initialState": {},
+    "locale": {
+      "default": "en-US",
+      "antd": true,
+      "baseNavigator": true,
+      "baseSeparator": "-",
+      "title": true
+    },
+    "model": {},
+    "routes": [
+      {
+        "path": "/",
+        "component": "@/layouts/MainLayout",
+        "routes": [
+          {
+            "path": "/",
+            "component": "@/pages/dashboard"
+          },
+          {
+            "path": "/users",
+            "component": "@/pages/users",
+            "access": "canManageUsers"
+          },
+          {
+            "path": "/settings",
+            "component": "@/pages/settings",
+            "access": "canManageSettings"
+          },
+          {
+            "path": "/ai",
+            "component": "@/pages/ai",
+            "access": "canAccessAI"
+          },
+          {
+            "path": "/ai/crew-demo",
+            "component": "@/pages/ai/crew-demo",
+            "access": "canAccessAI"
+          },
+          {
+            "path": "/modules",
+            "component": "@/pages/modules",
+            "access": "canManageModules"
+          },
+          {
+            "path": "*",
+            "component": "@/pages/404"
+          }
+        ]
+      }
+    ],
+    "hash": true,
+    "targets": {
+      "chrome": 80,
+      "firefox": 80,
+      "safari": 13,
+      "edge": 80
+    },
+    "codeSplitting": {
+      "jsStrategy": "granularChunks"
+    },
+    "devtool": false,
+    "fastRefresh": true,
+    "jsMinifier": "terser",
+    "cssMinifier": "cssnano",
+    "proxy": {
+      "/api": {
+        "target": "http://localhost:3001",
+        "changeOrigin": true
+      }
+    },
+    "ssr": {
+      "serverBuildPath": "./dist/umi.server.js",
+      "builder": "webpack",
+      "mode": "stream",
+      "staticRoutes": {
+        "/": {
+          "extraRoutePaths": [
+            "/dashboard"
+          ]
+        }
+      },
+      "removeUnusedCss": true
+    },
+    "define": {
+      "process.env.SSR_BUILD_TARGET": "express"
+    }
+  },
+  "defaultConfig": {
+    "routeLoader": {
+      "moduleType": "esm"
+    },
+    "mountElementId": "root",
+    "history": {
+      "type": "browser"
+    },
+    "base": "/",
+    "svgr": {},
+    "publicPath": "/",
+    "mfsu": {
+      "strategy": "eager",
+      "esbuild": true
+    },
+    "ignoreMomentLocale": true,
+    "externals": {},
+    "autoCSSModules": true,
+    "alias": {
+      "umi": "@@/exports",
+      "react": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react",
+      "react-dom": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react-dom",
+      "react-router": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router@6.3.0_react@18.3.1\\node_modules\\react-router",
+      "react-router-dom": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\react-router-dom@6.3.0_reac_beb70b932a60871592d5dec302f52003\\node_modules\\react-router-dom",
+      "@": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src",
+      "@cauldronos/ui": "../../packages/ui/dist",
+      "@cauldronos/hooks": "../../packages/hooks/dist",
+      "@cauldronos/utils": "../../packages/utils/dist",
+      "@cauldronos/agents": "../../packages/agents/dist",
+      "@cauldronos/api": "../../packages/api/dist",
+      "@@": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/.umi-production",
+      "regenerator-runtime": "C:\\Users\\DevToolsUser\\cauldronos\\node_modules\\.pnpm\\regenerator-runtime@0.13.11\\node_modules\\regenerator-runtime",
+      "@tanstack/react-query": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@tanstack+react-query@4.36._0f261c9fbe22bd62978d878f4b0f9d5d/node_modules/@tanstack/react-query",
+      "@tanstack/react-query-devtools": "C:/Users/DevToolsUser/cauldronos/node_modules/.pnpm/@tanstack+react-query-devto_7093df4b8f8e71d99b893f56732cddac/node_modules/@tanstack/react-query-devtools"
+    },
+    "title": "CauldronOS Admin Dashboard",
+    "favicons": [
+      "/favicon.ico"
+    ],
+    "metas": [
+      {
+        "name": "description",
+        "content": "CauldronOS Admin Dashboard"
+      },
+      {
+        "name": "theme-color",
+        "content": "#00F0FF"
+      }
+    ],
+    "plugins": [
+      "@umijs/plugins/dist/tailwindcss",
+      "@umijs/plugins/dist/react-query",
+      "@umijs/plugins/dist/access",
+      "@umijs/plugins/dist/initial-state",
+      "@umijs/plugins/dist/locale",
+      "@umijs/plugins/dist/model"
+    ],
+    "tailwindcss": {},
+    "reactQuery": {},
+    "npmClient": "pnpm",
+    "access": {},
+    "initialState": {},
+    "locale": {
+      "default": "en-US",
+      "antd": true,
+      "baseNavigator": true,
+      "baseSeparator": "-",
+      "title": true
+    },
+    "model": {},
+    "routes": [
+      {
+        "path": "/",
+        "component": "@/layouts/MainLayout",
+        "routes": [
+          {
+            "path": "/",
+            "component": "@/pages/dashboard"
+          },
+          {
+            "path": "/users",
+            "component": "@/pages/users",
+            "access": "canManageUsers"
+          },
+          {
+            "path": "/settings",
+            "component": "@/pages/settings",
+            "access": "canManageSettings"
+          },
+          {
+            "path": "/ai",
+            "component": "@/pages/ai",
+            "access": "canAccessAI"
+          },
+          {
+            "path": "/ai/crew-demo",
+            "component": "@/pages/ai/crew-demo",
+            "access": "canAccessAI"
+          },
+          {
+            "path": "/modules",
+            "component": "@/pages/modules",
+            "access": "canManageModules"
+          },
+          {
+            "path": "*",
+            "component": "@/pages/404"
+          }
+        ]
+      }
+    ],
+    "hash": true,
+    "targets": {
+      "chrome": 80,
+      "firefox": 80,
+      "safari": 13,
+      "edge": 80
+    },
+    "codeSplitting": {
+      "jsStrategy": "granularChunks"
+    },
+    "devtool": false,
+    "fastRefresh": true,
+    "jsMinifier": "terser",
+    "cssMinifier": "cssnano",
+    "proxy": {
+      "/api": {
+        "target": "http://localhost:3001",
+        "changeOrigin": true
+      }
+    },
+    "ssr": {
+      "serverBuildPath": "./dist/umi.server.js",
+      "builder": "webpack",
+      "mode": "stream",
+      "staticRoutes": {
+        "/": {
+          "extraRoutePaths": [
+            "/dashboard"
+          ]
+        }
+      },
+      "removeUnusedCss": true
+    },
+    "define": {
+      "process.env.SSR_BUILD_TARGET": "express"
+    }
+  },
+  "routes": {
+    "1": {
+      "path": "/",
+      "file": "@/layouts/MainLayout.tsx",
+      "id": "1",
+      "absPath": "/",
+      "__content": "import React, { useState } from 'react';\r\nimport { Layout, Menu, Button, Avatar, Dropdown, Badge, Space, theme } from 'antd';\r\nimport { Outlet, useLocation, useNavigate, useIntl } from 'umi';\r\nimport {\r\n  MenuFoldOutlined,\r\n  MenuUnfoldOutlined,\r\n  DashboardOutlined,\r\n  UserOutlined,\r\n  SettingOutlined,\r\n  RobotOutlined,\r\n  AppstoreOutlined,\r\n  BellOutlined,\r\n  LogoutOutlined,\r\n} from '@ant-design/icons';\r\nimport { motion, AnimatePresence } from 'framer-motion';\r\nimport LanguageSwitcher from '@/components/LanguageSwitcher';\r\n\r\nconst { Header, Sider, Content } = Layout;\r\n\r\nconst MainLayout: React.FC = () => {\r\n  const [collapsed, setCollapsed] = useState(false);\r\n  const location = useLocation();\r\n  const navigate = useNavigate();\r\n  const intl = useIntl();\r\n  const {\r\n    token: { colorBgContainer, colorPrimary, borderRadiusLG },\r\n  } = theme.useToken();\r\n\r\n  // Menu items\r\n  const menuItems = [\r\n    {\r\n      key: '/',\r\n      icon: <DashboardOutlined />,\r\n      label: intl.formatMessage({ id: 'menu.dashboard' }),\r\n    },\r\n    {\r\n      key: '/users',\r\n      icon: <UserOutlined />,\r\n      label: intl.formatMessage({ id: 'menu.users' }),\r\n    },\r\n    {\r\n      key: '/modules',\r\n      icon: <AppstoreOutlined />,\r\n      label: intl.formatMessage({ id: 'menu.modules' }),\r\n    },\r\n    {\r\n      key: '/ai',\r\n      icon: <RobotOutlined />,\r\n      label: intl.formatMessage({ id: 'menu.ai' }),\r\n    },\r\n    {\r\n      key: '/settings',\r\n      icon: <SettingOutlined />,\r\n      label: intl.formatMessage({ id: 'menu.settings' }),\r\n    },\r\n  ];\r\n\r\n  // User dropdown menu\r\n  const userMenu = {\r\n    items: [\r\n      {\r\n        key: 'profile',\r\n        icon: <UserOutlined />,\r\n        label: 'Profile',\r\n      },\r\n      {\r\n        key: 'settings',\r\n        icon: <SettingOutlined />,\r\n        label: 'Settings',\r\n      },\r\n      {\r\n        type: 'divider',\r\n      },\r\n      {\r\n        key: 'logout',\r\n        icon: <LogoutOutlined />,\r\n        label: 'Logout',\r\n      },\r\n    ],\r\n    onClick: ({ key }: { key: string }) => {\r\n      if (key === 'profile') {\r\n        navigate('/profile');\r\n      } else if (key === 'settings') {\r\n        navigate('/settings');\r\n      } else if (key === 'logout') {\r\n        // Handle logout\r\n        console.log('Logout');\r\n      }\r\n    },\r\n  };\r\n\r\n  // Notifications dropdown menu\r\n  const notificationsMenu = {\r\n    items: [\r\n      {\r\n        key: 'notification1',\r\n        label: 'New user registered',\r\n        icon: <UserOutlined />,\r\n      },\r\n      {\r\n        key: 'notification2',\r\n        label: 'System update available',\r\n        icon: <AppstoreOutlined />,\r\n      },\r\n      {\r\n        key: 'notification3',\r\n        label: 'New message received',\r\n        icon: <BellOutlined />,\r\n      },\r\n    ],\r\n  };\r\n\r\n  // Logo animation variants\r\n  const logoVariants = {\r\n    hidden: { opacity: 0, scale: 0.8 },\r\n    visible: {\r\n      opacity: 1,\r\n      scale: 1,\r\n      transition: {\r\n        duration: 0.5,\r\n        ease: [0.22, 1, 0.36, 1]\r\n      }\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Layout className=\"min-h-screen\">\r\n      <Sider\r\n        trigger={null}\r\n        collapsible\r\n        collapsed={collapsed}\r\n        width={240}\r\n        style={{\r\n          overflow: 'auto',\r\n          height: '100vh',\r\n          position: 'fixed',\r\n          left: 0,\r\n          top: 0,\r\n          bottom: 0,\r\n          zIndex: 100,\r\n          boxShadow: '2px 0 8px rgba(0,0,0,0.15)',\r\n        }}\r\n      >\r\n        <div className=\"h-16 flex items-center justify-center\">\r\n          <AnimatePresence mode=\"wait\">\r\n            <motion.div\r\n              key={collapsed ? 'collapsed' : 'expanded'}\r\n              initial=\"hidden\"\r\n              animate=\"visible\"\r\n              exit={{ opacity: 0, scale: 0.8 }}\r\n              variants={logoVariants}\r\n            >\r\n              {collapsed ? (\r\n                <div className=\"text-2xl font-bold\" style={{ color: colorPrimary }}>C</div>\r\n              ) : (\r\n                <div className=\"text-xl font-bold\" style={{ color: colorPrimary }}>CauldronOS</div>\r\n              )}\r\n            </motion.div>\r\n          </AnimatePresence>\r\n        </div>\r\n        <Menu\r\n          theme=\"dark\"\r\n          mode=\"inline\"\r\n          selectedKeys={[location.pathname]}\r\n          items={menuItems}\r\n          onClick={({ key }) => navigate(key)}\r\n        />\r\n      </Sider>\r\n      <Layout style={{ marginLeft: collapsed ? 80 : 240, transition: 'all 0.2s' }}>\r\n        <Header\r\n          style={{\r\n            padding: 0,\r\n            background: colorBgContainer,\r\n            display: 'flex',\r\n            alignItems: 'center',\r\n            justifyContent: 'space-between',\r\n            boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)',\r\n            position: 'sticky',\r\n            top: 0,\r\n            zIndex: 99,\r\n            width: '100%',\r\n          }}\r\n        >\r\n          <Button\r\n            type=\"text\"\r\n            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}\r\n            onClick={() => setCollapsed(!collapsed)}\r\n            style={{ fontSize: '16px', width: 64, height: 64 }}\r\n          />\r\n          <Space className=\"mr-4\">\r\n            <LanguageSwitcher />\r\n            <Dropdown menu={notificationsMenu} placement=\"bottomRight\" arrow>\r\n              <Badge count={3} size=\"small\">\r\n                <Button type=\"text\" icon={<BellOutlined />} />\r\n              </Badge>\r\n            </Dropdown>\r\n            <Dropdown menu={userMenu} placement=\"bottomRight\" arrow>\r\n              <Button type=\"text\" className=\"flex items-center\">\r\n                <Avatar icon={<UserOutlined />} className=\"mr-2\" />\r\n                <span className={collapsed ? 'hidden' : ''}>Admin User</span>\r\n              </Button>\r\n            </Dropdown>\r\n          </Space>\r\n        </Header>\r\n        <Content\r\n          style={{\r\n            margin: '24px 16px',\r\n            padding: 24,\r\n            background: colorBgContainer,\r\n            borderRadius: borderRadiusLG,\r\n            minHeight: 280,\r\n            overflow: 'auto',\r\n          }}\r\n        >\r\n          <Outlet />\r\n        </Content>\r\n      </Layout>\r\n    </Layout>\r\n  );\r\n};\r\n\r\nexport default MainLayout;",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/layouts/MainLayout.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    },
+    "2": {
+      "path": "/",
+      "file": "@/pages/dashboard/index.tsx",
+      "parentId": "1",
+      "id": "2",
+      "absPath": "/",
+      "__content": "import React, { useState } from 'react';\r\nimport { Card, Row, Col, Statistic, Typography, Space, Button, Table, Tag } from 'antd';\r\nimport {\r\n  UserOutlined,\r\n  RiseOutlined,\r\n  FallOutlined,\r\n  AppstoreOutlined,\r\n  ClockCircleOutlined,\r\n  BulbOutlined,\r\n  SearchOutlined,\r\n  BarChartOutlined,\r\n} from '@ant-design/icons';\r\nimport {\r\n  PageTransition,\r\n  InsightCard,\r\n  AISearchBar,\r\n  GestureCard,\r\n  PredictiveForm\r\n} from '../../components/ui';\r\nimport { Form, Input, Select, DatePicker } from 'antd';\r\nimport { useIntl } from 'umi';\r\n\r\nconst { Title, Paragraph, Text } = Typography;\r\nconst { Option } = Select;\r\n\r\nconst DashboardPage: React.FC = () => {\r\n  const intl = useIntl();\r\n  const [searchQuery, setSearchQuery] = useState('');\r\n\r\n  // Sample data for statistics\r\n  const stats = [\r\n    {\r\n      titleId: 'users.title',\r\n      value: 1234,\r\n      icon: <UserOutlined />,\r\n      change: 12.5,\r\n      changeType: 'increase',\r\n    },\r\n    {\r\n      titleId: 'modules.title',\r\n      value: 42,\r\n      icon: <AppstoreOutlined />,\r\n      change: 8.3,\r\n      changeType: 'increase',\r\n    },\r\n    {\r\n      titleId: 'dashboard.performance',\r\n      value: '99.9%',\r\n      icon: <ClockCircleOutlined />,\r\n      change: 0.1,\r\n      changeType: 'decrease',\r\n    },\r\n  ];\r\n\r\n  // Sample data for recent activities\r\n  const recentActivities = [\r\n    {\r\n      key: '1',\r\n      user: 'John Doe',\r\n      action: 'Created a new module',\r\n      time: '2 hours ago',\r\n      status: 'success',\r\n    },\r\n    {\r\n      key: '2',\r\n      user: 'Jane Smith',\r\n      action: 'Updated user settings',\r\n      time: '4 hours ago',\r\n      status: 'info',\r\n    },\r\n    {\r\n      key: '3',\r\n      user: 'Bob Johnson',\r\n      action: 'Deleted a record',\r\n      time: '1 day ago',\r\n      status: 'warning',\r\n    },\r\n    {\r\n      key: '4',\r\n      user: 'Alice Brown',\r\n      action: 'Added new user',\r\n      time: '2 days ago',\r\n      status: 'success',\r\n    },\r\n  ];\r\n\r\n  // Table columns for recent activities\r\n  const columns = [\r\n    {\r\n      title: intl.formatMessage({ id: 'users.title' }),\r\n      dataIndex: 'user',\r\n      key: 'user',\r\n    },\r\n    {\r\n      title: intl.formatMessage({ id: 'common.actions' }),\r\n      dataIndex: 'action',\r\n      key: 'action',\r\n    },\r\n    {\r\n      title: intl.formatMessage({ id: 'dashboard.activity' }),\r\n      dataIndex: 'time',\r\n      key: 'time',\r\n    },\r\n    {\r\n      title: intl.formatMessage({ id: 'common.status' }),\r\n      dataIndex: 'status',\r\n      key: 'status',\r\n      render: (status: string) => {\r\n        let color = 'green';\r\n        if (status === 'warning') color = 'orange';\r\n        if (status === 'info') color = 'blue';\r\n        return <Tag color={color}>{status.toUpperCase()}</Tag>;\r\n      },\r\n    },\r\n  ];\r\n\r\n  // Sample insights data\r\n  const insights = [\r\n    {\r\n      title: 'User Growth Trend',\r\n      description: 'User growth has increased by 12.5% in the last month, which is 5% higher than the previous month. This suggests that recent marketing campaigns have been effective.',\r\n      source: 'User Analytics',\r\n      confidence: 0.85,\r\n      timestamp: new Date(),\r\n      tags: ['Users', 'Growth', 'Marketing'],\r\n      type: 'trend',\r\n      metrics: [\r\n        {\r\n          name: 'Current Month',\r\n          value: '12.5%',\r\n          change: 5.0,\r\n          changeType: 'increase',\r\n        },\r\n        {\r\n          name: 'Previous Month',\r\n          value: '7.5%',\r\n          change: 0,\r\n          changeType: 'neutral',\r\n        },\r\n        {\r\n          name: 'Average',\r\n          value: '8.2%',\r\n          change: 0,\r\n          changeType: 'neutral',\r\n        },\r\n      ],\r\n      recommendations: [\r\n        'Continue current marketing strategies',\r\n        'Focus on user retention to maintain growth',\r\n        'Analyze which channels are driving the most growth',\r\n      ],\r\n    },\r\n    {\r\n      title: 'System Performance Alert',\r\n      description: 'Database response time has increased by 15% in the last 24 hours. This could indicate a potential performance issue that needs attention.',\r\n      source: 'System Monitoring',\r\n      confidence: 0.75,\r\n      timestamp: new Date(),\r\n      tags: ['Performance', 'Database', 'Alert'],\r\n      type: 'anomaly',\r\n      metrics: [\r\n        {\r\n          name: 'Response Time',\r\n          value: '250ms',\r\n          change: 15.0,\r\n          changeType: 'increase',\r\n        },\r\n        {\r\n          name: 'CPU Usage',\r\n          value: '78%',\r\n          change: 12.0,\r\n          changeType: 'increase',\r\n        },\r\n        {\r\n          name: 'Memory',\r\n          value: '65%',\r\n          change: 5.0,\r\n          changeType: 'increase',\r\n        },\r\n      ],\r\n      recommendations: [\r\n        'Check database query performance',\r\n        'Consider scaling up database resources',\r\n        'Review recent code changes that might affect performance',\r\n      ],\r\n    },\r\n  ];\r\n\r\n  // Handle AI search\r\n  const handleAISearch = async (query: string) => {\r\n    console.log('Searching for:', query);\r\n    setSearchQuery(query);\r\n    // In a real implementation, this would call an API\r\n    return [\r\n      `User statistics for \"${query}\"`,\r\n      `System performance related to \"${query}\"`,\r\n      `Recent activities involving \"${query}\"`,\r\n    ];\r\n  };\r\n\r\n  // Handle form submission with AI\r\n  const handleFormSubmit = (values: any) => {\r\n    console.log('Form submitted:', values);\r\n  };\r\n\r\n  // Handle AI form completion\r\n  const handleAIComplete = async (values: any) => {\r\n    // In a real implementation, this would call an AI API\r\n    return {\r\n      ...values,\r\n      name: values.name || 'New Module',\r\n      description: values.description || 'AI-generated description for the new module',\r\n      category: values.category || 'General',\r\n      status: values.status || 'Active',\r\n      startDate: values.startDate || new Date(),\r\n    };\r\n  };\r\n\r\n  // Handle AI form validation\r\n  const handleAIValidate = async (values: any) => {\r\n    // In a real implementation, this would call an AI API\r\n    const issues = [];\r\n\r\n    if (!values.name) {\r\n      issues.push('Module name is required');\r\n    }\r\n\r\n    if (values.name && values.name.length < 3) {\r\n      issues.push('Module name should be at least 3 characters');\r\n    }\r\n\r\n    if (!values.category) {\r\n      issues.push('Category is required');\r\n    }\r\n\r\n    return {\r\n      valid: issues.length === 0,\r\n      issues,\r\n    };\r\n  };\r\n\r\n  return (\r\n    <PageTransition type=\"slide\" direction=\"up\" cyberpunk>\r\n      <Space direction=\"vertical\" size=\"large\" style={{ width: '100%' }}>\r\n        <div className=\"flex justify-between items-center\">\r\n          <Title level={2}>{intl.formatMessage({ id: 'dashboard.title' })}</Title>\r\n          <Button type=\"primary\" icon={<BulbOutlined />}>AI Assistant</Button>\r\n        </div>\r\n\r\n        <AISearchBar\r\n          placeholder={intl.formatMessage({ id: 'common.search' })}\r\n          onSearch={(query) => console.log('Search query:', query)}\r\n          onAISearch={handleAISearch}\r\n          recentSearches={true}\r\n          maxRecentSearches={5}\r\n          suggestionsSource=\"ai\"\r\n          scope=\"global\"\r\n          allowVoiceInput={true}\r\n          cyberpunk={true}\r\n        />\r\n\r\n        <Paragraph className=\"text-gray-400\">\r\n          {intl.formatMessage({ id: 'app.welcome' })}. {intl.formatMessage({ id: 'dashboard.overview' })}.\r\n        </Paragraph>\r\n\r\n        <Row gutter={[16, 16]}>\r\n          {stats.map((stat, index) => (\r\n            <Col xs={24} sm={12} md={8} key={index}>\r\n              <GestureCard\r\n                title={\r\n                  <div className=\"flex items-center text-gray-300\">\r\n                    <span className=\"mr-2\">{stat.icon}</span>\r\n                    {intl.formatMessage({ id: stat.titleId })}\r\n                  </div>\r\n                }\r\n                draggable={true}\r\n                swipeable={true}\r\n                cyberpunk={true}\r\n              >\r\n                <Statistic\r\n                  value={stat.value}\r\n                  valueStyle={{ color: '#1677ff', fontWeight: 'bold' }}\r\n                  suffix={\r\n                    <div className=\"ml-2\">\r\n                      {stat.changeType === 'increase' ? (\r\n                        <Tag color=\"green\" className=\"flex items-center\">\r\n                          <RiseOutlined /> {stat.change}%\r\n                        </Tag>\r\n                      ) : (\r\n                        <Tag color=\"red\" className=\"flex items-center\">\r\n                          <FallOutlined /> {stat.change}%\r\n                        </Tag>\r\n                      )}\r\n                    </div>\r\n                  }\r\n                />\r\n              </GestureCard>\r\n            </Col>\r\n          ))}\r\n        </Row>\r\n\r\n        <Row gutter={[16, 16]}>\r\n          <Col xs={24} md={12}>\r\n            <InsightCard\r\n              insight={insights[0]}\r\n              cyberpunk={true}\r\n              showRecommendations={true}\r\n              defaultExpanded={false}\r\n            />\r\n          </Col>\r\n          <Col xs={24} md={12}>\r\n            <InsightCard\r\n              insight={insights[1]}\r\n              cyberpunk={true}\r\n              showRecommendations={true}\r\n              defaultExpanded={false}\r\n            />\r\n          </Col>\r\n        </Row>\r\n\r\n        <Card\r\n          title={intl.formatMessage({ id: 'dashboard.activity' })}\r\n          className=\"bg-gray-900 border-gray-700 shadow-md\"\r\n          extra={<Button type=\"link\">{intl.formatMessage({ id: 'common.actions' })}</Button>}\r\n        >\r\n          <Table\r\n            dataSource={recentActivities}\r\n            columns={columns}\r\n            pagination={false}\r\n            className=\"bg-gray-900\"\r\n          />\r\n        </Card>\r\n\r\n        <Card\r\n          title={intl.formatMessage({ id: 'modules.add' })}\r\n          className=\"bg-gray-900 border-gray-700 shadow-md\"\r\n        >\r\n          <PredictiveForm\r\n            onFinish={handleFormSubmit}\r\n            learningMode=\"active\"\r\n            contextId=\"module-form\"\r\n            showSuggestions={true}\r\n            showInsights={true}\r\n            autoValidate={true}\r\n            smartDefaults={true}\r\n            showAICompletion={true}\r\n            showAIValidation={true}\r\n            onAIComplete={handleAIComplete}\r\n            onAIValidate={handleAIValidate}\r\n            cyberpunk={true}\r\n            fieldDependencies={{\r\n              status: ['category'],\r\n            }}\r\n          >\r\n            <Form.Item name=\"name\" label={intl.formatMessage({ id: 'modules.title' })} rules={[{ required: true }]}>\r\n              <Input placeholder={intl.formatMessage({ id: 'modules.title' })} />\r\n            </Form.Item>\r\n\r\n            <Form.Item name=\"description\" label={intl.formatMessage({ id: 'common.description' })}>\r\n              <Input.TextArea placeholder={intl.formatMessage({ id: 'common.description' })} rows={4} />\r\n            </Form.Item>\r\n\r\n            <Form.Item name=\"category\" label={intl.formatMessage({ id: 'common.category' })} rules={[{ required: true }]}>\r\n              <Select placeholder={intl.formatMessage({ id: 'common.category' })}>\r\n                <Option value=\"general\">General</Option>\r\n                <Option value=\"security\">Security</Option>\r\n                <Option value=\"analytics\">Analytics</Option>\r\n                <Option value=\"communication\">Communication</Option>\r\n              </Select>\r\n            </Form.Item>\r\n\r\n            <Form.Item name=\"status\" label={intl.formatMessage({ id: 'common.status' })}>\r\n              <Select placeholder={intl.formatMessage({ id: 'common.status' })}>\r\n                <Option value=\"active\">Active</Option>\r\n                <Option value=\"inactive\">Inactive</Option>\r\n                <Option value=\"pending\">Pending</Option>\r\n              </Select>\r\n            </Form.Item>\r\n\r\n            <Form.Item name=\"startDate\" label={intl.formatMessage({ id: 'common.startDate' })}>\r\n              <DatePicker style={{ width: '100%' }} />\r\n            </Form.Item>\r\n\r\n            <Form.Item>\r\n              <Button type=\"primary\" htmlType=\"submit\">\r\n                {intl.formatMessage({ id: 'modules.add' })}\r\n              </Button>\r\n            </Form.Item>\r\n          </PredictiveForm>\r\n        </Card>\r\n      </Space>\r\n    </PageTransition>\r\n  );\r\n};\r\n\r\nexport default DashboardPage;\r\n",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/pages/dashboard/index.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    },
+    "3": {
+      "path": "/users",
+      "access": "canManageUsers",
+      "file": "@/pages/users/index.tsx",
+      "parentId": "1",
+      "id": "3",
+      "absPath": "/users",
+      "__content": "import React from 'react';\nimport { Card, Table, Button, Space, Tag, Typography, Input } from 'antd';\nimport { UserOutlined, SearchOutlined, PlusOutlined } from '@ant-design/icons';\nimport PageTransition from '@/components/PageTransition';\nimport { useIntl } from 'umi';\n\nconst { Title } = Typography;\n\nconst UsersPage: React.FC = () => {\n  const intl = useIntl();\n\n  // Sample data for users\n  const users = [\n    {\n      key: '1',\n      name: 'John Doe',\n      email: 'john.doe@example.com',\n      role: 'Admin',\n      status: 'Active',\n      lastLogin: '2023-04-15 14:30',\n    },\n    {\n      key: '2',\n      name: 'Jane Smith',\n      email: 'jane.smith@example.com',\n      role: 'Manager',\n      status: 'Active',\n      lastLogin: '2023-04-14 09:15',\n    },\n    {\n      key: '3',\n      name: 'Bob Johnson',\n      email: 'bob.johnson@example.com',\n      role: 'User',\n      status: 'Inactive',\n      lastLogin: '2023-03-28 11:45',\n    },\n    {\n      key: '4',\n      name: 'Alice Brown',\n      email: 'alice.brown@example.com',\n      role: 'User',\n      status: 'Active',\n      lastLogin: '2023-04-12 16:20',\n    },\n  ];\n\n  // Table columns\n  const columns = [\n    {\n      title: intl.formatMessage({ id: 'users.name' }),\n      dataIndex: 'name',\n      key: 'name',\n      sorter: (a, b) => a.name.localeCompare(b.name),\n    },\n    {\n      title: intl.formatMessage({ id: 'users.email' }),\n      dataIndex: 'email',\n      key: 'email',\n    },\n    {\n      title: intl.formatMessage({ id: 'users.role' }),\n      dataIndex: 'role',\n      key: 'role',\n      filters: [\n        { text: 'Admin', value: 'Admin' },\n        { text: 'Manager', value: 'Manager' },\n        { text: 'User', value: 'User' },\n      ],\n      onFilter: (value, record) => record.role === value,\n      render: (role) => {\n        let color = 'blue';\n        if (role === 'Admin') color = 'red';\n        if (role === 'Manager') color = 'orange';\n        return <Tag color={color}>{role}</Tag>;\n      },\n    },\n    {\n      title: intl.formatMessage({ id: 'users.status' }),\n      dataIndex: 'status',\n      key: 'status',\n      filters: [\n        { text: 'Active', value: 'Active' },\n        { text: 'Inactive', value: 'Inactive' },\n      ],\n      onFilter: (value, record) => record.status === value,\n      render: (status) => {\n        const color = status === 'Active' ? 'green' : 'gray';\n        return <Tag color={color}>{status}</Tag>;\n      },\n    },\n    {\n      title: intl.formatMessage({ id: 'users.lastLogin' }),\n      dataIndex: 'lastLogin',\n      key: 'lastLogin',\n      sorter: (a, b) => new Date(a.lastLogin) - new Date(b.lastLogin),\n    },\n    {\n      title: intl.formatMessage({ id: 'common.actions' }),\n      key: 'actions',\n      render: () => (\n        <Space size=\"small\">\n          <Button type=\"link\" size=\"small\">\n            {intl.formatMessage({ id: 'common.edit' })}\n          </Button>\n          <Button type=\"link\" size=\"small\" danger>\n            {intl.formatMessage({ id: 'common.delete' })}\n          </Button>\n        </Space>\n      ),\n    },\n  ];\n\n  return (\n    <PageTransition type=\"fade\" cyberpunk>\n      <Space direction=\"vertical\" size=\"large\" style={{ width: '100%' }}>\n        <div className=\"flex justify-between items-center\">\n          <Title level={2}>{intl.formatMessage({ id: 'users.title' })}</Title>\n          <Button type=\"primary\" icon={<PlusOutlined />}>\n            {intl.formatMessage({ id: 'users.add' })}\n          </Button>\n        </div>\n\n        <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n          <div className=\"mb-4\">\n            <Input\n              placeholder={intl.formatMessage({ id: 'common.search' })}\n              prefix={<SearchOutlined />}\n              className=\"max-w-md\"\n            />\n          </div>\n          <Table\n            dataSource={users}\n            columns={columns}\n            pagination={{ pageSize: 10 }}\n            className=\"bg-gray-900\"\n          />\n        </Card>\n      </Space>\n    </PageTransition>\n  );\n};\n\nexport default UsersPage;\n",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/pages/users/index.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    },
+    "4": {
+      "path": "/settings",
+      "access": "canManageSettings",
+      "file": "@/pages/settings/index.tsx",
+      "parentId": "1",
+      "id": "4",
+      "absPath": "/settings",
+      "__content": "import React from 'react';\nimport { Card, Tabs, Form, Input, Switch, Button, Select, Space, Typography, Divider } from 'antd';\nimport {\n  SettingOutlined,\n  SecurityScanOutlined,\n  BellOutlined,\n  ApiOutlined,\n  GlobalOutlined,\n  SaveOutlined\n} from '@ant-design/icons';\nimport PageTransition from '@/components/PageTransition';\nimport { useIntl } from 'umi';\n\nconst { Title, Paragraph } = Typography;\nconst { Option } = Select;\nconst { TabPane } = Tabs;\n\nconst SettingsPage: React.FC = () => {\n  const intl = useIntl();\n\n  return (\n    <PageTransition type=\"fade\" cyberpunk>\n      <Space direction=\"vertical\" size=\"large\" style={{ width: '100%' }}>\n        <Title level={2}>{intl.formatMessage({ id: 'settings.title' })}</Title>\n\n        <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n          <Tabs defaultActiveKey=\"general\">\n            <TabPane\n              tab={\n                <span>\n                  <SettingOutlined />\n                  {intl.formatMessage({ id: 'settings.general' })}\n                </span>\n              }\n              key=\"general\"\n            >\n              <Form layout=\"vertical\">\n                <Title level={4}>{intl.formatMessage({ id: 'settings.general' })}</Title>\n                <Paragraph className=\"text-gray-400\">\n                  {intl.formatMessage({ id: 'settings.general.description' })}\n                </Paragraph>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.siteName' })}\n                  name=\"siteName\"\n                  initialValue=\"CauldronOS Admin\"\n                >\n                  <Input />\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.siteDescription' })}\n                  name=\"siteDescription\"\n                  initialValue=\"Administration dashboard for CauldronOS\"\n                >\n                  <Input.TextArea rows={3} />\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.timezone' })}\n                  name=\"timezone\"\n                  initialValue=\"UTC\"\n                >\n                  <Select>\n                    <Option value=\"UTC\">UTC</Option>\n                    <Option value=\"America/New_York\">America/New_York</Option>\n                    <Option value=\"Europe/London\">Europe/London</Option>\n                    <Option value=\"Asia/Tokyo\">Asia/Tokyo</Option>\n                  </Select>\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.maintenance' })}\n                  name=\"maintenance\"\n                  valuePropName=\"checked\"\n                >\n                  <Switch />\n                </Form.Item>\n\n                <Button type=\"primary\" icon={<SaveOutlined />}>\n                  {intl.formatMessage({ id: 'common.save' })}\n                </Button>\n              </Form>\n            </TabPane>\n\n            <TabPane\n              tab={\n                <span>\n                  <SecurityScanOutlined />\n                  {intl.formatMessage({ id: 'settings.security' })}\n                </span>\n              }\n              key=\"security\"\n            >\n              <Form layout=\"vertical\">\n                <Title level={4}>{intl.formatMessage({ id: 'settings.security' })}</Title>\n                <Paragraph className=\"text-gray-400\">\n                  {intl.formatMessage({ id: 'settings.security.description' })}\n                </Paragraph>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.twoFactor' })}\n                  name=\"twoFactor\"\n                  valuePropName=\"checked\"\n                  initialValue={true}\n                >\n                  <Switch />\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.sessionTimeout' })}\n                  name=\"sessionTimeout\"\n                  initialValue=\"30\"\n                >\n                  <Select>\n                    <Option value=\"15\">15 minutes</Option>\n                    <Option value=\"30\">30 minutes</Option>\n                    <Option value=\"60\">1 hour</Option>\n                    <Option value=\"120\">2 hours</Option>\n                  </Select>\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.passwordPolicy' })}\n                  name=\"passwordPolicy\"\n                  initialValue=\"strong\"\n                >\n                  <Select>\n                    <Option value=\"basic\">Basic</Option>\n                    <Option value=\"medium\">Medium</Option>\n                    <Option value=\"strong\">Strong</Option>\n                    <Option value=\"custom\">Custom</Option>\n                  </Select>\n                </Form.Item>\n\n                <Button type=\"primary\" icon={<SaveOutlined />}>\n                  {intl.formatMessage({ id: 'common.save' })}\n                </Button>\n              </Form>\n            </TabPane>\n\n            <TabPane\n              tab={\n                <span>\n                  <BellOutlined />\n                  {intl.formatMessage({ id: 'settings.notifications' })}\n                </span>\n              }\n              key=\"notifications\"\n            >\n              <Form layout=\"vertical\">\n                <Title level={4}>{intl.formatMessage({ id: 'settings.notifications' })}</Title>\n                <Paragraph className=\"text-gray-400\">\n                  {intl.formatMessage({ id: 'settings.notifications.description' })}\n                </Paragraph>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.emailNotifications' })}\n                  name=\"emailNotifications\"\n                  valuePropName=\"checked\"\n                  initialValue={true}\n                >\n                  <Switch />\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.pushNotifications' })}\n                  name=\"pushNotifications\"\n                  valuePropName=\"checked\"\n                  initialValue={true}\n                >\n                  <Switch />\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.notificationFrequency' })}\n                  name=\"notificationFrequency\"\n                  initialValue=\"immediate\"\n                >\n                  <Select>\n                    <Option value=\"immediate\">Immediate</Option>\n                    <Option value=\"hourly\">Hourly digest</Option>\n                    <Option value=\"daily\">Daily digest</Option>\n                    <Option value=\"weekly\">Weekly digest</Option>\n                  </Select>\n                </Form.Item>\n\n                <Button type=\"primary\" icon={<SaveOutlined />}>\n                  {intl.formatMessage({ id: 'common.save' })}\n                </Button>\n              </Form>\n            </TabPane>\n\n            <TabPane\n              tab={\n                <span>\n                  <ApiOutlined />\n                  {intl.formatMessage({ id: 'settings.integrations' })}\n                </span>\n              }\n              key=\"integrations\"\n            >\n              <Form layout=\"vertical\">\n                <Title level={4}>{intl.formatMessage({ id: 'settings.integrations' })}</Title>\n                <Paragraph className=\"text-gray-400\">\n                  {intl.formatMessage({ id: 'settings.integrations.description' })}\n                </Paragraph>\n\n                <Form.Item\n                  label=\"API Key\"\n                  name=\"apiKey\"\n                >\n                  <Input.Password />\n                </Form.Item>\n\n                <Form.Item\n                  label=\"Webhook URL\"\n                  name=\"webhookUrl\"\n                >\n                  <Input />\n                </Form.Item>\n\n                <Form.Item\n                  label=\"Enable External API\"\n                  name=\"enableExternalApi\"\n                  valuePropName=\"checked\"\n                  initialValue={false}\n                >\n                  <Switch />\n                </Form.Item>\n\n                <Button type=\"primary\" icon={<SaveOutlined />}>\n                  {intl.formatMessage({ id: 'common.save' })}\n                </Button>\n              </Form>\n            </TabPane>\n\n            <TabPane\n              tab={\n                <span>\n                  <GlobalOutlined />\n                  {intl.formatMessage({ id: 'settings.localization' })}\n                </span>\n              }\n              key=\"localization\"\n            >\n              <Form layout=\"vertical\">\n                <Title level={4}>{intl.formatMessage({ id: 'settings.localization' })}</Title>\n                <Paragraph className=\"text-gray-400\">\n                  {intl.formatMessage({ id: 'settings.localization.description' })}\n                </Paragraph>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.defaultLanguage' })}\n                  name=\"defaultLanguage\"\n                  initialValue=\"en-US\"\n                >\n                  <Select>\n                    <Option value=\"en-US\">English (US)</Option>\n                    <Option value=\"zh-CN\">Chinese (Simplified)</Option>\n                    <Option value=\"es-ES\">Spanish</Option>\n                    <Option value=\"fr-FR\">French</Option>\n                  </Select>\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.dateFormat' })}\n                  name=\"dateFormat\"\n                  initialValue=\"MM/DD/YYYY\"\n                >\n                  <Select>\n                    <Option value=\"MM/DD/YYYY\">MM/DD/YYYY</Option>\n                    <Option value=\"DD/MM/YYYY\">DD/MM/YYYY</Option>\n                    <Option value=\"YYYY-MM-DD\">YYYY-MM-DD</Option>\n                  </Select>\n                </Form.Item>\n\n                <Form.Item\n                  label={intl.formatMessage({ id: 'settings.timeFormat' })}\n                  name=\"timeFormat\"\n                  initialValue=\"12h\"\n                >\n                  <Select>\n                    <Option value=\"12h\">12-hour (AM/PM)</Option>\n                    <Option value=\"24h\">24-hour</Option>\n                  </Select>\n                </Form.Item>\n\n                <Button type=\"primary\" icon={<SaveOutlined />}>\n                  {intl.formatMessage({ id: 'common.save' })}\n                </Button>\n              </Form>\n            </TabPane>\n          </Tabs>\n        </Card>\n      </Space>\n    </PageTransition>\n  );\n};\n\nexport default SettingsPage;\n",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/pages/settings/index.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    },
+    "5": {
+      "path": "/ai",
+      "access": "canAccessAI",
+      "file": "@/pages/ai/index.tsx",
+      "parentId": "1",
+      "id": "5",
+      "absPath": "/ai",
+      "__content": "import React from 'react';\nimport { Card, Tabs, Table, Button, Space, Tag, Typography, Progress, Statistic, Row, Col } from 'antd';\nimport {\n  RobotOutlined,\n  ApiOutlined,\n  BarChartOutlined,\n  SettingOutlined,\n  PlusOutlined,\n  SyncOutlined,\n  TeamOutlined\n} from '@ant-design/icons';\nimport { history } from 'umi';\nimport PageTransition from '@/components/PageTransition';\nimport AISearchBar from '@/components/AISearchBar';\nimport InsightCard from '@/components/InsightCard';\nimport { useIntl } from 'umi';\n\nconst { Title, Paragraph } = Typography;\nconst { TabPane } = Tabs;\n\nconst AIPage: React.FC = () => {\n  const intl = useIntl();\n\n  // Sample data for AI models\n  const models = [\n    {\n      key: '1',\n      name: 'GPT-4',\n      type: 'Text Generation',\n      status: 'Active',\n      version: '1.0.0',\n      lastUpdated: '2023-04-10',\n      usage: 85,\n    },\n    {\n      key: '2',\n      name: 'DALL-E 3',\n      type: 'Image Generation',\n      status: 'Active',\n      version: '2.1.0',\n      lastUpdated: '2023-04-05',\n      usage: 72,\n    },\n    {\n      key: '3',\n      name: 'Whisper',\n      type: 'Speech Recognition',\n      status: 'Inactive',\n      version: '1.5.0',\n      lastUpdated: '2023-03-20',\n      usage: 45,\n    },\n    {\n      key: '4',\n      name: 'Codex',\n      type: 'Code Generation',\n      status: 'Active',\n      version: '0.9.0',\n      lastUpdated: '2023-04-12',\n      usage: 60,\n    },\n  ];\n\n  // Table columns for AI models\n  const modelColumns = [\n    {\n      title: intl.formatMessage({ id: 'ai.model.name' }),\n      dataIndex: 'name',\n      key: 'name',\n      sorter: (a, b) => a.name.localeCompare(b.name),\n    },\n    {\n      title: intl.formatMessage({ id: 'ai.model.type' }),\n      dataIndex: 'type',\n      key: 'type',\n      filters: [\n        { text: 'Text Generation', value: 'Text Generation' },\n        { text: 'Image Generation', value: 'Image Generation' },\n        { text: 'Speech Recognition', value: 'Speech Recognition' },\n        { text: 'Code Generation', value: 'Code Generation' },\n      ],\n      onFilter: (value, record) => record.type === value,\n    },\n    {\n      title: intl.formatMessage({ id: 'ai.model.status' }),\n      dataIndex: 'status',\n      key: 'status',\n      filters: [\n        { text: 'Active', value: 'Active' },\n        { text: 'Inactive', value: 'Inactive' },\n      ],\n      onFilter: (value, record) => record.status === value,\n      render: (status) => {\n        const color = status === 'Active' ? 'green' : 'gray';\n        return <Tag color={color}>{status}</Tag>;\n      },\n    },\n    {\n      title: intl.formatMessage({ id: 'ai.model.version' }),\n      dataIndex: 'version',\n      key: 'version',\n    },\n    {\n      title: intl.formatMessage({ id: 'ai.model.lastUpdated' }),\n      dataIndex: 'lastUpdated',\n      key: 'lastUpdated',\n      sorter: (a, b) => new Date(a.lastUpdated) - new Date(b.lastUpdated),\n    },\n    {\n      title: intl.formatMessage({ id: 'ai.model.usage' }),\n      dataIndex: 'usage',\n      key: 'usage',\n      sorter: (a, b) => a.usage - b.usage,\n      render: (usage) => <Progress percent={usage} size=\"small\" />,\n    },\n    {\n      title: intl.formatMessage({ id: 'common.actions' }),\n      key: 'actions',\n      render: (_, record) => (\n        <Space size=\"small\">\n          <Button type=\"link\" size=\"small\">\n            {intl.formatMessage({ id: 'common.edit' })}\n          </Button>\n          {record.status === 'Active' ? (\n            <Button type=\"link\" size=\"small\" danger>\n              {intl.formatMessage({ id: 'ai.model.deactivate' })}\n            </Button>\n          ) : (\n            <Button type=\"link\" size=\"small\">\n              {intl.formatMessage({ id: 'ai.model.activate' })}\n            </Button>\n          )}\n        </Space>\n      ),\n    },\n  ];\n\n  // Sample data for AI insights\n  const insights = [\n    {\n      title: 'Model Performance Trend',\n      description: 'GPT-4 has shown a 15% improvement in response quality over the last month based on user feedback.',\n      source: 'AI Analytics',\n      confidence: 0.92,\n      timestamp: new Date(),\n      tags: ['GPT-4', 'Performance', 'Quality'],\n      type: 'trend',\n      metrics: [\n        {\n          name: 'Response Quality',\n          value: '92%',\n          change: 15.0,\n          changeType: 'increase',\n        },\n        {\n          name: 'Response Time',\n          value: '1.2s',\n          change: 8.0,\n          changeType: 'decrease',\n        },\n      ],\n      recommendations: [\n        'Continue with the current model configuration',\n        'Consider increasing resource allocation during peak hours',\n        'Monitor for any regression in specialized domains',\n      ],\n    },\n    {\n      title: 'Usage Pattern Anomaly',\n      description: 'Unusual spike in DALL-E 3 usage detected during off-hours (2AM-4AM). This may indicate automated batch processing or potential abuse.',\n      source: 'Security Monitoring',\n      confidence: 0.85,\n      timestamp: new Date(),\n      tags: ['DALL-E 3', 'Security', 'Usage'],\n      type: 'anomaly',\n      metrics: [\n        {\n          name: 'Off-hours Usage',\n          value: '+320%',\n          change: 320.0,\n          changeType: 'increase',\n        },\n        {\n          name: 'Request Pattern',\n          value: 'Automated',\n          change: 0,\n          changeType: 'neutral',\n        },\n      ],\n      recommendations: [\n        'Investigate source of automated requests',\n        'Consider implementing rate limiting for off-hours',\n        'Review authentication logs for suspicious activity',\n      ],\n    },\n  ];\n\n  return (\n    <PageTransition type=\"fade\" cyberpunk>\n      <Space direction=\"vertical\" size=\"large\" style={{ width: '100%' }}>\n        <div className=\"flex justify-between items-center\">\n          <Title level={2}>{intl.formatMessage({ id: 'ai.title' })}</Title>\n          <Space>\n            <Button icon={<TeamOutlined />} onClick={() => history.push('/ai/crew-demo')}>\n              AI Crew Demo\n            </Button>\n            <Button icon={<SyncOutlined />}>\n              {intl.formatMessage({ id: 'ai.sync' })}\n            </Button>\n            <Button type=\"primary\" icon={<PlusOutlined />}>\n              {intl.formatMessage({ id: 'ai.model.add' })}\n            </Button>\n          </Space>\n        </div>\n\n        <AISearchBar\n          placeholder={intl.formatMessage({ id: 'ai.search' })}\n          onSearch={(query) => console.log('Search query:', query)}\n          recentSearches={true}\n          maxRecentSearches={5}\n          suggestionsSource=\"ai\"\n          scope=\"ai\"\n          allowVoiceInput={true}\n          cyberpunk={true}\n        />\n\n        <Row gutter={[16, 16]}>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <Statistic\n                title={intl.formatMessage({ id: 'ai.stats.totalModels' })}\n                value={4}\n                prefix={<RobotOutlined />}\n                valueStyle={{ color: '#1677ff' }}\n              />\n            </Card>\n          </Col>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <Statistic\n                title={intl.formatMessage({ id: 'ai.stats.activeModels' })}\n                value={3}\n                prefix={<ApiOutlined />}\n                valueStyle={{ color: '#52c41a' }}\n              />\n            </Card>\n          </Col>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <Statistic\n                title={intl.formatMessage({ id: 'ai.stats.totalRequests' })}\n                value={12458}\n                prefix={<BarChartOutlined />}\n                valueStyle={{ color: '#faad14' }}\n              />\n            </Card>\n          </Col>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <Statistic\n                title={intl.formatMessage({ id: 'ai.stats.avgResponseTime' })}\n                value={1.2}\n                suffix=\"s\"\n                prefix={<SettingOutlined />}\n                valueStyle={{ color: '#eb2f96' }}\n              />\n            </Card>\n          </Col>\n        </Row>\n\n        <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n          <Tabs defaultActiveKey=\"models\">\n            <TabPane\n              tab={\n                <span>\n                  <RobotOutlined />\n                  {intl.formatMessage({ id: 'ai.models' })}\n                </span>\n              }\n              key=\"models\"\n            >\n              <Table\n                dataSource={models}\n                columns={modelColumns}\n                pagination={{ pageSize: 10 }}\n                className=\"bg-gray-900\"\n              />\n            </TabPane>\n\n            <TabPane\n              tab={\n                <span>\n                  <SettingOutlined />\n                  {intl.formatMessage({ id: 'ai.settings' })}\n                </span>\n              }\n              key=\"settings\"\n            >\n              <Paragraph className=\"text-gray-400\">\n                {intl.formatMessage({ id: 'ai.settings.description' })}\n              </Paragraph>\n\n              {/* AI Settings content would go here */}\n            </TabPane>\n\n            <TabPane\n              tab={\n                <span>\n                  <BarChartOutlined />\n                  {intl.formatMessage({ id: 'ai.analytics' })}\n                </span>\n              }\n              key=\"analytics\"\n            >\n              <Row gutter={[16, 16]}>\n                {insights.map((insight, index) => (\n                  <Col xs={24} md={12} key={index}>\n                    <InsightCard\n                      insight={insight}\n                      cyberpunk={true}\n                      showRecommendations={true}\n                      defaultExpanded={false}\n                    />\n                  </Col>\n                ))}\n              </Row>\n            </TabPane>\n          </Tabs>\n        </Card>\n      </Space>\n    </PageTransition>\n  );\n};\n\nexport default AIPage;\n",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/pages/ai/index.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    },
+    "6": {
+      "path": "/ai/crew-demo",
+      "access": "canAccessAI",
+      "file": "@/pages/ai/crew-demo.tsx",
+      "parentId": "1",
+      "id": "6",
+      "absPath": "/ai/crew-demo",
+      "__content": "import React from 'react';\nimport { PageContainer } from '@ant-design/pro-components';\nimport { CrewDemo } from '../../components/CrewDemo';\n\n/**\n * CrewDemoPage - A page for demonstrating the AI agent crew system\n */\nconst CrewDemoPage: React.FC = () => {\n  return (\n    <PageContainer\n      title=\"AI Agent Crew System\"\n      subTitle=\"Create and orchestrate specialized AI agent crews\"\n    >\n      <CrewDemo />\n    </PageContainer>\n  );\n};\n\nexport default CrewDemoPage;\n",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/pages/ai/crew-demo.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    },
+    "7": {
+      "path": "/modules",
+      "access": "canManageModules",
+      "file": "@/pages/modules/index.tsx",
+      "parentId": "1",
+      "id": "7",
+      "absPath": "/modules",
+      "__content": "import React from 'react';\nimport { Card, Table, Button, Space, Tag, Typography, Input, Row, Col, Progress } from 'antd';\nimport {\n  AppstoreOutlined,\n  SearchOutlined,\n  PlusOutlined,\n  ReloadOutlined,\n  DownloadOutlined\n} from '@ant-design/icons';\nimport PageTransition from '@/components/PageTransition';\nimport { useIntl } from 'umi';\n\nconst { Title, Paragraph } = Typography;\n\nconst ModulesPage: React.FC = () => {\n  const intl = useIntl();\n\n  // Sample data for modules\n  const modules = [\n    {\n      key: '1',\n      name: 'User Management',\n      category: 'Core',\n      version: '1.2.0',\n      status: 'Active',\n      author: 'CauldronOS Team',\n      lastUpdated: '2023-04-10',\n      health: 95,\n    },\n    {\n      key: '2',\n      name: 'Analytics Dashboard',\n      category: 'Analytics',\n      version: '0.9.5',\n      status: 'Active',\n      author: 'Data Team',\n      lastUpdated: '2023-04-05',\n      health: 87,\n    },\n    {\n      key: '3',\n      name: 'Payment Gateway',\n      category: 'Finance',\n      version: '2.0.1',\n      status: 'Inactive',\n      author: 'Finance Team',\n      lastUpdated: '2023-03-15',\n      health: 0,\n    },\n    {\n      key: '4',\n      name: 'Content Management',\n      category: 'Core',\n      version: '1.5.0',\n      status: 'Active',\n      author: 'CauldronOS Team',\n      lastUpdated: '2023-04-12',\n      health: 92,\n    },\n    {\n      key: '5',\n      name: 'Notification System',\n      category: 'Communication',\n      version: '1.1.0',\n      status: 'Active',\n      author: 'Communication Team',\n      lastUpdated: '2023-04-08',\n      health: 90,\n    },\n  ];\n\n  // Table columns\n  const columns = [\n    {\n      title: intl.formatMessage({ id: 'modules.name' }),\n      dataIndex: 'name',\n      key: 'name',\n      sorter: (a, b) => a.name.localeCompare(b.name),\n    },\n    {\n      title: intl.formatMessage({ id: 'modules.category' }),\n      dataIndex: 'category',\n      key: 'category',\n      filters: [\n        { text: 'Core', value: 'Core' },\n        { text: 'Analytics', value: 'Analytics' },\n        { text: 'Finance', value: 'Finance' },\n        { text: 'Communication', value: 'Communication' },\n      ],\n      onFilter: (value, record) => record.category === value,\n      render: (category) => {\n        let color = 'blue';\n        if (category === 'Core') color = 'purple';\n        if (category === 'Analytics') color = 'cyan';\n        if (category === 'Finance') color = 'green';\n        if (category === 'Communication') color = 'orange';\n        return <Tag color={color}>{category}</Tag>;\n      },\n    },\n    {\n      title: intl.formatMessage({ id: 'modules.version' }),\n      dataIndex: 'version',\n      key: 'version',\n    },\n    {\n      title: intl.formatMessage({ id: 'modules.status' }),\n      dataIndex: 'status',\n      key: 'status',\n      filters: [\n        { text: 'Active', value: 'Active' },\n        { text: 'Inactive', value: 'Inactive' },\n      ],\n      onFilter: (value, record) => record.status === value,\n      render: (status) => {\n        const color = status === 'Active' ? 'green' : 'gray';\n        return <Tag color={color}>{status}</Tag>;\n      },\n    },\n    {\n      title: intl.formatMessage({ id: 'modules.author' }),\n      dataIndex: 'author',\n      key: 'author',\n    },\n    {\n      title: intl.formatMessage({ id: 'modules.lastUpdated' }),\n      dataIndex: 'lastUpdated',\n      key: 'lastUpdated',\n      sorter: (a, b) => new Date(a.lastUpdated) - new Date(b.lastUpdated),\n    },\n    {\n      title: intl.formatMessage({ id: 'modules.health' }),\n      dataIndex: 'health',\n      key: 'health',\n      sorter: (a, b) => a.health - b.health,\n      render: (health) => {\n        let color = 'green';\n        if (health < 90) color = 'lime';\n        if (health < 80) color = 'orange';\n        if (health < 70) color = 'red';\n        if (health === 0) return <Tag color=\"gray\">N/A</Tag>;\n\n        return <Progress percent={health} size=\"small\" strokeColor={color} />;\n      },\n    },\n    {\n      title: intl.formatMessage({ id: 'common.actions' }),\n      key: 'actions',\n      render: (_, record) => (\n        <Space size=\"small\">\n          <Button type=\"link\" size=\"small\">\n            {intl.formatMessage({ id: 'common.edit' })}\n          </Button>\n          {record.status === 'Active' ? (\n            <Button type=\"link\" size=\"small\" danger>\n              {intl.formatMessage({ id: 'modules.deactivate' })}\n            </Button>\n          ) : (\n            <Button type=\"link\" size=\"small\">\n              {intl.formatMessage({ id: 'modules.activate' })}\n            </Button>\n          )}\n        </Space>\n      ),\n    },\n  ];\n\n  return (\n    <PageTransition type=\"fade\" cyberpunk>\n      <Space direction=\"vertical\" size=\"large\" style={{ width: '100%' }}>\n        <div className=\"flex justify-between items-center\">\n          <Title level={2}>{intl.formatMessage({ id: 'modules.title' })}</Title>\n          <Space>\n            <Button icon={<ReloadOutlined />}>\n              {intl.formatMessage({ id: 'modules.refresh' })}\n            </Button>\n            <Button icon={<DownloadOutlined />}>\n              {intl.formatMessage({ id: 'modules.install' })}\n            </Button>\n            <Button type=\"primary\" icon={<PlusOutlined />}>\n              {intl.formatMessage({ id: 'modules.add' })}\n            </Button>\n          </Space>\n        </div>\n\n        <Paragraph className=\"text-gray-400\">\n          {intl.formatMessage({ id: 'modules.description' })}\n        </Paragraph>\n\n        <Row gutter={[16, 16]}>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <div className=\"text-center\">\n                <AppstoreOutlined style={{ fontSize: '24px', color: '#1677ff' }} />\n                <div className=\"mt-2 text-lg font-bold\">5</div>\n                <div className=\"text-gray-400\">{intl.formatMessage({ id: 'modules.total' })}</div>\n              </div>\n            </Card>\n          </Col>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <div className=\"text-center\">\n                <AppstoreOutlined style={{ fontSize: '24px', color: '#52c41a' }} />\n                <div className=\"mt-2 text-lg font-bold\">4</div>\n                <div className=\"text-gray-400\">{intl.formatMessage({ id: 'modules.active' })}</div>\n              </div>\n            </Card>\n          </Col>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <div className=\"text-center\">\n                <AppstoreOutlined style={{ fontSize: '24px', color: '#faad14' }} />\n                <div className=\"mt-2 text-lg font-bold\">1</div>\n                <div className=\"text-gray-400\">{intl.formatMessage({ id: 'modules.inactive' })}</div>\n              </div>\n            </Card>\n          </Col>\n          <Col xs={24} sm={12} md={6}>\n            <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n              <div className=\"text-center\">\n                <AppstoreOutlined style={{ fontSize: '24px', color: '#eb2f96' }} />\n                <div className=\"mt-2 text-lg font-bold\">2</div>\n                <div className=\"text-gray-400\">{intl.formatMessage({ id: 'modules.updates' })}</div>\n              </div>\n            </Card>\n          </Col>\n        </Row>\n\n        <Card className=\"bg-gray-900 border-gray-700 shadow-md\">\n          <div className=\"mb-4\">\n            <Input\n              placeholder={intl.formatMessage({ id: 'common.search' })}\n              prefix={<SearchOutlined />}\n              className=\"max-w-md\"\n            />\n          </div>\n          <Table\n            dataSource={modules}\n            columns={columns}\n            pagination={{ pageSize: 10 }}\n            className=\"bg-gray-900\"\n          />\n        </Card>\n      </Space>\n    </PageTransition>\n  );\n};\n\nexport default ModulesPage;\n",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/pages/modules/index.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    },
+    "8": {
+      "path": "*",
+      "file": "@/pages/404.tsx",
+      "parentId": "1",
+      "id": "8",
+      "absPath": "/*",
+      "__content": "import React from 'react';\r\nimport { Button, Result } from 'antd';\r\nimport { useNavigate, useIntl } from 'umi';\r\nimport PageTransition from '@/components/PageTransition';\r\n\r\nconst NotFoundPage: React.FC = () => {\r\n  const navigate = useNavigate();\r\n  const intl = useIntl();\r\n\r\n  return (\r\n    <PageTransition type=\"fade\" cyberpunk>\r\n      <Result\r\n        status=\"404\"\r\n        title=\"404\"\r\n        subTitle={intl.formatMessage({ id: 'error.notFound' })}\r\n        extra={\r\n          <Button type=\"primary\" onClick={() => navigate('/')}>\r\n            {intl.formatMessage({ id: 'error.backHome' })}\r\n          </Button>\r\n        }\r\n      />\r\n    </PageTransition>\r\n  );\r\n};\r\n\r\nexport default NotFoundPage;",
+      "__isJSFile": true,
+      "__absFile": "C:/Users/DevToolsUser/cauldronos/apps/admin-dashboard/src/pages/404.tsx",
+      "hasServerLoader": false,
+      "hasMetadataLoader": false
+    }
+  },
+  "apiRoutes": {},
+  "hasSrcDir": true,
+  "npmClient": "pnpm",
+  "umi": {
+    "version": "4.4.9",
+    "name": "Umi",
+    "importSource": "umi",
+    "cliName": "umi"
+  },
+  "bundleStatus": {
+    "done": false
+  },
+  "mfsuBundleStatus": {
+    "done": false
+  },
+  "react": {
+    "version": "18.3.1",
+    "path": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react"
+  },
+  "react-dom": {
+    "version": "18.3.1",
+    "path": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\node_modules\\react-dom"
+  },
+  "appJS": {
+    "path": "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\src\\app.tsx",
+    "exports": [
+      "getInitialState",
+      "layout",
+      "request",
+      "rootContainer",
+      "runtime"
+    ]
+  },
+  "locale": "en-US",
+  "globalCSS": [
+    "C:\\Users\\DevToolsUser\\cauldronos\\apps\\admin-dashboard\\src\\global.css"
+  ],
+  "globalJS": [],
+  "overridesCSS": [],
+  "bundler": "webpack",
+  "git": {
+    "originUrl": "https://github.com/seemslegit42/cauldronos.git"
+  },
+  "framework": "react",
+  "typescript": {
+    "tsVersion": "5.8.3",
+    "tslibVersion": "2.8.1"
+  }
+}
