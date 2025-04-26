@@ -45,6 +45,12 @@ export const AI_CONFIG = {
     apiKey: process.env.CREWAI_API_KEY || '',
     baseUrl: process.env.CREWAI_BASE_URL || '',
   },
+
+  // Google Gemini configuration
+  gemini: {
+    apiKey: process.env.GEMINI_API_KEY || '',
+    defaultModel: process.env.GEMINI_DEFAULT_MODEL || 'gemini-2.0-flash-001',
+  },
 };
 
 /**
@@ -71,6 +77,13 @@ export const AI_MODELS = {
     claude3_haiku: 'claude-3-haiku-20240307',
     claude3_sonnet: 'claude-3-sonnet-20240229',
     claude3_opus: 'claude-3-opus-20240229',
+  },
+
+  // Google Gemini models
+  gemini: {
+    gemini_flash: 'gemini-2.0-flash-001',
+    gemini_pro: 'gemini-2.0-pro-001',
+    gemini_ultra: 'gemini-2.0-ultra-001',
   },
 };
 

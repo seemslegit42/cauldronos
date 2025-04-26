@@ -39,5 +39,11 @@
   "devDependencies": {
     "prettier": "^3.0.0",
     "turbo": "^2.5.1"
+  },
+  "dependencies": {
+    "@ant-design/pro-components": "^2.8.7",
+    "@google/genai": "^0.10.0",
+    "antd": "^5.24.8",
+    "i": "^0.3.7"
   }
 }
